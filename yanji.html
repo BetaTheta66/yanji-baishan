@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13242b">
+<title>延吉 · 半日动线与吃喝攻略</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8;--pine:#2f6b5a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 90px}
+header{background:linear-gradient(150deg,#5a2f1e 0%,#8f4a2c 50%,#c0653f 100%);color:#fff;padding:32px 26px 36px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff26;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#ffd9c6}
+.hero{font-size:clamp(34px,8.4vw,50px);line-height:1.05;letter-spacing:-.05em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#f3ddd2;max-width:620px;font-size:15px;line-height:1.75}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+.nav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid #ded8ce99}
+.nav-in{max-width:1080px;margin:auto;padding:0 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap}
+.nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+section{scroll-margin-top:66px;margin:34px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 14px}
+.sh h2{font-size:26px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.sh p{margin:0;color:var(--muted);font-size:12px;text-align:right;max-width:330px}
+.label{font-size:11px;letter-spacing:.15em;color:var(--coral);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
+.mapbox{background:var(--card);border-radius:20px;padding:12px;box-shadow:var(--shadow);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.mapbox::-webkit-scrollbar{height:5px}
+.mapbox::-webkit-scrollbar-thumb{background:#cfc7b9;border-radius:9px}
+.mapbox svg{min-width:680px;display:block}
+.scroll-hint{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;display:none}
+@media(max-width:700px){.scroll-hint{display:block}}
+
+.slots{display:grid;gap:7px}
+.slot{display:grid;grid-template-columns:64px 1fr;gap:13px;padding:15px 16px;background:var(--card);border-radius:14px;box-shadow:0 6px 18px #14252a0f}
+.time{font-size:13.5px;font-weight:800;color:#5c7075;font-variant-numeric:tabular-nums}
+.time small{display:block;font-size:10px;font-weight:600;color:#9aa8aa;margin-top:1px}
+.slot b{font-size:15.5px}
+.slot p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
+.tag{color:#b14d38;font-size:10.5px;font-weight:800;margin-left:5px}
+.tag.g{color:#1c6e55}
+.place{font-size:12.5px;color:#24726c;text-decoration:none;padding:3px 0;border-bottom:1px dashed #b9d8d1}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px;margin-top:13px}
+.card h4{margin:0 0 9px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.82}
+.card li{margin-bottom:5px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.tip>b{display:block;color:var(--gold);font-size:14px;margin-bottom:5px}
+.tip span{font-size:13.5px;color:#cad6d5;line-height:1.72}
+.tip b{display:inline;color:#f0d9a4;font-size:inherit}
+.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}.tip.alt b{color:#9fe6c9}
+.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}.tip.warn b{color:#ffd0c2}
+.tip.gold{background:#4a3a12}.tip.gold>b{color:#ffe0a3}.tip.gold b{color:#ffe0a3}
+
+.food{display:grid;gap:10px}
+.food-row{background:var(--card);border-radius:15px;padding:15px 17px;box-shadow:var(--shadow);border-left:4px solid var(--c)}
+.food-row .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.food-row b{font-size:15.5px}
+.food-row .price{font-size:11.5px;font-weight:800;color:var(--pine);white-space:nowrap}
+.food-row p{margin:5px 0 0;color:var(--muted);font-size:13px;line-height:1.65}
+.food-row .note{margin-top:6px;font-size:11.5px;font-weight:800;color:#a8412c}
+
+.footer{text-align:center;color:#74817b;font-size:11.5px;padding-top:32px;line-height:1.9}
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #13242b40}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+@media(max-width:700px){.sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}.slot{grid-template-columns:58px 1fr}}
+</style>
+</head>
+<body>
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">YANJI · HALF DAY · FOOD &amp; WALK</div>
+  <h1 class="hero">延吉<br>半天怎么过</h1>
+  <p class="hero-copy">09:35 落地，16:33 发车，中间 5 小时。拍一套朝鲜族写真、逛两个市场、吃一顿冷面拌饭烤肉，然后上车进山。</p>
+  <div class="stamp">1/1 元旦<br>5 小时</div>
+</header>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#map" class="on">地图</a>
+    <a href="#plan">半天动线</a>
+    <a href="#spot">四个点</a>
+    <a href="#food">吃什么</a>
+    <a href="#tips">贴士</a>
+  </div>
+</nav>
+
+<section id="map">
+  <div class="sh"><div><div class="label">01 · THE MAP</div><h2>延吉市区</h2></div>
+    <p>橙色线为 1/1 实际动线 · 按经纬度绘制</p></div>
+
+  <div class="mapbox">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 940" width="820" height="940" font-family="PingFang SC,Hiragino Sans GB,sans-serif"><defs>
+<linearGradient id="yb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5f0e8"/><stop offset="100%" stop-color="#eee8dc"/></linearGradient>
+<linearGradient id="city" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f3efe6"/><stop offset="100%" stop-color="#eae4d7"/></linearGradient>
+<pattern id="yd" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#d8d0c2"/></pattern>
+<marker id="ya" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 z" fill="#c0653f"/></marker>
+</defs><rect width="820" height="940" fill="url(#yb)"/><rect x="44" y="108" width="732" height="700" rx="18" fill="url(#city)" stroke="#d5cbb9" stroke-width="1.4"/><rect x="44" y="108" width="732" height="700" rx="18" fill="url(#yd)"/><path d="M64 508 L344 488 L604 448 L756 408" stroke="#d9cfbd" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.85"/><path d="M164 148 L204 348 L274 528 L294 788" stroke="#d9cfbd" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/><path d="M424 138 L444 308 L474 528 L514 798" stroke="#d9cfbd" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/><path d="M54 578 Q264 538 444 578 Q604 613 766 578" stroke="#a9cde0" stroke-width="16" fill="none" opacity="0.55" stroke-linecap="round"/><text x="344" y="560" fill="#6d93a8" font-size="10.5" font-weight="700">布尔哈通河</text><ellipse cx="494.6" cy="691.7" rx="72" ry="46" fill="#cfe3d8" stroke="#a9c9bb" stroke-width="1.4"/><text x="494.6" y="687.7" text-anchor="middle" fill="#2f6b5a" font-size="13" font-weight="800">帽儿山</text><text x="494.6" y="704.7" text-anchor="middle" fill="#6b8a80" font-size="9.5">森林公园 · 俯瞰全城</text><circle cx="359.6" cy="476.3" r="8" fill="#4a7fa5" stroke="#fffdf9" stroke-width="2.6"/><text x="359.6" y="480.3" text-anchor="middle" fill="#fff" font-size="9">✈</text><text x="285.6" y="480.3" fill="#1d3b44" font-size="12.5" font-weight="800">延吉朝阳川机场</text><text x="285.6" y="495.3" fill="#7d8f8a" font-size="9.5">距市区 19 min</text><circle cx="123.7" cy="355.1" r="8" fill="#2f6b5a" stroke="#fffdf9" stroke-width="2.6"/><text x="109.7" y="329.1" fill="#1d3b44" font-size="12.5" font-weight="800">延吉西站</text><text x="109.7" y="344.1" fill="#7d8f8a" font-size="9.5">高铁 · 16:33 发车</text><circle cx="550.4" cy="539.0" r="23" fill="#e9bd64" opacity="0.2"/><circle cx="550.4" cy="539.0" r="16" fill="#e9bd64" opacity="0.32"/><circle cx="550.4" cy="539.0" r="10" fill="#c0653f" stroke="#fffdf9" stroke-width="2.6"/><text x="550.4" y="543.0" text-anchor="middle" fill="#fff" font-size="11">拍</text><text x="550.4" y="565.0" text-anchor="middle" fill="#1d3b44" font-size="12.5" font-weight="800">中国朝鲜族民俗园</text><text x="550.4" y="580.0" text-anchor="middle" fill="#7d8f8a" font-size="9.5">写真拍摄 · 行李寄存</text><circle cx="522.2" cy="300.3" r="8" fill="#c9a24b" stroke="#fffdf9" stroke-width="2.6"/><text x="502.20000000000005" y="298.3" fill="#1d3b44" font-size="12.5" font-weight="800">延边大学</text><text x="502.20000000000005" y="313.3" fill="#7d8f8a" font-size="9.5">网红门楼</text><circle cx="538.8" cy="339.4" r="5" fill="#c9a24b" stroke="#fffdf9" stroke-width="2.6"/><text x="522.8" y="353.4" fill="#1d3b44" font-size="12.5" font-weight="800">大学城</text><circle cx="618.1" cy="319.0" r="9" fill="#ef755b" stroke="#fffdf9" stroke-width="2.6"/><text x="618.1" y="323.0" text-anchor="middle" fill="#fff" font-size="10">🍴</text><text x="640.1" y="317.0" fill="#1d3b44" font-size="12.5" font-weight="800">全州拌饭 总店</text><text x="640.1" y="332.0" fill="#7d8f8a" font-size="9.5">非遗传承 · 午餐</text><circle cx="597.1" cy="243.7" r="9" fill="#ef755b" stroke="#fffdf9" stroke-width="2.6"/><text x="597.1" y="247.7" text-anchor="middle" fill="#fff" font-size="10">🍴</text><text x="591.1" y="219.7" text-anchor="middle" fill="#1d3b44" font-size="12.5" font-weight="800">延吉水上市场</text><text x="591.1" y="234.7" text-anchor="middle" fill="#7d8f8a" font-size="9.5">打糕 / 米肠 / 明太鱼</text><circle cx="628.6" cy="342.6" r="5.5" fill="#c9a24b" stroke="#fffdf9" stroke-width="2.6"/><text x="646.6" y="360.6" fill="#1d3b44" font-size="12.5" font-weight="800">西市场</text><text x="646.6" y="375.6" fill="#7d8f8a" font-size="9.5">伴手礼</text><circle cx="571.6" cy="463.5" r="6" fill="#8a9a93" stroke="#fffdf9" stroke-width="2.6"/><text x="571.6" y="483.5" text-anchor="middle" fill="#1d3b44" font-size="12.5" font-weight="800">延吉站</text><path d="M359.6 476.3 L550.4 539.0 L522.2 300.3 L618.1 319.0 L597.1 243.7 L123.7 355.1" stroke="#c0653f" stroke-width="3" fill="none" opacity="0.85" stroke-linecap="round"/><path d="M597.1 243.7 L133.7 355.1" stroke="#c0653f" stroke-width="3" fill="none" marker-end="url(#ya)" stroke-linecap="round"/><circle cx="510.4" cy="509.0" r="13" fill="#fffdf9" stroke="#c0653f" stroke-width="1.8"/><text x="510.4" y="513.0" text-anchor="middle" fill="#a8412c" font-size="10" font-weight="800">01</text><circle cx="548.2" cy="270.3" r="13" fill="#fffdf9" stroke="#c0653f" stroke-width="1.8"/><text x="548.2" y="274.3" text-anchor="middle" fill="#a8412c" font-size="10" font-weight="800">02</text><circle cx="662.1" cy="343.0" r="13" fill="#fffdf9" stroke="#c0653f" stroke-width="1.8"/><text x="662.1" y="347.0" text-anchor="middle" fill="#a8412c" font-size="10" font-weight="800">03</text><circle cx="629.1" cy="229.7" r="13" fill="#fffdf9" stroke="#c0653f" stroke-width="1.8"/><text x="629.1" y="233.7" text-anchor="middle" fill="#a8412c" font-size="10" font-weight="800">04</text><circle cx="91.7" cy="377.1" r="13" fill="#fffdf9" stroke="#c0653f" stroke-width="1.8"/><text x="91.7" y="381.1" text-anchor="middle" fill="#a8412c" font-size="10" font-weight="800">05</text><rect x="399.2" y="518.65" width="71.6" height="21" rx="10" fill="#fffdf9" stroke="#e0d6c4" stroke-width="1"/><text x="435.0" y="533.65" text-anchor="middle" fill="#7a6a55" font-size="10" font-weight="700">打车 19 min</text><rect x="299.40000000000003" y="274.4" width="142.0" height="21" rx="10" fill="#fffdf9" stroke="#e0d6c4" stroke-width="1"/><text x="370.40000000000003" y="289.4" text-anchor="middle" fill="#7a6a55" font-size="10" font-weight="700">打车 20 min · 16:33 发车</text><text x="44" y="60" fill="#13242b" font-size="34" font-weight="800" letter-spacing="1">延吉市区</text><text x="44" y="84" fill="#c0653f" font-size="10.5" font-weight="800" letter-spacing="2.4">YANJI CITY · 1/1 当天动线</text><text x="300" y="60" fill="#4a656d" font-size="16" font-weight="700">半天走完</text><line x1="44" y1="96" x2="780" y2="96" stroke="#c9c0b2" stroke-width="1"/><g transform="translate(730,154)"><circle r="19" fill="#fffdf9" stroke="#c9c0b2" stroke-width="1.2"/><path d="M0 -11 L5 5 L0 2 L-5 5 Z" fill="#2f6b5a"/><text x="0" y="-23" text-anchor="middle" fill="#5f7889" font-size="9" font-weight="800">N</text></g><line x1="44" y1="826" x2="780" y2="826" stroke="#c9c0b2" stroke-width="1"/><text x="44" y="850" fill="#5f7889" font-size="11" font-weight="800">半天节奏</text><text x="44" y="872" fill="#c0653f" font-size="10" font-weight="800">09:35 落地</text><text x="116" y="872" fill="#8a9999" font-size="10">机场 → 民俗园 19 min</text><text x="294" y="872" fill="#c0653f" font-size="10" font-weight="800">10:30 拍摄</text><text x="366" y="872" fill="#8a9999" font-size="10">民俗园 2—3 小时</text><text x="544" y="872" fill="#c0653f" font-size="10" font-weight="800">13:30 午餐</text><text x="616" y="872" fill="#8a9999" font-size="10">全州拌饭总店</text><text x="44" y="892" fill="#c0653f" font-size="10" font-weight="800">14:35 采购</text><text x="116" y="892" fill="#8a9999" font-size="10">水上市场</text><text x="294" y="892" fill="#c0653f" font-size="10" font-weight="800">15:50 出发</text><text x="366" y="892" fill="#8a9999" font-size="10">延吉西站 20 min</text><text x="780" y="850" text-anchor="end" fill="#8a9999" font-size="9.5">按经纬度绘制 · 2026-11-25</text><text x="780" y="866" text-anchor="end" fill="#8a9999" font-size="9.5">橙色线为 1/1 实际动线</text></svg>
+    <div class="scroll-hint">← 左右滑动查看细节，双指可放大 →</div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h4>城市结构</h4><ul>
+      <li>机场在西边，市区在中部，<b>西站更靠西南</b></li>
+      <li>布尔哈通河横穿市区，<b>河南岸是帽儿山</b></li>
+      <li>吃喝集中在<b>参花街一带</b>（水上市场、西市场、全州拌饭）</li>
+      <li>延边大学在西侧，门楼是网红打卡点</li>
+    </ul></div>
+    <div class="card"><h4>动线为什么这么排</h4><ul>
+      <li>机场 → 民俗园 → 延大 → 全州拌饭 → 水上市场 → 西站</li>
+      <li><b>由西向东北再折回西</b>，最后一段直接上车站</li>
+      <li>除最后一段 20 分钟，其余每段都在 5 分钟内</li>
+      <li>帽儿山在反方向，<b>3 小时写真版建议砍掉</b></li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="plan">
+  <div class="sh"><div><div class="label">02 · HALF DAY</div><h2>半天动线</h2></div>
+    <p>按写真 2 小时版排 · 3 小时版见下方</p></div>
+
+  <div class="slots">
+    <div class="slot"><div class="time">09:35<small>落地</small></div><div>
+      <b>延吉朝阳川机场</b>
+      <p>取行李后直接打车去民俗园，19 分钟、¥30—40。<b>行李寄存在民俗园售票处</b>，后面全程轻装。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.458200,42.884500&name=延吉朝阳川国际机场">朝阳川机场 ↗</a></div></div>
+
+    <div class="slot"><div class="time">10:10<small>换装</small></div><div>
+      <b>中国朝鲜族民俗园<span class="tag">写真</span></b>
+      <p>寄存、换装、化妆约 20 分钟。<b>提前确认工作室位置</b>——有些在园外，需另算往返。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.493400,42.874200&name=中国朝鲜族民俗园">民俗园 ↗</a></div></div>
+
+    <div class="slot"><div class="time">10:30<small>拍摄</small></div><div>
+      <b>民俗园拍摄 2 小时</b>
+      <p>园内有朝鲜族传统建筑群、庭院、长鼓等场景。<b>冬季 16:30 闭园</b>，上午到午后光线最好。<br>2 小时版拍到 12:30；<b>3 小时版拍到 13:30</b>。</p></div></div>
+
+    <div class="slot"><div class="time">12:40<small>吃饭</small></div><div>
+      <b>全州拌饭 总店 / 服务大楼冷面<span class="tag g">延吉必吃</span></b>
+      <p>民俗园到参花街 15 分钟。<b>全州拌饭是 45 年老店</b>，石锅锅巴香脆、辣酱微辣不呛，非遗传承。<br>想吃冷面就去服务大楼，荞麦面配冰碴牛肉汤。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.505870,42.910330&name=全州拌饭馆总店">全州拌饭 ↗</a></div></div>
+
+    <div class="slot"><div class="time">13:40<small>逛市场</small></div><div>
+      <b>延吉水上市场</b>
+      <p>打糕、米肠、辣白菜、明太鱼、松茸。<b>顺手买当晚车上的晚餐</b>——18:41 才到长白山，中途没正餐时间。<br>2 小时版逛 60 分钟；3 小时版压到 25 分钟。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.502000,42.922700&name=延吉水上市场">水上市场 ↗</a></div></div>
+
+    <div class="slot"><div class="time">14:50<small>打卡</small></div><div>
+      <b>延边大学 正门</b>
+      <p>朝鲜族风格门楼，白墙青瓦，<b>拍照 20 分钟足够</b>。校内不进，门口台阶就是最好的机位。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.488200,42.913400&name=延边大学">延边大学 ↗</a></div></div>
+
+    <div class="slot"><div class="time">15:30<small>看全景</small></div><div>
+      <b>帽儿山<span class="tag">仅 2 小时版</span></b>
+      <p>车程 7 分钟，俯瞰延吉全城。<b>3 小时版取消此站</b>，直接从延大去车站。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.483100,42.849100&name=帽儿山国家森林公园">帽儿山 ↗</a></div></div>
+
+    <div class="slot"><div class="time">15:50<small>赶车</small></div><div>
+      <b>前往延吉西站<span class="tag">时间节点</span></b>
+      <p>20 分钟，16:15 到站安检。<b>晚 30 分钟就赶不上</b>——16:33 是当天最后一班。<br>提前 10 分钟用 App 叫车。</p>
+      <a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.414700,42.904400&name=延吉西站">延吉西站 ↗</a></div></div>
+
+    <div class="slot"><div class="time">16:33<small>发车</small></div><div>
+      <b>G8140 延吉西 → 长白山西</b>
+      <p>2 小时 8 分，18:41 到。<b>注意 16:06 那班 G142 终到「长白山站」</b>（北坡），离万达 85 公里，别上错。</p></div></div>
+  </div>
+
+  <div class="tip warn" style="margin-top:14px"><b>写真 3 小时版的差别</b><span>拍摄延到 13:30，午餐压到 45 分钟，水上市场只留 25 分钟，<b>帽儿山取消</b>。<br>其余不变，<b>15:50 出发这条线不能动</b>。</span></div>
+</section>
+
+<section id="spot">
+  <div class="sh"><div><div class="label">03 · SPOTS</div><h2>四个点，各自看什么</h2></div>
+    <p>按动线顺序</p></div>
+
+  <div class="grid2">
+    <div class="card"><h4>① 中国朝鲜族民俗园</h4><ul>
+      <li>朝鲜族传统民居建筑群，<b>白墙青瓦、木格窗</b></li>
+      <li>有服饰体验、长鼓表演，适合拍人像</li>
+      <li><b>冬季 16:30 闭园</b>，上午光线最柔</li>
+      <li>园内有室内展馆，冷的时候可以躲</li>
+      <li><b>写真提前 2—3 周约档期</b>，元旦是旺季</li>
+    </ul></div>
+    <div class="card"><h4>② 延吉水上市场</h4><ul>
+      <li>延吉最生活化的市场，<b>本地人买菜的地方</b></li>
+      <li>重点：打糕、米肠、辣白菜、明太鱼干、松茸</li>
+      <li>可以现买现吃，也有现做的打糕摊</li>
+      <li><b>下午 5 点后陆续收摊</b>，14:00—15:00 正合适</li>
+      <li>现金备一点，部分摊位不收扫码</li>
+    </ul></div>
+    <div class="card"><h4>③ 延边大学</h4><ul>
+      <li>正门是<b>朝鲜族风格门楼</b>，白墙配深色瓦</li>
+      <li>门前台阶和两侧树是热门机位</li>
+      <li>对面就是<b>大学城美食街</b>，烤肉店密集</li>
+      <li>拍照 20 分钟够，不必进校</li>
+    </ul></div>
+    <div class="card"><h4>④ 帽儿山</h4><ul>
+      <li>市区最高点，<b>可俯瞰延吉全城</b></li>
+      <li>从延大开车 7 分钟，山上有观景台</li>
+      <li>冬季风大，<b>待 20 分钟就够</b></li>
+      <li><b>离高速口最近</b>，排最后一站不折返</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="food">
+  <div class="sh"><div><div class="label">04 · EAT</div><h2>延吉吃什么</h2></div>
+    <p>冷面 · 石锅拌饭 · 烤肉 · 打糕</p></div>
+
+  <div class="food">
+    <div class="food-row" style="--c:#c0653f">
+      <div class="top"><b>全州拌饭 总店</b><span class="price">人均 ¥40—60</span></div>
+      <p>参花街的 45 年老店，非遗传承。石锅拌饭的锅巴香脆，辣酱咸香微辣不呛，配煎蛋和小菜。一日三餐都开门。</p>
+      <div class="note">✓ 本次午餐首选 · 离水上市场 1 km</div>
+    </div>
+    <div class="food-row" style="--c:#8f4a2c">
+      <div class="top"><b>服务大楼冷面</b><span class="price">人均 ¥30—50</span></div>
+      <p>延吉冷面代表之一，荞麦面配冰碴牛肉汤，酸甜清爽，加牛肉片、苹果片。<b>中国十大面条之一。</b></p>
+      <div class="note">⚠ 延大店正在装修，可就近去第一分店</div>
+    </div>
+    <div class="food-row" style="--c:#a06a3f">
+      <div class="top"><b>延吉烤肉 · 大学城一带</b><span class="price">人均 ¥70—120</span></div>
+      <p>延边黄牛肉是特色，炭火现烤、自己剪。大学城美食街与参花街都有密集选择，看到本地人排队的基本不会错。</p>
+      <div class="note">时间充裕可吃，赶车日建议选拌饭或冷面</div>
+    </div>
+    <div class="food-row" style="--c:#c9a24b">
+      <div class="top"><b>水上市场小吃</b><span class="price">人均 ¥20—40</span></div>
+      <p>现打打糕蘸豆面、米肠切片蒸热、辣鱼饼、米酒。边走边吃，也适合买上车当晚餐。</p>
+      <div class="note">✓ 必逛 · 建议买当晚车上吃的</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h4>点单小抄</h4><ul>
+      <li><b>冷面</b>：要先喝汤，冰碴越多越正宗；面要现压的</li>
+      <li><b>石锅拌饭</b>：上桌先别拌，等 1 分钟出锅巴再搅</li>
+      <li><b>米肠</b>：沾椒盐或辣酱，趁热吃</li>
+      <li><b>打糕</b>：现打的软糯，凉了就硬</li>
+    </ul></div>
+    <div class="card"><h4>时间安排建议</h4><ul>
+      <li>赶车日<b>别点烤肉</b>——等位加烤制至少 1 小时</li>
+      <li>拌饭和冷面都是<b>15 分钟内上菜</b>，适合这天</li>
+      <li>市场小吃可以边走边吃，不占正餐时间</li>
+      <li>带上车：打糕、米肠、明太鱼干</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="sh"><div><div class="label">05 · NOTES</div><h2>实用贴士</h2></div>
+    <p>延吉这半天容易踩的坑</p></div>
+
+  <div class="tips">
+    <div class="tip warn"><b>三个必须守住的时间</b><span>① <b>10:30 必须开机拍摄</b>，再晚压到午餐<br>② <b>13:30 拍摄收工</b>（3 小时版），超时砍掉市场或帽儿山<br>③ <b>15:50 出发去车站</b>——16:33 是当天末班，错过只能住延吉</span></div>
+    <div class="tip gold"><b>写真要提前约</b><span>元旦是延吉旅拍旺季，<b>建议提前 2—3 周锁定档期</b>。<br>问清四件事：<b>服装套数、妆造是否含、精修张数、出片周期</b>。<br>还要确认<b>工作室在园内还是园外</b>——园外要另算往返时间。</span></div>
+    <div class="tip"><b>行李怎么放</b><span>寄存在<b>民俗园售票处</b>（¥10—20），和车站同方向，逛完直接取。<br>寄存延吉西站也可以，但要先跑一趟。<br><b>随身只带小包</b>：证件、手机、充电宝。</span></div>
+    <div class="tip"><b>打车与费用</b><span>机场 → 民俗园 ¥30—40（19 分钟）<br>民俗园 → 参花街 ¥20—25（15 分钟）<br>参花街 → 延吉西站 ¥30—40（20 分钟）<br><b>全程打车约 ¥100</b>，比包车划算。</span></div>
+    <div class="tip"><b>天气与穿着</b><span>1 月延吉 −10～−20℃，比长白山暖一些。<br><b>拍照要穿厚外套</b>——写真服装通常较薄，中间等待会冷。<br>带暖宝宝，贴在内层。</span></div>
+    <div class="tip alt"><b>这半天的定位</b><span>不是「打卡城市」，是<b>「在山脚下吃一顿好的、拍一组照片」</b>。<br>四个点足够，不必贪多。<b>留出 30 分钟缓冲</b>比多看一个景点重要。</span></div>
+  </div>
+</section>
+
+<div class="footer">延吉 · 半日动线与吃喝攻略<br>点位按实际坐标绘制 · 2026-11-25</div>
+</div>
+
+<script>
+const links=[...document.querySelectorAll('.nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function paint(){
+  const y=window.scrollY+120;
+  let cur=0;
+  secs.forEach((s,i)=>{ if(s && s.offsetTop<=y) cur=i; });
+  links.forEach((a,i)=>a.classList.toggle('on', i===cur));
+}
+window.addEventListener('scroll',paint,{passive:true}); paint();
+</script>
+</body>
+</html>
