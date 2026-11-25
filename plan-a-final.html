@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13242b">
+<title>延吉白山｜烟火半日，雪落两夜</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8;--pine:#2f6b5a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #13242b40}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 90px}
+header{background:linear-gradient(150deg,#0f2f45,#1b4a6b 55%,#2e7d96);color:#fff;padding:30px 24px 34px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#a8d2e8}
+.hero{font-size:clamp(40px,10vw,62px);line-height:1;letter-spacing:-.06em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#cfe6f2;max-width:620px;font-size:15.5px;line-height:1.75}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+.nav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid #ded8ce99}
+.nav-in{max-width:1080px;margin:auto;padding:0 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap}
+section{scroll-margin-top:66px;margin:32px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:26px 0 13px}
+.sh h2{font-size:27px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.sh p{margin:0;color:var(--muted);font-size:12.5px;text-align:right;max-width:320px}
+.label{font-size:11px;letter-spacing:.15em;color:var(--coral);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
+.day{border-left:3px solid var(--day);padding-left:15px;margin-left:7px;position:relative;margin-bottom:22px}
+.day:before{content:"";position:absolute;left:-7px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--day);border:3px solid var(--paper)}
+.day h3{margin:8px 0 4px;font-size:22px;letter-spacing:-.03em}
+.dh{margin:0 0 13px;color:var(--muted);font-size:13px}
+.pill{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.1em;border-radius:99px;padding:4px 10px;background:var(--ink);color:#fff}
+.slots{display:grid;gap:7px}
+.slot{display:grid;grid-template-columns:64px 1fr;gap:13px;padding:15px 16px;background:#fffdf9e6;border-radius:14px}
+.time{font-size:13.5px;font-weight:800;color:#5c7075;font-variant-numeric:tabular-nums}
+.time small{display:block;font-size:10px;font-weight:600;color:#9aa8aa;margin-top:1px}
+.slot b{font-size:15.5px}
+.slot p{margin:4px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7}
+.tag{color:#b14d38;font-size:10.5px;font-weight:800;margin-left:5px}
+.tag.blue{color:#2b6b93}
+.tag.g{color:#1c6e55}
+.placelinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.place{font-size:12.5px;color:#24726c;text-decoration:none;padding:3px 0;border-bottom:1px dashed #b9d8d1}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:12px}
+.card h4{margin:0 0 9px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.85}
+.card li{margin-bottom:4px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:13px 15px;margin-bottom:9px}
+.tip>b{display:block;color:var(--gold);font-size:14px;margin-bottom:4px}
+.tip span{font-size:13.5px;color:#cad6d5;line-height:1.75}
+.tip b{display:inline;color:#f0d9a4;font-size:inherit}
+.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}.tip.warn b{color:#ffd0c2}
+.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}.tip.alt b{color:#9fe6c9}
+.tip.gold{background:#4a3a12}.tip.gold>b{color:#ffe0a3}.tip.gold b{color:#ffe0a3}
+.budget{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.budget table{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed}
+.budget col.c1{width:26%}.budget col.c3{width:15%}.budget col.c4{width:17%}
+.budget th{background:var(--soft);color:var(--muted);font-size:10.5px;padding:9px 8px;text-align:left;font-weight:700}
+.budget td{padding:10px 8px;border-bottom:1px solid #f0ebe3;overflow-wrap:anywhere}
+.budget tr:last-child td{border-bottom:none;background:var(--soft);font-weight:700}
+.budget .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-size:12px;padding:10px 5px}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:9px;background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-top:-10px}
+.kpi div{border-radius:13px;padding:11px 6px;text-align:center}
+.kpi strong{display:block;font-size:22px;line-height:1.15;font-weight:800}
+.kpi span{font-size:10.5px;opacity:.85}
+.tl{background:var(--card);border-radius:18px;padding:4px 16px;box-shadow:var(--shadow)}
+.trow{display:grid;grid-template-columns:62px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed #eae4da}
+.trow:last-child{border-bottom:none}
+.trow .tm{font-size:12px;font-weight:800;color:var(--pine);font-variant-numeric:tabular-nums}
+.trow .tm small{display:block;font-size:9.5px;color:var(--muted);font-weight:600;margin-top:2px}
+.trow b{font-size:13.5px}
+.trow p{margin:3px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
+.perk{background:var(--card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.perk .row{display:grid;grid-template-columns:74px 1fr 54px;gap:10px;padding:11px 14px;border-bottom:1px solid #f2ece3;font-size:12.5px;align-items:center}
+.perk .row:last-child{border-bottom:none}
+.perk .row b{font-size:12.5px}
+.perk .qty{text-align:right;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.perk .grp{background:var(--soft);font-size:10.5px;color:var(--muted);font-weight:800;letter-spacing:.08em;padding:7px 14px}
+.chk{background:var(--card);border-radius:16px;padding:15px 16px;box-shadow:var(--shadow)}
+.chk ul{margin:0;padding-left:0;list-style:none;display:grid;gap:7px}
+.chk li{display:flex;gap:9px;font-size:12.5px;color:var(--muted);line-height:1.65;align-items:flex-start}
+.chk li:before{content:"";width:7px;height:7px;border-radius:2px;background:var(--pine);margin-top:7px;flex:0 0 auto}
+.chk li b{color:var(--ink)}
+.footer{text-align:center;color:#74817b;font-size:11px;padding-top:30px;line-height:1.9}
+@media(max-width:700px){.sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}.slot{grid-template-columns:52px 1fr;padding:11px}}
+
+.split{background:var(--card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-top:12px}
+.split .hd{display:grid;grid-template-columns:54px 1fr 1fr;background:var(--ink);color:#fff}
+.split .hd span{padding:10px 9px;font-size:11px;font-weight:800;letter-spacing:.04em;text-align:center}
+.split .hd span:first-child{text-align:left;color:#a8c4c4}
+.split .hd span:nth-child(2){background:#7a3d2e;color:#ffd9cc}
+.split .hd span:nth-child(3){background:#24506b;color:#cfe6f2}
+.split .r{display:grid;grid-template-columns:54px 1fr 1fr;border-bottom:1px solid #f2ece3}
+.split .r:last-child{border-bottom:none}
+.split .r>span{padding:10px 9px;font-size:11.5px;line-height:1.55;color:var(--muted);border-right:1px solid #f2ece3}
+.split .r>span:last-child{border-right:none}
+.split .r .t{font-weight:800;color:var(--pine);font-variant-numeric:tabular-nums;border-right:1px solid #e8e2d8}
+.split .r .a{background:#fdf6f2;color:#7a4a3a}
+.split .r .a b{color:#8f3f28}
+.split .r .b{background:#f3f8fc;color:#3f5f75}
+.split .r .b b{color:#1c5273}
+.split .r.m{grid-template-columns:54px 1fr}
+.split .r.m .j{grid-column:2;background:#f7f9f8;color:var(--ink);font-weight:700;text-align:center}
+.split .r.m .t{border-right:1px solid #e8e2d8}
+
+.meal-card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:11px}
+.meal-card .mh{display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:#fff;padding:11px 16px;font-size:13px;font-weight:800}
+.meal-card .mh .mt{font-size:11.5px;font-weight:600;color:#a8c4c4}
+.meal-card .mrow{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:13px 16px;border-bottom:1px solid #f2ece3}
+.meal-card .mrow:last-child{border-bottom:none}
+.meal-card .mn{font-size:12px;font-weight:800;color:var(--pine);padding-top:2px}
+.meal-card .mrow b{font-size:14.5px;display:block}
+.meal-card .mrow p{margin:4px 0 0;font-size:13px;color:var(--muted);line-height:1.65}
+.meal-card .mrow p b{display:inline;font-size:inherit;color:var(--ink)}
+.sub-poem{margin:0 0 14px;font-size:15px;letter-spacing:.32em;color:#e9bd64;font-weight:600}
+
+/* 手机端预算表：金额不下压，改双行布局 */
+@media(max-width:700px){
+  .budget table{table-layout:auto;display:block}
+  .budget colgroup{display:none}
+  .budget tr{display:grid;grid-template-columns:1fr 86px 106px;
+    grid-template-areas:"name s1 s2" "desc s1 s2";
+    column-gap:7px;padding:11px 12px;border-bottom:1px solid #f0ebe3;align-items:center}
+  .budget tr:first-child{grid-template-columns:1fr 86px 106px;grid-template-areas:"name s1 s2";background:var(--soft);padding:8px 12px}
+  .budget tr:first-child th{padding:0;border:none;font-size:10px;background:none}
+  .budget tr:first-child th:nth-child(1){grid-area:name}
+  .budget tr:first-child th:nth-child(2){display:none}
+  .budget tr:first-child th:nth-child(3){grid-area:s1;text-align:right}
+  .budget tr:first-child th:nth-child(4){grid-area:s2;text-align:right}
+  .budget tr:last-child{background:var(--soft)}
+  .budget td{border:none;padding:0}
+  .budget td:nth-child(1){grid-area:name;font-size:13.5px;font-weight:800;line-height:1.4}
+  .budget td:nth-child(2){grid-area:desc;font-size:11px;color:var(--muted);line-height:1.5;margin-top:3px;font-weight:400}
+  .budget td.num{grid-area:s1;font-size:11px;text-align:right;padding:0;white-space:nowrap;font-weight:600;letter-spacing:-.2px}
+  .budget td.num:last-child{grid-area:s2}
+  .budget tr:last-child td.num{font-size:11px;letter-spacing:-.3px}
+}
+</style>
+</head>
+<body>
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">YANJI → CHANGBAISHAN → SHENYANG · 2027.01</div>
+  <h1 class="hero">延吉白山</h1>
+  <p class="sub-poem">烟火半日，雪落两夜</p>
+  <p class="hero-copy">12/31 21:00 深圳起飞，北京大兴隔夜，1/1 09:35 落地延吉。白天游延吉，16:33 高铁进山。万达假日智选连住两晚，1/3 上午滑雪后经沈阳返程。</p>
+  <div class="stamp">12.31—01.03<br>延吉白山</div>
+</header>
+
+<div class="kpi">
+  <div style="background:#13242b"><strong style="color:#fff">2 晚</strong><span style="color:#a8c4c4">万达住宿</span></div>
+  <div style="background:#e7f5ef"><strong style="color:#1c6e55">11.5h</strong><span style="color:#3d8071">滑雪时长</span></div>
+  <div style="background:#e3f0fa"><strong style="color:#2b6b93">5 小时</strong><span style="color:#4a6b85">延吉游览</span></div>
+  <div style="background:#fdf0db"><strong style="color:#a36b13">¥13,364</strong><span style="color:#8a6420">起（2人）</span></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#d" class="on">逐日行程</a>
+    <a href="#yj">延吉路线</a>
+    <a href="#perk">套餐权益</a>
+    <a href="#gear">滑雪装备</a>
+    <a href="#meal">三餐</a>
+    <a href="#budget">预算</a>
+    <a href="#book">预约清单</a>
+    <a href="#tips">出行提示</a>
+  </div>
+</nav>
+
+<section id="d">
+  <div class="sh"><div><div class="label">01 · ITINERARY</div><h2>逐日行程</h2></div>
+    <p>12/31—1/3 · 万达 2 晚 · 全程经长白山西站</p></div>
+
+  <div class="day" style="--day:#4a7fa5">
+    <span class="pill">DAY 01 · 12/31 周四</span>
+    <h3>深圳 → 北京大兴 → 延吉</h3>
+    <p class="dh">当晚在大兴机场内住宿</p>
+    <div class="slots">
+      <div class="slot"><div class="time">19:00<small>UTC+8</small></div><div>
+        <b>出发深圳宝安 T3</b>
+        <p>21:00 起飞，建议提前 90 分钟到。跨年前夜机场高速拥堵，预留 20 分钟余量。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=113.811840,22.627554&name=深圳宝安国际机场T3航站楼">深圳宝安 T3 ↗</a></div></div></div>
+      <div class="slot"><div class="time">21:00<small>UTC+8</small></div><div>
+        <b>深圳 → 北京大兴 → 延吉<span class="tag blue">¥1,934/人</span></b>
+        <p>全程 12 小时 35 分，1/1 09:35 落地延吉朝阳川。<b>第一程落地北京大兴机场（PKX）</b>，值机时确认两段航站楼。</p></div></div>
+      <div class="slot"><div class="time">00:45<small>UTC+8</small></div><div>
+        <b>北京大兴美宸酒店<span class="tag g">航站楼二层</span></b>
+        <p><b>订 2 间优享单人间</b>，¥315/间。酒店位于航站楼二层东北指廊，无需出楼或乘坐接驳。房型 1.2 米床、11 ㎡、封闭窗，适合短时休息。<br>闪促价含「12/31 18:00 前免费取消」。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=116.421040,39.514080&name=美宸酒店(北京大兴国际机场店)">美宸酒店 ↗</a></div></div></div>
+      <div class="slot"><div class="time">06:30<small>UTC+8</small></div><div>
+        <b>退房 → 楼内登机</b>
+        <p>酒店与候机区同楼，提前 90 分钟出房门即可。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#62aa91">
+    <span class="pill">DAY 02 · 1/1 周五</span>
+    <h3>延吉写真拍摄 → 长白山西 → 万达</h3>
+    <p class="dh">元旦 · 民俗园写真 2—3 小时，傍晚进山</p>
+    <div class="slots">
+      <div class="slot"><div class="time">09:35<small>UTC+8</small></div><div>
+        <b>落地延吉朝阳川机场</b>
+        <p>取行李后直接打车去民俗园，约 19 分钟、¥30–40。<b>行李寄存在民俗园售票处</b>（¥10–20），拍摄期间轻装。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.458200,42.884500&name=延吉朝阳川国际机场">朝阳川机场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">10:10<small>UTC+8</small></div><div>
+        <b>抵达中国朝鲜族民俗园<span class="tag blue">写真拍摄</span></b>
+        <p>寄存行李、换装、化妆。建议提前与摄影工作室确认：<b>是否含服装、妆造、成片数量、出片时间</b>。<br>冬季 16:30 闭园，上午光线最好，<b>拍摄安排在 10:30—13:30 之间最合适</b>。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.493400,42.874200&name=中国朝鲜族民俗园">民俗园 ↗</a></div></div></div>
+      <div class="slot"><div class="time">10:30<small>UTC+8</small></div><div>
+        <b>写真拍摄（2 小时版：至 12:30｜3 小时版：至 13:30）</b>
+        <p>民俗园内有朝鲜族传统建筑群、庭院、长鼓等场景，是延吉主要的旅拍点。<b>元旦为旺季，务必提前预约档期。</b></p></div></div>
+      <div class="slot"><div class="time">13:35<small>UTC+8</small></div><div>
+        <b>打车赴延边大学一带 · 午餐<span class="tag g">延吉必吃</span></b>
+        <p>民俗园到延大 7.4 公里、18 分钟，13:55 到。<br><b>服务大楼冷面（延大店）</b>：45 年老店，荞麦面配冰碴牛肉汤，酸甜清爽，旺季需排队。<b>全州拌饭</b>：非遗传承，石锅锅巴香脆，就近二选一。<br>2 小时版用餐 13:00—13:50　｜　3 小时版 13:55—14:45</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/search?keyword=服务大楼冷面延大店&city=延吉">服务大楼冷面 ↗</a></div></div></div>
+      <div class="slot"><div class="time">13:40<small>UTC+8</small></div><div>
+        <b>延吉水上市场</b>
+        <p>2 小时版：13:40—14:40（60 分钟）　｜　3 小时版：14:35—15:00（25 分钟）<br>打糕、米肠、辣白菜、明太鱼。<b>购买食物备作当晚车上晚餐</b>——18:41 才抵长白山，中途无正餐时间。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.502000,42.922700&name=延吉水上市场">水上市场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">14:50<small>UTC+8</small></div><div>
+        <b>延边大学正门</b>
+        <p>2 小时版：14:50—15:20　｜　3 小时版：15:10—15:30<br>朝鲜族风格门楼，拍照约 20 分钟。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.488200,42.913400&name=延边大学">延边大学 ↗</a></div></div></div>
+      <div class="slot"><div class="time">15:30<small>UTC+8</small></div><div>
+        <b>帽儿山<span class="tag">仅 2 小时版保留</span></b>
+        <p>2 小时版：15:30—15:50 俯瞰延吉全景。<b>3 小时版取消此站</b>，直接从延边大学前往车站。<br>帽儿山距高速入口最近，保留时可避免折返。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.483100,42.849100&name=帽儿山国家森林公园">帽儿山 ↗</a></div></div></div>
+      <div class="slot"><div class="time">15:50<small>UTC+8</small></div><div>
+        <b>前往延吉西站<span class="tag">时间节点</span></b>
+        <p>车程 20 分钟，16:15 到站安检。<b>两版均以此时间为准。</b>建议提前 10 分钟用 App 叫车。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/marker?position=129.414700,42.904400&name=延吉西站">延吉西站 ↗</a></div></div></div>
+      <div class="slot"><div class="time">16:33<small>UTC+8</small></div><div>
+        <b>G8140 延吉西 → 长白山西<span class="tag">¥116/人</span></b>
+        <p>2 小时 8 分，18:41 抵达。<b>当日最后一班</b>。注意 16:06 的 G142 终到「长白山站」（北坡），距万达 85 公里，请勿乘错。</p></div></div>
+      <div class="slot"><div class="time">18:50<small>UTC+8</small></div><div>
+        <b>长白山西站 → 万达度假区</b>
+        <p>18 公里、27 分钟。<b>套餐含西站接驳巴士</b>，需提前向前台预约班次。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/navigation?to=127.496277,42.106282,万达国际度假区&mode=car&policy=1">西站 → 万达 导航 ↗</a></div></div></div>
+      <div class="slot"><div class="time">19:40<small>UTC+8</small></div><div>
+        <b>入住 · 晚餐 · 租雪具<span class="tag g">雪票 2 天，今天不用</span></b>
+        <p>酒店距雪场 1.2 公里，步行 15 分钟或坐穿梭巴士。<b>当晚完成雪具租赁</b>，次日早餐后可直接进场。<br><b>套餐含 2 天滑雪权益</b>，今日抵店已近 20:00，实际用于 1/2、1/3。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#d79445">
+    <span class="pill">DAY 03 · 1/2 周六</span>
+    <h3>全天滑雪</h3>
+    <p class="dh">主行程日 · 唯一完整滑雪日 · 雪票第 1 天</p>
+    <div class="slots">
+      <div class="slot"><div class="time">07:30<small>UTC+8</small></div><div>
+        <b>早餐 → 雪场</b>
+        <p>雪场 8:30 开放，步行 15 分钟。</p></div></div>
+      <div class="slot"><div class="time">08:30<small>UTC+8</small></div><div>
+        <b>上午场 08:30—11:30<span class="tag g">雪票 1/2</span></b>
+        <p>雪质与人流最佳的时段。建议固定一条主雪道练习。度假区共 30 余条雪道、总长 33 公里。</p></div></div>
+      <div class="slot"><div class="time">12:00<small>UTC+8</small></div><div>
+        <b>午餐 40—60 分钟</b>
+        <p>1 月日落约 16:30，不宜过长。</p></div></div>
+      <div class="slot"><div class="time">13:00<small>UTC+8</small></div><div>
+        <b>下午场 13:00—16:30</b>
+        <p>16:00 前收尾，天黑前返回酒店。</p></div></div>
+      <div class="slot"><div class="time">17:00<small>UTC+8</small></div><div>
+        <b>拉伸 · 温泉</b>
+        <p>套餐含汉拿山温泉门票。建议先拉伸 15 分钟再泡。</p></div></div>
+      <div class="slot"><div class="time">19:00<small>UTC+8</small></div><div>
+        <b>晚餐 · 收拾行李</b>
+        <p>次日 12:30 需下雪道，建议当晚完成打包。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#ef755b">
+    <span class="pill">DAY 04 · 1/3 周日</span>
+    <h3>上午滑雪 → 西站 → 沈阳 → 深圳</h3>
+    <p class="dh">雪票第 2 天 · G3558 为可衔接 18:15 航班的末班车</p>
+    <div class="slots">
+      <div class="slot"><div class="time">07:30<small>UTC+8</small></div><div>
+        <b>早餐 · 换装 · 暂不退房</b>
+        <p>行李整理后留于房间，退房前需保留换装空间。</p></div></div>
+      <div class="slot"><div class="time">08:00<small>UTC+8</small></div><div>
+        <b>上午场 08:00—12:30<span class="tag g">雪票 2/2</span></b>
+        <p>4 小时 30 分。<b>12:30 准时下雪道</b>，以预留赴机场时间。</p></div></div>
+      <div class="slot"><div class="time">12:30<small>UTC+8</small></div><div>
+        <b>还雪具 · 退房</b>
+        <p>12:40 前离开度假区。</p></div></div>
+      <div class="slot"><div class="time">12:45<small>UTC+8</small></div><div>
+        <b>前往长白山西站</b>
+        <p>27 分钟，13:15 到站。<b>提前一晚向前台确认送站班次。</b></p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/navigation?to=127.481331,42.189374,长白山西站&mode=car&policy=1">万达 → 西站 导航 ↗</a></div></div></div>
+      <div class="slot"><div class="time">14:14<small>UTC+8</small></div><div>
+        <b>G3558 长白山西 → 沈阳北<span class="tag">¥205/人</span></b>
+        <p>1 小时 48 分，16:02 抵达。为当日晚间可衔接航班的末班车；13:39 的 G8144 终到沈阳站（15:46），换乘时间不足。</p></div></div>
+      <div class="slot"><div class="time">16:05<small>UTC+8</small></div><div>
+        <b>打车前往桃仙机场 T3 贵宾出发</b>
+        <p>车程约 50 分钟，16:55 抵达。<b>目的地填写「桃仙国际机场 T3 航站楼 贵宾出发」</b>，与普通出发层为不同入口，位于 T3 东侧。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://uri.amap.com/navigation?to=123.491700,41.635100,沈阳桃仙国际机场T3航站楼贵宾出发&mode=car&policy=1">打车去贵宾楼 ↗</a></div></div></div>
+      <div class="slot"><div class="time">17:00<small>UTC+8</small></div><div>
+        <b>办理登机 · 快速安检</b>
+        <p>出示银行卡与身份证件，办理登机牌与行李托运，使用独立安检通道。</p></div></div>
+      <div class="slot"><div class="time">18:15<small>UTC+8</small></div><div>
+        <b>DZ6232 沈阳桃仙 T3 → 深圳宝安 T3<span class="tag blue">¥1,587/人</span></b>
+        <p>经停大同，6 小时，00:15(+1) 抵达。<b>行李额度建议提前在线购买。</b></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="yj">
+  <div class="sh"><div><div class="label">02 · YANJI ROUTE</div><h2>延吉行程 · 写真版</h2></div>
+    <p>09:35 落地 → 16:33 发车 · 民俗园写真 2—3 小时</p></div>
+
+  <div class="grid2" style="margin-bottom:14px">
+    <div class="card" style="border-top:4px solid #4a7fa5">
+      <div class="label" style="color:#4a7fa5">方案一 · 写真 2 小时</div>
+      <h4 style="margin:6px 0 8px">保留全部景点</h4>
+      <ul>
+        <li>10:30—12:30　民俗园拍摄</li>
+        <li>13:00—13:50　午餐 · 服务大楼冷面</li>
+        <li>13:40—14:40　水上市场</li>
+        <li>14:50—15:20　延边大学</li>
+        <li>15:30—15:50　帽儿山</li>
+        <li>15:50 出发 → 16:33 发车</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid #a06a3f">
+      <div class="label" style="color:#a06a3f">方案二 · 写真 3 小时</div>
+      <h4 style="margin:6px 0 8px">取消帽儿山</h4>
+      <ul>
+        <li>10:30—13:30　民俗园拍摄</li>
+        <li>13:55—14:45　午餐 · 全州拌饭 / 冷面</li>
+        <li>14:35—15:00　水上市场（压缩至 25 分钟）</li>
+        <li>15:10—15:30　延边大学</li>
+        <li><b>帽儿山取消</b></li>
+        <li>15:35 出发 → 16:33 发车</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tl" style="margin-bottom:14px">
+    <div class="trow"><div class="tm">09:35<div><small>落地</small></div></div><div><b>朝阳川机场 → 民俗园</b><p>打车 19 分钟，¥30–40；行李寄存民俗园</p></div></div>
+    <div class="trow"><div class="tm">10:10<div><small>准备</small></div></div><div><b>换装 · 化妆 · 寄存</b><p>建议提前确认工作室位置与换装地点</p></div></div>
+    <div class="trow"><div class="tm">10:30<div><small>核心</small></div></div><div><b>民俗园写真拍摄</b><p>2 小时至 12:30 ／ 3 小时至 13:30</p></div></div>
+    <div class="trow"><div class="tm">13:35<div><small>用餐</small></div></div><div><b>延大一带 · 服务大楼冷面 / 全州拌饭</b><p>民俗园打车 18 分钟；顺路在延大门口拍照</p></div></div>
+    <div class="trow"><div class="tm">13:40<div><small>游览</small></div></div><div><b>水上市场</b><p>采购当晚车上晚餐</p></div></div>
+    <div class="trow"><div class="tm">14:50<div><small>游览</small></div></div><div><b>延边大学正门</b><p>门楼拍照 20 分钟</p></div></div>
+    <div class="trow"><div class="tm">15:30<div><small>可选</small></div></div><div><b>帽儿山</b><p>仅 2 小时版保留，3 小时版取消</p></div></div>
+    <div class="trow"><div class="tm">15:50<div><small>时间节点</small></div></div><div><b>前往延吉西站</b><p>20 分钟，16:15 到站</p></div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h4>写真预约要点</h4><ul>
+      <li><b>元旦为旺季</b>，建议提前 2—3 周锁定档期</li>
+      <li>确认套餐包含：<b>服装套数、妆造、精修张数、出片周期</b></li>
+      <li>民俗园<b>冬季 16:30 闭园</b>，上午至午后光线最佳</li>
+      <li>若工作室在园区外，需预留往返与换装时间，建议控制在 2 小时内</li>
+      <li>低温下拍摄注意保暖，可备暖宝宝与外套</li>
+    </ul></div>
+    <div class="card"><h4>拍摄与车次的时间边界</h4><ul>
+      <li><b>10:30 开机</b>是最晚的起拍时间，再晚就压到午餐</li>
+      <li>3 小时版必须在 <b>13:30 收工</b>；超时 30 分钟需砍掉午餐或水上市场</li>
+      <li>汇合后 <b>13:40 打车</b>，18 分钟到延边大学一带用餐</li>
+      <li>无论哪版，<b>15:50 必须从延吉西站方向出发</b>，16:33 是当日末班高铁</li>
+      <li>若拍摄大幅超时，可跳过延大与水上市场，直接赴车站</li>
+    </ul></div>
+  </div>
+
+  <div class="sh" style="margin-top:22px"><div><div class="label">SPLIT ROUTE</div><h2 style="font-size:19px">分头行动 · 写真 3 小时版</h2></div>
+    <p>13:30 民俗园门口汇合，之后合并</p></div>
+
+  <div class="split">
+    <div class="hd"><span>时间</span><span>拍摄的一方</span><span>同行的一方</span></div>
+    <div class="r"><span class="t">09:35</span><span class="a">落地朝阳川，打车赴民俗园</span><span class="b">同行</span></div>
+    <div class="r"><span class="t">10:10</span><span class="a"><b>民俗园</b>　寄存行李、换装化妆</span><span class="b"><b>民俗园</b>　寄存行李</span></div>
+    <div class="r"><span class="t">10:30</span><span class="a"><b>民俗园内拍摄</b>　建筑群、庭院、长鼓场景</span><span class="b">打车赴<b>水上市场</b>，约 10 分钟</span></div>
+    <div class="r"><span class="t">10:45</span><span class="a">拍摄中</span><span class="b"><b>水上市场</b>　打糕、米肠、辣白菜，采购当晚车上晚餐</span></div>
+    <div class="r"><span class="t">12:30</span><span class="a">拍摄中</span><span class="b">前往<b>延边大学</b>，门楼拍照</span></div>
+    <div class="r"><span class="t">13:00</span><span class="a">拍摄收尾、卸妆更衣</span><span class="b">返回民俗园，约 15 分钟</span></div>
+    <div class="r m"><span class="t">13:30</span><span class="j">民俗园门口汇合 · 取行李</span></div>
+    <div class="r m"><span class="t">13:40</span><span class="j">打车赴延边大学 · 18 分钟</span></div>
+    <div class="r m"><span class="t">14:00</span><span class="j">午餐 · 服务大楼冷面 / 全州拌饭</span></div>
+    <div class="r m"><span class="t">14:35</span><span class="j">水上市场（25 分钟，补购特产）</span></div>
+    <div class="r m"><span class="t">15:10</span><span class="j">延边大学正门（20 分钟）</span></div>
+    <div class="r m"><span class="t">15:35</span><span class="j">前往延吉西站 → 16:33 发车</span></div>
+  </div>
+
+  <div class="card" style="margin-top:12px"><h4>汇合与行李</h4><ul>
+      <li>两地与民俗园相距约 <b>5—6 公里</b>，打车 10—15 分钟</li>
+      <li>行李统一寄存民俗园，<b>汇合后一次取件</b>，避免重复往返</li>
+      <li>拍摄方卸妆更衣约需 20 分钟，汇合时间定 <b>13:30</b> 较为稳妥</li>
+      <li>若拍摄提前结束，可直接前往水上市场与同行者碰头</li>
+    </ul></div>
+</section>
+
+<section id="perk">
+  <div class="sh"><div><div class="label">03 · PACKAGE</div><h2>住宿套餐权益</h2></div>
+    <p>万达假日智选 · 2 间 × 2 晚 · ¥1,600/间</p></div>
+
+  <div class="perk">
+    <div class="grp">餐 饮</div>
+    <div class="row"><span>早餐</span><b>每日自助早餐</b><span class="qty">2 份/天</span></div>
+    <div class="row"><span>儿童早餐</span><b>12 周岁以下儿童自助早餐</b><span class="qty">1 份</span></div>
+
+    <div class="grp">娱 乐 · 二选一</div>
+    <div class="row"><span>下午茶</span><b>酒店下午茶 ／ 万达影院电影票（二选一）</b><span class="qty">1 份</span></div>
+
+    <div class="grp">滑 雪 与 场 馆</div>
+    <div class="row"><span>滑雪</span><b>万达滑雪门票</b><span class="qty">1 份/天</span></div>
+    <div class="row"><span>戏雪</span><b>哇酷戏雪乐园（大雪坡项目）体验票</b><span class="qty">1 份</span></div>
+    <div class="row"><span>温泉</span><b>汉拿山温泉门票</b><span class="qty">1 份</span></div>
+    <div class="row"><span>水乐园</span><b>万达水乐园门票</b><span class="qty">1 份/天</span></div>
+
+    <div class="grp">交 通 接 驳</div>
+    <div class="row"><span>机场</span><b>长白山机场定点穿梭巴士接送</b><span class="qty">1 份</span></div>
+    <div class="row"><span>高铁</span><b>长白山西站（高铁站）接驳巴士定点接送</b><span class="qty">1 份</span></div>
+  </div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card"><h4>需要向前台确认的三点</h4><ul>
+      <li><b>接驳巴士班次</b>：1/1 需对应 18:41 到站的 G8140；1/3 需 12:45 前后送站</li>
+      <li><b>滑雪门票按天计</b>：确认 1/1 晚间是否计入、1/2 与 1/3 各占一天</li>
+      <li><b>2 大 1 小权益</b>：套餐按「2 大 1 小」配置，实际 2 人入住时权益如何使用</li>
+    </ul></div>
+    <div class="card"><h4>已含项目 · 无需另购</h4><ul>
+      <li>雪票（含缆车）、温泉、水乐园、戏雪乐园</li>
+      <li>每日早餐 2 份</li>
+      <li>西站与机场接送巴士</li>
+      <li><b>雪具是否含在套餐内，需单独确认</b>——多数景酒套餐含板靴杖，不含雪服与雪镜</li>
+    </ul></div>
+  </div>
+</section>
+
+
+  <div class="sh" style="margin-top:24px"><div><div class="label">PACKAGE PRICE</div><h2 style="font-size:20px">同期套餐价对比</h2></div>
+    <p>1/1 入住、连住 2 晚、一间房 · 含早/温泉/水乐园/滑雪</p></div>
+
+  <div class="budget"><table>
+    <colgroup><col class="c1"><col><col class="c3"><col class="c4"></colgroup>
+    <tr><th>酒店</th><th>房型 / 说明</th><th class="num">2 晚价</th><th class="num">对比智选</th></tr>
+    <tr>
+      <td><b>假日智选</b><br><span style="font-size:11px;color:var(--muted)">本次选定</span></td>
+      <td>标准间 · <b>已购早鸟 ¥1,600/间</b></td>
+      <td class="num">¥2,821</td>
+      <td class="num" style="color:#1c6e55">早鸟省 ¥1,221</td>
+    </tr>
+    <tr>
+      <td><b>悦华 loft</b><br><span style="font-size:11px;color:var(--muted)">备选</span></td>
+      <td>上下层 loft · <b>可分两层住，双人友好</b></td>
+      <td class="num">¥2,714</td>
+      <td class="num" style="color:#1c6e55">低 ¥107</td>
+    </tr>
+    <tr><td>喜来登</td><td>标准间</td><td class="num">¥3,399</td><td class="num">高 ¥578</td></tr>
+    <tr><td>威斯汀</td><td>标准间</td><td class="num">¥3,899</td><td class="num">高 ¥1,078</td></tr>
+    <tr><td>锦华度假</td><td>标准间</td><td class="num">¥4,055</td><td class="num">高 ¥1,234</td></tr>
+    <tr><td colspan="2" style="color:var(--muted);font-weight:400">凯悦 / 柏悦 / Momoland / 锦华套房 · 截图未显示价格</td><td class="num">—</td><td class="num">—</td></tr>
+  </table></div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card"><h4>关于早鸟价</h4><ul>
+      <li>假日智选现价 <b>¥2,821</b>，已购早鸟 <b>¥1,600</b>，<b>省 ¥1,221（43%）</b></li>
+      <li>早鸟为提前锁价，通常不可退改，<b>行程确定后再出票</b></li>
+      <li>现价随入住日期浮动：1/1 最贵，1/2、1/3 逐日回落</li>
+    </ul></div>
+    <div class="card"><h4>悦华 loft 作为备选</h4><ul>
+      <li><b>上下两层 loft 结构</b>，可分层使用，两人入住互不打扰</li>
+      <li>2 晚 <b>¥2,714</b>，比智选现价还低 ¥107</li>
+      <li>位于度假区中心偏南，距雪场约 <b>1.3 km</b></li>
+      <li>若智选早鸟售罄或退改，可作为同等价位替代</li>
+    </ul></div>
+  </div>
+
+</section>
+
+<section id="gear">
+  <div class="sh"><div><div class="label">04 · GEAR</div><h2>滑雪装备清单</h2></div>
+    <p>套餐已含雪票与部分装备，以下为需自备项</p></div>
+
+  <div class="grid2">
+    <div class="chk"><h4 style="margin:0 0 10px;font-size:14px">贴身层 · 建议自备</h4>
+      <ul>
+        <li><b>速干内衣 2 套</b>——棉质出汗后失温，务必选聚酯或羊毛</li>
+        <li><b>滑雪袜 2—3 双</b>——厚底、过膝，普通棉袜会在雪靴里打滑</li>
+        <li><b>保暖中层</b>——抓绒或薄羽绒，-20℃ 时必需</li>
+      </ul>
+    </div>
+    <div class="chk"><h4 style="margin:0 0 10px;font-size:14px">防护 · 多数需自备</h4>
+      <ul>
+        <li><b>雪镜</b>——套餐通常不含，可租；阴天用增光镜片</li>
+        <li><b>面罩／护脸</b>——-20℃ 风大时必须</li>
+        <li><b>防水手套</b>——普通毛线手套湿透即失温</li>
+        <li><b>护臀／护膝</b>——单板或初次上雪建议</li>
+        <li><b>高倍防晒与润唇膏</b>——雪面反射紫外线，晴天易晒伤</li>
+      </ul>
+    </div>
+    <div class="chk"><h4 style="margin:0 0 10px;font-size:14px">可租 · 无需携带</h4>
+      <ul>
+        <li><b>雪板、雪鞋、雪杖</b>——套餐多含，确认后无需自带</li>
+        <li><b>雪服雪裤</b>——度假区租赁 ¥300–600/套/天，深圳携带成本高于租金</li>
+        <li><b>头盔</b>——租赁点可租</li>
+      </ul>
+    </div>
+    <div class="chk"><h4 style="margin:0 0 10px;font-size:14px">其他</h4>
+      <ul>
+        <li><b>保温杯</b>——雪场热水贵，山上补水靠它</li>
+        <li><b>充电宝</b>——低温下手机掉电极快，需贴内层口袋存放</li>
+        <li><b>颈枕、眼罩、耳塞</b>——12/31 夜间中转与航班补觉</li>
+        <li><b>常用药</b>——感冒药、肠胃药、创可贴、肌肉酸痛贴</li>
+        <li><b>证件</b>——身份证（高铁与住宿必需）</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip alt" style="margin-top:14px"><b>不要从深圳带雪具</b><span>雪板托运按超规行李计费，往返成本通常高于当地租赁。度假区内雪具租赁点集中在游客中心与酒店楼下，1/1 晚到店后即可办理。</span></div>
+</section>
+
+<section id="meal">
+  <div class="sh"><div><div class="label">05 · MEALS</div><h2>每顿饭吃什么</h2></div>
+    <p>按当天所在位置就近安排</p></div>
+
+  <div class="meal-card">
+    <div class="mh"><span class="md">12/31 周四</span><span class="mt">深圳机场 · 飞机</span></div>
+    <div class="mrow"><span class="mn">晚餐</span><div><b>机场简餐</b><p>宝安 T3 安检后有不少选择，建议吃七分饱，21:00 的航班提供点心餐。</p></div></div>
+  </div>
+
+  <div class="meal-card">
+    <div class="mh"><span class="md">1/1 周五</span><span class="mt">延吉 · 万达</span></div>
+    <div class="mrow"><span class="mn">早餐</span><div><b>北京大兴机场</b><p>美宸酒店单人间不含早餐（订房时确认）。机场二层有 24 小时餐饮，出发前吃。</p></div></div>
+    <div class="mrow"><span class="mn">午餐</span><div><b>服务大楼冷面（延大店）或全州拌饭<span class="tag g">延吉必吃</span></b>
+      <p>拍摄结束汇合后，打车 18 分钟到延边大学附近。<br>
+      · <b>服务大楼冷面</b>：45 年老店，荞麦面配冰碴牛肉汤，酸甜清爽，人多需排队<br>
+      · <b>全州拌饭</b>：非遗传承，石锅锅巴香脆，辣酱微辣不呛<br>
+      两家都在延大周边，吃完步行去正门拍照。</p></div></div>
+    <div class="mrow"><span class="mn">晚餐</span><div><b>车上吃 · 水上市场采购</b><p>16:33—18:41 在高铁上。水上市场买的打糕、米肠、明太鱼正好当晚饭。<br>到店后可在智选假日楼下补一碗热汤面。</p></div></div>
+  </div>
+
+  <div class="meal-card">
+    <div class="mh"><span class="md">1/2 周六</span><span class="mt">万达度假区</span></div>
+    <div class="mrow"><span class="mn">早餐</span><div><b>酒店自助早餐<span class="tag g">套餐含</span></b><p>套餐含每日 2 份，7:30 开餐。吃饱再上雪，一上午消耗很大。</p></div></div>
+    <div class="mrow"><span class="mn">午餐</span><div><b>雪场餐厅 / 度假区小镇</b><p>雪场内有快餐厅，人均 ¥50–80。或步行回小镇，选择更多。<br>控制在 40—60 分钟，别耽误下午雪。</p></div></div>
+    <div class="mrow"><span class="mn">晚餐</span><div><b>度假区小镇 · 东北菜 / 铁锅炖</b><p>万达小镇餐饮集中在步行范围内，铁锅炖、烤肉、东北家常菜都有。<br>滑完一天建议吃点热的、带汤的。</p></div></div>
+  </div>
+
+  <div class="meal-card">
+    <div class="mh"><span class="md">1/3 周日</span><span class="mt">万达 · 沈阳 · 深圳</span></div>
+    <div class="mrow"><span class="mn">早餐</span><div><b>酒店自助早餐<span class="tag g">套餐含</span></b><p>7:30 开餐，吃饱再滑最后一上午。</p></div></div>
+    <div class="mrow"><span class="mn">午餐</span><div><b>车站简餐 / 打包</b><p>12:30 下雪道，时间紧。建议早餐吃足，午餐在长白山西站或高铁上解决（面包、泡面）。</p></div></div>
+    <div class="mrow"><span class="mn">晚餐</span><div><b>桃仙机场贵宾厅</b><p>贵宾厅提供饮料与简餐。18:15 起飞前用餐，机上还有一次配餐。</p></div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>延吉必吃三样</h4><ul>
+      <li><b>冷面</b>——荞麦面、冰碴牛肉汤、苹果片，酸甜口，中国十大面条之一</li>
+      <li><b>石锅拌饭</b>——锅巴香脆，辣酱咸香微辣，配煎蛋与小菜</li>
+      <li><b>烤肉</b>——艺林烤肉（历史最久）、震海贝烤贝，本地人常去</li>
+    </ul></div>
+    <div class="card"><h4>水上市场买什么</h4><ul>
+      <li><b>打糕</b>——现打的糯米糕，蘸豆面，趁热吃</li>
+      <li><b>米肠</b>——糯米灌肠，蒸热切片</li>
+      <li><b>辣白菜、明太鱼干、松茸</b>——可带走，适合当伴手礼</li>
+      <li><b>注意</b>：市场下午 5 点后陆续收摊，14:35—15:00 去正合适</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="budget">
+  <div class="sh"><div><div class="label">06 · BUDGET</div><h2>预算明细</h2></div>
+    <p>按 2 人 · 机票为结算页实价</p></div>
+
+  <div class="budget"><table>
+    <colgroup><col class="c1"><col><col class="c3"><col class="c4"></colgroup>
+    <tr><th>项目</th><th>明细</th><th class="num">单人</th><th class="num">2人</th></tr>
+    <tr><td><b>机票 · 去</b></td><td>深圳 21:00 → 北京大兴 → 延吉 09:35+1 · ¥1,934/人</td><td class="num">¥1,934</td><td class="num">¥3,868</td></tr>
+    <tr><td><b>机票 · 回</b></td><td>DZ6232 ¥1,587/人 · 沈阳 18:15 → 深圳 00:15+1</td><td class="num">¥1,587</td><td class="num">¥3,174</td></tr>
+    <tr><td><b>万达住宿</b></td><td>假日智选 <b>早鸟 ¥1,600/间 / 2 晚 × 2 间</b>（同期现价 ¥2,821），含雪票、温泉、水乐园、早餐、接驳</td><td class="num">¥1,600</td><td class="num">¥3,200</td></tr>
+    <tr><td><b>12/31 北京住宿</b></td><td>美宸酒店（大兴机场航站楼二层）单人间 ¥315 × 2 间</td><td class="num">¥315</td><td class="num">¥630</td></tr>
+    <tr><td><b>高铁 · 去</b></td><td>G8140 ¥116/人 · 延吉西 16:33 → 长白山西 18:41</td><td class="num">¥116</td><td class="num">¥232</td></tr>
+    <tr><td><b>高铁 · 回</b></td><td>G3558 ¥205/人 · 长白山西 14:14 → 沈阳北 16:02</td><td class="num">¥205</td><td class="num">¥410</td></tr>
+    <tr><td><b>地面 · 延吉</b></td><td>机场→市区 ¥30–40 · 市区→延吉西 ¥25–30 · 行李寄存 ¥20</td><td class="num">¥75–90</td><td class="num">¥150–180</td></tr>
+    <tr><td><b>地面 · 沈阳</b></td><td>沈阳北 → 桃仙 T3 贵宾出发</td><td class="num">¥50–65</td><td class="num">¥100–130</td></tr>
+    <tr><td><b>餐饮</b></td><td>早餐含于套餐，计午晚餐 ¥150–250/人/天</td><td class="num">¥450–750</td><td class="num">¥900–1,500</td></tr>
+    <tr><td><b>雪具租赁 / 零花</b></td><td>雪服雪镜等租赁，套餐外项目</td><td class="num">¥200–400</td><td class="num">¥400–800</td></tr>
+    <tr><td><b>应急金</b></td><td>延误改签、医药</td><td class="num">¥150–250</td><td class="num">¥300–500</td></tr>
+    <tr><td><b>合计</b></td><td style="color:var(--muted);font-weight:400">人均 ¥6,682–7,312</td><td class="num">¥6,682–7,312</td><td class="num">¥13,364–14,624</td></tr>
+  </table></div>
+
+  <div class="grid2">
+    <div class="card"><h4>成本结构</h4><ul>
+      <li>机票 <b>¥7,042</b>，占总额 <b>53%</b></li>
+      <li>住宿 <b>¥3,830</b>（万达早鸟 ¥3,200 + 北京 ¥630），占 <b>29%</b></li>
+      <li>其余交通、餐饮、装备合计约 <b>18%</b></li>
+      <li>住宿已含雪票、温泉、水乐园，无需另购</li>
+    </ul></div>
+    <div class="card"><h4>可调整项</h4><ul>
+      <li><b>餐饮</b>：早餐含于套餐，午晚餐控制预算可省 ¥600</li>
+      <li><b>雪具</b>：套餐若含板靴杖，仅需租雪服，约 ¥300/天</li>
+      <li><b>地面交通</b>：雪场接驳已含套餐，仅延吉与沈阳需打车</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="sh"><div><div class="label">07 · TO-DO</div><h2>预约清单</h2></div>
+    <p>按时间倒排</p></div>
+
+  <div class="tips">
+    <div class="tip warn"><b>12/17 · 高铁开售当日</b><span>12306 提前 15 天开售，抢两张：<br>① <b>G8140</b> 延吉西 1/1 16:33 → 长白山西 18:41（¥116）<br>② <b>G3558</b> 长白山西 1/3 14:14 → 沈阳北 16:02（¥205）<br>购票时核对站名「长白山西」。</span></div>
+
+    <div class="tip gold"><b>12/30 · 预约机场贵宾厅</b><span>通过发卡行客服或银行 App 预约，报：<b>航班 DZ6232、日期 1/3、18:15 起飞、同行 2 人</b>。<br>提前两天办理，避免现场无法进入。</span></div>
+
+    <div class="tip"><b>12/29 · 万达前台确认三项</b><span>① 1/1 <b>18:41</b> 长白山西站接驳班次<br>② 1/3 <b>12:45</b> 前后送站班次<br>③ 套餐内滑雪门票计天方式与雪具范围</span></div>
+
+    <div class="tip"><b>现在 · 三件确定事项</b><span>① <b>机票</b>：深圳→大兴→延吉 ¥1,934 + DZ6232 ¥1,587<br>② <b>万达假日智选</b>：2 间 × 2 晚，¥1,600/人<br>③ <b>美宸酒店</b>：大兴航站楼二层，单人间 × 2，¥315/间<br><br>12/31 夜间在北京，无需订沈阳或延吉住宿。</span></div>
+
+    <div class="tip alt"><b>12/30 · 值机与行李</b><span>DZ6232 提前在线值机并购买行李额度。去程中转需确认<b>行李是否直挂至延吉</b>，两段若为不同承运人，可能需在大兴提取后重新托运。</span></div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="sh"><div><div class="label">08 · NOTES</div><h2>出行提示</h2></div>
+    <p>时间节点与注意事项</p></div>
+
+  <div class="tips">
+    <div class="tip warn"><b>三个关键时间点</b><span>① <b>1/1 15:50</b> 离开帽儿山——16:33 为当日末班高铁<br>② <b>1/3 12:30</b> 下雪道——后续行程均以此倒排<br>③ <b>1/3 16:05</b> 从沈阳北站出发——到机场约 50 分钟</span></div>
+    <div class="tip"><b>行李直挂</b><span>深圳 → 北京大兴 → 延吉，两段若为不同承运人，行李可能不直挂。值机时向柜台确认；若不直挂，需在大兴提取后次日重新托运，建议控制行李体积。</span></div>
+    <div class="tip"><b>站名核对</b><span>「长白山西站」位于松江河，距万达 18 公里；「长白山站」位于北坡二道白河，距万达 85 公里。延吉西 16:06 的 G142 终到北坡，注意区分。</span></div>
+    <div class="tip"><b>滑雪门票计天</b><span>套餐标注「入住期间每间夜 1 份」。1/1 晚间到店、1/3 中午离店，实际可用 1/2 与 1/3 两天，与行程匹配。具体计天方式建议前台复核。</span></div>
+    <div class="tip"><b>气温与设备</b><span>1 月长白山日间 −15～−25℃。手机低温下电量骤降，建议存放于内层口袋；相机备用电池同样需贴身存放。</span></div>
+    <div class="tip alt"><b>行程要点</b><span>本方案在 12/31 夜间经北京中转，1/1 全日用于延吉游览与进山，1/2 为完整滑雪日，1/3 上午滑雪后返程。滑雪时长 11.5 小时，住宿集中于万达度假区，全程仅使用长白山西站。</span></div>
+  </div>
+
+  <p style="font-size:11px;color:var(--muted);margin-top:16px">
+    机票为 App 结算页实价（含燃油及会员优惠）；住宿为确认价；高铁为携程查询价。均以出票/入住时为准。地图链接均指向高德地图。
+  </p>
+</section>
+
+<div class="footer">延吉白山 · 烟火半日，雪落两夜<br>2026-11-25 定稿</div>
+</div>
+
+<script>
+const links=[...document.querySelectorAll('.nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+function paint(){
+  const y=window.scrollY+110;
+  let cur=0;
+  secs.forEach((s,i)=>{ if(s && s.offsetTop<=y) cur=i; });
+  links.forEach((a,i)=>{
+    const on=i===cur;
+    a.style.background = on ? 'var(--ink)' : 'var(--card)';
+    a.style.color = on ? '#fff' : 'var(--ink)';
+    a.style.borderColor = on ? 'var(--ink)' : 'var(--line)';
+  });
+}
+window.addEventListener('scroll',paint,{passive:true}); paint();
+</script>
+</body>
+</html>

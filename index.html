@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13242b">
+<title>延吉白山 · 长白山滑雪行程</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--violet:#9b8ec4;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 70px}
+header{background:var(--ink);color:#fff;padding:32px 26px 36px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#b9d8d1}
+.hero{font-size:clamp(36px,9vw,56px);line-height:1.02;letter-spacing:-.055em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#d3dedf;max-width:600px;font-size:15px;line-height:1.75}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+
+/* 主推方案 · 大卡 */
+.main-plan{display:block;background:linear-gradient(150deg,#0f2f45,#1b4a6b 55%,#2e7d96);color:#fff;border-radius:24px;padding:26px 24px 24px;box-shadow:0 18px 50px #13242b40;position:relative;overflow:hidden;margin-bottom:14px}
+.main-plan:after{content:"";position:absolute;right:-70px;top:-90px;width:240px;height:240px;border:1px solid #ffffff26;border-radius:50%;box-shadow:0 0 0 28px #ffffff08}
+.main-plan .tagline{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.16em;background:#e9bd64;color:#3a2d0e;border-radius:99px;padding:5px 12px;margin-bottom:14px}
+.main-plan h2{margin:0 0 8px;font-size:clamp(28px,7vw,38px);letter-spacing:-.04em;font-weight:800;line-height:1.1}
+.main-plan .sub{margin:0;font-size:14px;color:#cfe6f2;line-height:1.7;max-width:620px}
+.main-plan .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(88px,1fr));gap:9px;margin-top:20px}
+.main-plan .stats div{background:#ffffff1a;border-radius:13px;padding:12px 6px;text-align:center}
+.main-plan .stats strong{display:block;font-size:20px;font-weight:800;line-height:1.15}
+.main-plan .stats span{font-size:10px;opacity:.82;letter-spacing:.04em}
+.main-plan .go{display:inline-flex;align-items:center;gap:7px;margin-top:18px;background:#fffdf9;color:#0f2f45;border-radius:12px;padding:12px 20px;font-size:14.5px;font-weight:800}
+.main-plan:active{transform:scale(.99)}
+
+/* 次级入口 */
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:26px}
+.subs a{background:var(--card);border-radius:16px;padding:16px;box-shadow:var(--shadow);border-left:4px solid var(--c)}
+.subs a h3{margin:0 0 4px;font-size:15px;font-weight:800}
+.subs a p{margin:0;font-size:11.5px;color:var(--muted);line-height:1.55}
+
+.grp{margin:30px 0 12px;display:flex;align-items:baseline;gap:10px}
+.grp h2{font-size:21px;margin:0;letter-spacing:-.04em;font-weight:800}
+.grp span{font-size:11.5px;color:var(--muted)}
+.list{display:grid;gap:10px}
+.item{display:block;background:var(--card);border-radius:16px;padding:15px 17px;box-shadow:var(--shadow);border-left:4px solid var(--c);transition:.16s}
+.item:active{transform:scale(.985)}
+.item h3{margin:0 0 3px;font-size:15.5px;font-weight:800;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.item h3 small{font-size:10px;font-weight:800;letter-spacing:.08em;border-radius:99px;padding:2px 8px;background:#eef2f4;color:#4a656d}
+.item p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.65}
+.item .meta{margin-top:7px;display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:#8a9999}
+.item .meta b{color:var(--ink);font-weight:800}
+
+/* 归档区 */
+.archive{margin-top:26px}
+.arch-toggle{display:flex;align-items:center;justify-content:space-between;background:var(--card);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);cursor:pointer;border:1px solid var(--line);font-weight:800;font-size:14px}
+.arch-toggle .ar{font-size:12px;font-weight:700;color:var(--muted)}
+.arch-body{margin-top:10px;display:none}
+.arch-body.open{display:grid;gap:9px}
+.arch-item{display:block;background:#fbf8f3;border:1px dashed #d8d0c4;border-radius:13px;padding:13px 16px}
+.arch-item h4{margin:0 0 3px;font-size:14px;font-weight:800;color:#5a6663}
+.arch-item p{margin:0;font-size:11.5px;color:#8a9999;line-height:1.6}
+
+.note{background:var(--card);border-radius:16px;padding:15px 17px;margin-top:22px;box-shadow:var(--shadow);font-size:13px;color:var(--muted);line-height:1.75}
+.note b{color:var(--ink)}
+.footer{text-align:center;color:#74817b;font-size:11px;padding-top:26px;line-height:1.9}
+@media(max-width:700px){.stamp{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">CHANGBAISHAN · WINTER 2027</div>
+  <h1 class="hero">延吉白山</h1>
+  <p class="hero-copy"><span style="color:#e9bd64;letter-spacing:.3em;font-weight:600">烟火半日，雪落两夜</span><br>12/31—1/3 · 2 人 · 延吉进、沈阳出 · 万达假日智选连住两晚</p>
+  <div class="stamp">12.31—01.03<br>2027</div>
+</header>
+
+<a class="main-plan" href="plan-a-final.html">
+  <span class="tagline">最终方案 · FINAL</span>
+  <h2>延吉白山</h2>
+  <p class="sub">12/31 21:00 深圳起飞，北京大兴隔夜。1/1 09:35 落地延吉，白天拍民俗园写真、逛水上市场、吃冷面。16:33 高铁进山。万达假日智选连住两晚，含雪票、温泉、水乐园。1/3 上午滑雪后经沈阳返程。</p>
+  <div class="stats">
+    <div><strong>2 晚</strong><span>万达住宿</span></div>
+    <div><strong>11.5h</strong><span>滑雪时长</span></div>
+    <div><strong>5 小时</strong><span>延吉游览</span></div>
+    <div><strong>¥13,364</strong><span>2 人起</span></div>
+  </div>
+  <span class="go">查看完整方案 →</span>
+</a>
+
+<div class="subs">
+  <a href="map.html" style="--c:#2f6b5a">
+    <h3>景区地图</h3>
+    <p>11 家酒店位置与价格 · 三个坡 · 动线</p>
+  </a>
+  <a href="plan-a-final.html#meal" style="--c:#c0653f">
+    <h3>每顿饭吃什么</h3>
+    <p>冷面 · 石锅拌饭 · 水上市场</p>
+  </a>
+  <a href="plan-a-final.html#gear" style="--c:#4a7fa5">
+    <h3>滑雪装备</h3>
+    <p>哪些自备 · 哪些当地租</p>
+  </a>
+</div>
+
+<div class="grp"><h2>行程分项</h2><span>延吉白山的各个部分</span></div>
+<div class="list">
+  <a class="item" href="plan-a-final.html#d" style="--c:#4a7fa5">
+    <h3>逐日行程</h3>
+    <p>12/31—1/3 四天时间线，含交通、景点、住宿的每个节点。</p>
+    <div class="meta"><span>4 天</span><span>每个时间点带理由</span></div>
+  </a>
+  <a class="item" href="plan-a-final.html#yj" style="--c:#62aa91">
+    <h3>延吉行程 · 写真版<span class="small">双版本</span></h3>
+    <p>民俗园写真 2 小时 / 3 小时两套时间表，含分头行动的两列并行时间线。</p>
+    <div class="meta"><span>2 小时版</span><span>3 小时版</span><span>分头行动</span></div>
+  </a>
+  <a class="item" href="plan-a-final.html#perk" style="--c:#d79445">
+    <h3>套餐权益</h3>
+    <p>万达假日智选 ¥1,600/人 两晚包含的项目：雪票、温泉、水乐园、早餐、接驳。</p>
+    <div class="meta"><span>雪票</span><span>温泉</span><span>接驳</span></div>
+  </a>
+  <a class="item" href="plan-a-final.html#budget" style="--c:#9b8ec4">
+    <h3>预算明细</h3>
+    <p>按单人 / 2 人两列拆分，含机票、住宿、高铁、餐饮、装备。</p>
+    <div class="meta"><span>人均 ¥6,682—7,312</span></div>
+  </a>
+  <a class="item" href="plan-a-final.html#book" style="--c:#ef755b">
+    <h3>预约清单</h3>
+    <p>12/17 抢高铁、12/29 确认接驳、12/30 预约机场贵宾厅。</p>
+    <div class="meta"><span>按时间倒排</span></div>
+  </a>
+</div>
+
+<div class="archive">
+  <div class="arch-toggle" id="archBtn">
+    <span>归档 · 早期对比方案</span>
+    <span class="ar" id="archAr">展开 ＋</span>
+  </div>
+  <div class="arch-body" id="archBody">
+    <a class="arch-item" href="bd-plans.html">
+      <h4>早期两版对比（延吉进 / 沈阳进）</h4>
+      <p>延吉进·沈阳回 与 沈阳进·延吉回 两种路径的对比，含大交通时间账。已归入延吉白山。</p>
+    </a>
+    <a class="arch-item" href="all-plans.html">
+      <h4>A / B / C / D 四方案总览</h4>
+      <p>沈阳往返、延吉当天进山、延吉半日自驾、沈阳进长春出——早期四方案的横向对比。</p>
+    </a>
+    <a class="arch-item" href="index-v1-shenyang.html">
+      <h4>V1 · 雪落长白（沈阳往返）</h4>
+      <p>最早定稿版本：12/31 飞沈阳，1/1 早班高铁进山，万达住 3 晚。</p>
+    </a>
+    <a class="arch-item" href="index-v2a-yanji-red-eye.html">
+      <h4>A · 当日进山</h4>
+      <p>1/1 直飞延吉，落地逛一小时民俗园，16:33 高铁当天进山。</p>
+    </a>
+    <a class="arch-item" href="index-v2b-yanji-stay.html">
+      <h4>B · 延吉住一晚</h4>
+      <p>延吉玩一下午加一晚，次日 08:01 高铁进山。</p>
+    </a>
+    <a class="arch-item" href="index-v2c-yanji-drive.html">
+      <h4>C · 半日延吉自驾</h4>
+      <p>四个景点走完，18:30 自驾 244 公里夜进长白山。</p>
+    </a>
+    <a class="arch-item" href="index-v2-yanji.html">
+      <h4>延吉进山（旧版）</h4>
+      <p>早期延吉方案草稿，保留当时的对比表与预算口径。</p>
+    </a>
+  </div>
+</div>
+
+<div class="note">
+  <b>关于这一页：</b>所有页面为同目录静态文件，离线可打开。线上地址固定，每次更新后刷新即可。<br><br>
+  <b>当前结论：</b>延吉白山为定稿方案，其余版本仅作追溯。
+</div>
+
+<div class="footer">延吉白山 · 烟火半日，雪落两夜<br>2026-11-25 · 各页面相互独立，可单独发送</div>
+</div>
+
+<script>
+const btn=document.getElementById('archBtn'), body=document.getElementById('archBody'), ar=document.getElementById('archAr');
+btn.addEventListener('click',()=>{
+  const open=body.classList.toggle('open');
+  ar.textContent = open ? '收起 －' : '展开 ＋';
+});
+</script>
+</body>
+</html>

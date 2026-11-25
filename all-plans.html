@@ -1,0 +1,734 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#13242b">
+<title>长白山滑雪｜三方案详解</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}button{font:inherit;cursor:pointer}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 70px}
+header{background:var(--ink);color:#fff;padding:30px 24px 32px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#b9d8d1}
+.hero{font-size:clamp(34px,8.6vw,54px);line-height:1;letter-spacing:-.06em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#d3dedf;max-width:560px;font-size:14px}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+.switch{position:sticky;top:0;z-index:20;background:#f5f0e8;padding:10px 0;border-bottom:1px solid #ded8ce99}
+.switch-in{max-width:1080px;margin:auto;padding:0 16px;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.switch button{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 8px;font-size:13px;font-weight:700;color:var(--ink);line-height:1.3;transition:.15s}
+.switch button small{display:block;font-size:9.5px;font-weight:600;color:var(--muted);margin-top:3px;letter-spacing:.03em}
+.switch button[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 6px 18px #13242b33}
+.switch button[aria-selected="true"] small{color:#a8c4c4}
+.panel[hidden]{display:none}
+.p-head{border-radius:22px;padding:22px;margin:18px 0 16px;color:#fff}
+.p-head h2{margin:0;font-size:29px;letter-spacing:-.045em;font-weight:800}
+.p-head p{margin:9px 0 0;font-size:13px;opacity:.94;max-width:600px;line-height:1.65}
+.p-tag{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.14em;border-radius:99px;padding:4px 10px;background:#ffffff2b;margin-bottom:10px}
+.p-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(84px,1fr));gap:8px;margin-top:16px}
+.p-stats div{background:#ffffff1f;border-radius:12px;padding:10px 6px;text-align:center}
+.p-stats strong{display:block;font-size:17px;line-height:1.15;font-weight:800}
+.p-stats span{font-size:9px;opacity:.85;letter-spacing:.05em}
+.cmp{background:var(--card);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:16px}
+.cmp table{width:100%;border-collapse:collapse;font-size:12.5px}
+.cmp th{background:var(--ink);color:#c8dcec;font-size:10.5px;padding:11px 7px;text-align:left;font-weight:700}
+.cmp td{padding:11px 7px;border-bottom:1px solid #f0ebe3}
+.cmp tr:last-child td{border-bottom:none}
+.cmp .cur{background:#eef7f2;font-weight:700;color:#1c6e55}
+.cmp th.cur{background:#1c6e55;color:#fff}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 13px}
+.section-head h3{font-size:20px;letter-spacing:-.04em;margin:0;font-weight:800}
+.section-head p{margin:0;color:var(--muted);font-size:11px;text-align:right}
+.day{border-left:3px solid var(--day);padding-left:15px;margin-left:7px;position:relative;margin-bottom:20px}
+.day:before{content:"";position:absolute;left:-7px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--day);border:3px solid var(--paper)}
+.day h4{margin:6px 0 3px;font-size:17px;letter-spacing:-.02em}
+.day-head{margin:0 0 10px;color:var(--muted);font-size:12px}
+.pill{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.1em;border-radius:99px;padding:3px 10px;background:var(--ink);color:#fff}
+.slots{display:grid;gap:6px}
+.slot{display:grid;grid-template-columns:54px 1fr;gap:10px;padding:11px 12px;background:#fffdf9e6;border-radius:12px}
+.time{font-size:12px;font-weight:800;color:#5c7075;font-variant-numeric:tabular-nums}
+.time small{display:block;font-size:9px;font-weight:600;color:#9aa8aa;margin-top:1px}
+.slot b{font-size:13.5px;font-weight:700}
+.slot p{margin:3px 0 0;color:var(--muted);font-size:12px;line-height:1.55}
+.tag{color:#b14d38;font-size:9.5px;font-weight:800;margin-left:5px}
+.placelinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.place{font-size:11.5px;color:#24726c;text-decoration:none;padding:3px 0;border-bottom:1px dashed #b9d8d1}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-top:12px}
+.card{background:var(--card);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.card h4{margin:0 0 8px;font-size:14px}
+.card p{margin:0;color:var(--muted);font-size:12.5px;line-height:1.7}
+.card ul{margin:0;padding-left:17px;color:var(--muted);font-size:12.5px;line-height:1.75}
+.card li{margin-bottom:4px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:13px 15px;margin-bottom:9px}
+.tip b{display:block;color:var(--gold);font-size:12.5px;margin-bottom:3px}
+.tip span{font-size:12px;color:#cad6d5;line-height:1.65}
+.tip.warn{background:#5b2c22}.tip.warn b{color:#ffd0c2}
+.tip.alt{background:#1c4a3c}.tip.alt b{color:#9fe6c9}
+.budget{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.budget table{width:100%;border-collapse:collapse;font-size:12.5px}
+.budget th{background:var(--soft);color:var(--muted);font-size:10.5px;padding:9px 8px;text-align:left;font-weight:700;letter-spacing:.04em}
+.budget td{padding:10px 8px;border-bottom:1px solid #f0ebe3}
+.budget tr:last-child td{border-bottom:none;background:var(--soft);font-weight:700}
+.budget .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.footer{text-align:center;color:#74817b;font-size:11px;padding-top:28px;line-height:1.9}
+@media(max-width:700px){
+  .switch-in{grid-template-columns:1fr;gap:5px}
+  .switch button{padding:8px;font-size:12px;text-align:left}
+  .switch button small{display:inline;margin-left:6px}
+  .p-head h2{font-size:24px}
+  .stamp{display:none}
+  .cmp table,.budget table{font-size:11.5px}
+  .section-head{display:block}
+  .section-head p{text-align:left;margin-top:3px}
+  .slot{grid-template-columns:50px 1fr;padding:10px}
+}
+
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;
+background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;
+padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;letter-spacing:.02em;
+box-shadow:0 8px 24px #13242b40;transition:.18s}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+</style>
+</head>
+<body>
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">CHANGBAISHAN · WINTER 2027 · 4 PLANS</div>
+  <h1 class="hero">四个方案<br>逐日详解</h1>
+  <p class="hero-copy">同一趟长白山，四种走法：沈阳往返、延吉当天进山、延吉半日自驾、沈阳进长春出。全部 1/3 当天回深圳，全程只走长白山西站。<b style="color:#e9bd64">A / B / C 从沈阳飞回</b>，统一坐最晚的 G3558（14:14 → 沈阳北 16:02）；<b style="color:#e9bd64">D 从长春龙嘉飞回</b>，走 C1016 + 9C6482。每个方案里都标了<b style="color:#e9bd64">纯滑雪时长</b>和<b style="color:#e9bd64">需要的雪票权益次数</b>。</p>
+  <div class="stamp">12.31—01.03<br>2027</div>
+</header>
+
+<div class="switch" id="switch">
+  <div class="switch-in" role="tablist">
+    <button role="tab" aria-selected="true" data-p="a">沈阳往返<small>最稳 · 基线</small></button>
+    <button role="tab" aria-selected="false" data-p="b">B 延吉玩 5 小时<small>红眼去 · 沈阳回</small></button>
+    <button role="tab" aria-selected="false" data-p="c">C 延吉半日自驾<small>玩得最满</small></button>
+    <button role="tab" aria-selected="false" data-p="d">D 雪场落日<small>沈阳进 · 长春出</small></button>
+    <button role="tab" aria-selected="false" data-p="ski">时长权益<small>横向对比</small></button>
+  </div>
+</div>
+
+<!-- ==================== A ==================== -->
+<section class="panel" id="a">
+  <div class="p-head" style="background:linear-gradient(135deg,#13242b,#2f5460)">
+    <span class="p-tag">方案 A · 推荐基线</span>
+    <h2>沈阳往返 · 雪落长白</h2>
+    <p>12/31 晚班机飞沈阳，机场附近住一晚。1/1 早班高铁进山，中午前就到万达。滑 1/1 下午、1/2 全天、1/3 上午，1/3 下午从长白山西站下山，沈阳飞回深圳。</p>
+    <div class="p-stats">
+      <div><strong>2 晚</strong><span>万达住宿</span></div>
+      <div><strong>15.5h</strong><span>纯滑 · 需4次权益</span></div>
+      <div><strong>¥9,432</strong><span>起（2人）</span></div>
+      <div><strong>最稳</strong><span>风险最低</span></div>
+    </div>
+  </div>
+
+  <div class="cmp"><table>
+    <tr><th>对比项</th><th class="cur">沈阳往返</th><th>延吉进山</th><th>C 半日自驾</th><th>沈阳进山</th></tr>
+    <tr><td>去程</td><td class="cur">12/31 20:05 飞沈阳</td><td>1/1 08:05 飞延吉</td><td>1/1 08:05 飞延吉</td></tr>
+    <tr><td>进山</td><td class="cur">高铁 G8141</td><td>高铁 G8140 16:33</td><td>自驾 244km</td></tr>
+    <tr><td>到店</td><td class="cur">1/1 11:45</td><td>1/1 19:20</td><td>1/1 22:00</td></tr>
+    <tr><td>滑雪</td><td class="cur">1.5 天</td><td>1.5 天</td><td>1.5 天</td></tr>
+    <tr><td>延吉游玩</td><td class="cur">无</td><td>1 小时</td><td>4 小时 · 4 站</td></tr>
+<tr><td>纯滑雪时长</td><td class="cur"><b>15.5—20.5h</b></td><td>11.5h</td><td>11h</td><td>14h</td></tr><tr><td>雪票权益</td><td class="cur"><b>3 次</b>（含夜场 5 次）<br><span style="font-size:10.5px;color:#b14d38">住2晚给2次，差1次</span></td><td>2 次<br><span style="font-size:10.5px;color:#1c6e55">够</span></td><td>2 次<br><span style="font-size:10.5px;color:#1c6e55">够</span></td><td>3 次<br><span style="font-size:10.5px;color:#b14d38">住1晚给1次，差2次</span></td></tr>
+    <tr><td>预算（2人）</td><td class="cur">¥9,432—12,032</td><td>¥9,760—12,110</td><td>¥10,260—13,310</td><td>¥9,379—11,629</td></tr>
+    <tr><td>主要风险</td><td class="cur">1/1 早上 6:50 起床</td><td>33 分钟赶车</td><td>夜驾 3.5 小时</td></tr>
+  </table></div>
+
+  <div class="section-head"><h3>逐日行程</h3><p>12/31—1/3 · 万达 2 晚（1/1、1/2）· 全程只走长白山西站</p></div>
+
+  <div class="day" style="--day:#76a8d5">
+    <span class="pill">DAY 01 · 12/31 周四</span>
+    <h4>深圳 → 沈阳过夜</h4>
+    <p class="day-head">下班直接走 · 当晚宿桃仙机场周边</p>
+    <div class="slots">
+      <div class="slot"><div class="time">17:30<small>UTC+8</small></div><div>
+        <b>出发宝安 T3</b>
+        <p>跨年前夜，深南大道和机场高速都会堵。国内航班建议提前 90 分钟到，宁可早到。行李直接托运到沈阳，雪具如果要带也在这段托运。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B7%B1%E5%9C%B3%E5%AE%9D%E5%AE%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BAT3&dir_action=navigate">宝安 T3 ↗</a></div></div></div>
+      <div class="slot"><div class="time">20:05<small>UTC+8</small></div><div>
+        <b>ZH9605 深圳宝安 T3 → 沈阳桃仙 T3<span class="tag">¥900</span></b>
+        <p>深航，空客 A320NEO，3 小时 45 分，含点心餐。到达准点率 97%，是当晚沈阳方向最稳的一班。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B2%88%E9%98%B3%E6%A1%83%E4%BB%99%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA&dir_action=navigate">桃仙 T3 ↗</a></div></div></div>
+      <div class="slot"><div class="time">23:50<small>UTC+8</small></div><div>
+        <b>落地沈阳</b>
+        <p>取行李出站约 00:15。当晚高铁已全部停运，<b>必须住机场附近</b>。别硬赶市区——30 公里、¥80—100，到了也只剩睡觉，第二天还要折返沈阳北站。</p></div></div>
+      <div class="slot"><div class="time">00:30<small>UTC+8</small></div><div>
+        <b>桃仙机场周边酒店</b>
+        <p>¥200—300。订房时确认两件事：<b>①是否免费接送机 ②能不能早上 6:40 送去沈阳北站</b>。有些机场酒店有这个服务，能省一次打车。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#62aa91">
+    <span class="pill">DAY 02 · 1/1 周五</span>
+    <h4>沈阳 → 长白山西 → 万达</h4>
+    <p class="day-head">元旦 · 中午前后到店，下午首滑</p>
+    <div class="slots">
+      <div class="slot"><div class="time">06:40<small>UTC+8</small></div><div>
+        <b>退房，去沈阳北站</b>
+        <p>打车 40—50 分钟，¥100 左右。<b>一定要提前一晚约车</b>——元旦清晨机场打车很难，叫不到就误了高铁。注意是<b>沈阳北站</b>，不是沈阳站。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B2%88%E9%98%B3%E5%8C%97%E7%AB%99&dir_action=navigate">沈阳北站 ↗</a></div></div></div>
+      <div class="slot"><div class="time">09:11<small>UTC+8</small></div><div>
+        <b>G8141 沈阳北 → 长白山西<span class="tag">¥176</span></b>
+        <p>1 小时 54 分，11:05 到。<b>站名要认准「长白山西」</b>——「长白山站」在北坡二道白河，离万达 85 公里；「白河站」又是另一个地方。三个站相距 60 多公里。</p></div></div>
+      <div class="slot"><div class="time">11:10<small>UTC+8</small></div><div>
+        <b>西站接站车 → 万达</b>
+        <p>18 公里、27 分钟，¥60—80。<b>提前两天让智选假日前台订好</b>，元旦现场叫车能报到 ¥400。两人拼一辆最划算。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%E9%95%BF%E7%99%BD%E5%B1%B1%E8%A5%BF%E7%AB%99&destination=%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B8%87%E8%BE%BE%E5%9B%BD%E9%99%85%E5%BA%A6%E5%81%87%E5%8C%BA&travelmode=driving&dir_action=navigate">西站 → 万达 ↗</a></div></div></div>
+      <div class="slot"><div class="time">11:45<small>UTC+8</small></div><div>
+        <b>到店：寄存行李 + 办雪具</b>
+        <p>智选假日一般 14:00 后才算入住，先把行李寄存、租好雪具雪服。这一步现在办，比第二天早上再排队省 40 分钟。</p></div></div>
+      <div class="slot"><div class="time">13:00<small>UTC+8</small></div><div>
+        <b>午餐 → 首滑 13:30—16:30</b>
+        <p>西坡雪场就在度假区内，步行或摆渡车可达，雪场 8:30—16:30 营业。第一天先在魔毯区和初级道找脚感，别急着上中高级。<b>这天只滑 3 小时，别买全天票，问前台有没有 4 小时票或下午票。</b></p></div></div>
+      <div class="slot"><div class="time">18:00<small>UTC+8</small></div><div>
+        <b>晚餐 · 早睡</b>
+        <p>前一晚是红眼落地 + 早起赶车，这一天体力是关键。温泉可以泡，但控制在 30—40 分钟，别拖到很晚。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#d79445">
+    <span class="pill">DAY 03 · 1/2 周六</span>
+    <h4>全天滑雪</h4>
+    <p class="day-head">主攻日 · 是这趟唯一一整天</p>
+    <div class="slots">
+      <div class="slot"><div class="time">07:30<small>UTC+8</small></div><div>
+        <b>早餐 → 直接上雪场</b>
+        <p>装备前一晚已备好，8:30 能上雪。早饭吃饱——雪场一上午的热量消耗比想象中大得多。</p></div></div>
+      <div class="slot"><div class="time">08:30<small>UTC+8</small></div><div>
+        <b>上午雪 08:30—11:30</b>
+        <p><b>全天最值钱的 3 小时。</b>雪质最好、人最少。挑一条主雪道反复练，别一上午换五条道。万达有 30 余条雪道、总长 33 公里，初级到高级都可选。</p></div></div>
+      <div class="slot"><div class="time">12:00<small>UTC+8</small></div><div>
+        <b>午餐 40—60 分钟</b>
+        <p>雪场内餐厅。1 月下午 4:30 就天黑，别吃太久。</p></div></div>
+      <div class="slot"><div class="time">13:00<small>UTC+8</small></div><div>
+        <b>下午雪 13:00—16:30</b>
+        <p>体力允许就上一条更难的；不行就守住一条练基本功——乱滑不如专注一条。16:00 前收尾，天黑前回店。</p></div></div>
+      <div class="slot"><div class="time">17:00<small>UTC+8</small></div><div>
+        <b>拉伸 · 温泉</b>
+        <p>滑雪后<b>先拉伸 15 分钟再泡温泉</b>，比直接泡有效得多，也能避免第二天腿沉。</p></div></div>
+      <div class="slot"><div class="time">19:00<small>UTC+8</small></div><div>
+        <b>晚餐 · 收拾行李<span class="tag">别忘</span></b>
+        <p>从今晚开始，所有东西都要能「5 分钟打包」。明天上午滑完直接退房，没时间慢慢收。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#ef755b">
+    <span class="pill">DAY 04 · 1/3 周日</span>
+    <h4>上午雪 → 西站 → 沈阳 → 深圳</h4>
+    <p class="day-head">G3558 是能接上 18:15 航班的最后一班</p>
+    <div class="slots">
+      <div class="slot"><div class="time">07:30<small>UTC+8</small></div><div>
+        <b>早餐 · 穿好雪服 · 先不退房</b>
+        <p>行李收好放在房间。<b>退了房没地方换衣服</b>，这个顺序别弄反。</p></div></div>
+      <div class="slot"><div class="time">08:00<small>UTC+8</small></div><div>
+        <b>上午雪 08:00—12:30</b>
+        <p>4 小时 30 分，<b>上午基本能滑满</b>。这是三班车里唯一能滑到中午的。</p></div></div>
+      <div class="slot"><div class="time">12:30<small>UTC+8</small></div><div>
+        <b>下雪道 · 还雪具 · 退房<span class="tag">必须准时</span></b>
+        <p><b>12:30 上雪道边，12:40 前离开度假区。</b>押金当场退，别在雪具点排队磨时间。</p></div></div>
+      <div class="slot"><div class="time">12:45<small>UTC+8</small></div><div>
+        <b>车走 → 长白山西站</b>
+        <p>27 分钟，13:15 到站。车上先掏出身份证和车票，下车直接进站。<b>提前一晚跟前台订好车</b>。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B8%87%E8%BE%BE%E5%9B%BD%E9%99%85%E5%BA%A6%E5%81%87%E5%8C%BA&destination=%E9%95%BF%E7%99%BD%E5%B1%B1%E8%A5%BF%E7%AB%99&travelmode=driving&dir_action=navigate">万达 → 西站 ↗</a></div></div></div>
+      <div class="slot"><div class="time">14:14<small>UTC+8</small></div><div>
+        <b>G3558 长白山西 → 沈阳北<span class="tag">¥205 · 最后一班</span></b>
+        <p>1 小时 48 分，16:02 到。<b>这是三班里最晚的一班</b>：再晚的 G8144（13:39）到的是沈阳站且已 15:46，接不上。</p></div></div>
+      <div class="slot"><div class="time">16:05<small>UTC+8</small></div><div>
+        <b>沈阳北 → 桃仙机场<span class="tag">时间很紧</span></b>
+        <p>打车 50 分钟，约 16:55 到。<b>出站直接上车，别绕候车室、别逛商店。</b>带雪具不建议坐地铁。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B2%88%E9%98%B3%E6%A1%83%E4%BB%99%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA&dir_action=navigate">桃仙机场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">16:55<small>UTC+8</small></div><div>
+        <b>到机场 · 距停办值机 35 分钟</b>
+        <p>18:15 起飞，停办值机 17:30。<b>35 分钟只够取票、安检、走到登机口</b>，中间不能有任何延误。所以前两步（网上值机、提前买行李额）必须做。</p></div></div>
+      <div class="slot"><div class="time">18:15<small>UTC+8</small></div><div>
+        <b>DZ6232 沈阳桃仙 T3 → 深圳宝安 T3<span class="tag">¥1,410</span></b>
+        <p>东海航空，波音 737，<b>经停大同</b>，6 小时。00:15(+1) 落地。<b>登机牌和行李额度务必提前在线买好</b>，低成本航空柜台买贵很多。</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-head"><h3>预算明细</h3><p>按 2 人估算</p></div>
+  <div class="budget"><table>
+    <tr><th>项目</th><th>单价 / 明细</th><th>数量</th><th class="num">小计</th></tr>
+    <tr><td><b>机票 · 去</b></td><td>ZH9605 ¥900/人 · 深圳20:05→沈阳23:50</td><td>2 人</td><td class="num">¥1,800</td></tr>
+    <tr><td><b>机票 · 回</b></td><td>DZ6232 ¥1,410/人 · 沈阳18:15→深圳00:15+1</td><td>2 人</td><td class="num">¥2,820</td></tr>
+    <tr><td><b>高铁 · 去</b></td><td>G8141 ¥176/人 · 沈阳北09:11→长白山西11:05</td><td>2 人</td><td class="num">¥352</td></tr>
+    <tr><td><b>高铁 · 回</b></td><td>G3558 ¥205/人 · 长白山西14:14→沈阳北16:02</td><td>2 人</td><td class="num">¥410</td></tr>
+    <tr><td><b>雪场住宿</b><br><span style="font-size:11px;color:var(--muted)">景酒套餐含雪票</span></td><td>万达智选假日 ¥800—1,300/晚<br><span style="font-size:11px;color:var(--muted)">住 1/1、1/2 两晚，1/3 上午退房</span></td><td>2 晚</td><td class="num">¥1,600—2,600</td></tr>
+    <tr><td><b>沈阳住宿</b></td><td>桃仙机场周边 ¥250—300/间</td><td>1 间</td><td class="num">¥250—300</td></tr>
+    <tr><td><b>地面 · 沈阳</b></td><td>机场→沈阳北 ¥100—120　北站→桃仙 ¥100—120</td><td>2 段</td><td class="num">¥200—240</td></tr>
+    <tr><td><b>地面 · 雪场</b></td><td>西站↔万达 包车 ¥60—80／趟</td><td>2 趟</td><td class="num">¥120—160</td></tr>
+    <tr><td><b>餐饮</b></td><td>¥150—250/人/天（山下简餐 + 山上正餐）</td><td>4 天</td><td class="num">¥1,200—2,000</td></tr>
+    <tr><td><b>雪具 / 温泉 / 其他</b><br><span style="font-size:11px;color:var(--muted)">套餐已含雪具，此为升级与零花</span></td><td>—</td><td>—</td><td class="num">¥300—700</td></tr>
+    <tr><td><b>应急金</b></td><td>延误改签 / 医药（建议 10%）</td><td>—</td><td class="num">¥300—500</td></tr>
+    <tr><td><b>合计</b></td><td colspan="2" style="color:var(--muted);font-weight:400">上下限累计</td><td class="num">¥9,432—12,032</td></tr></table></div>
+
+  <div class="tip warn" style="margin-top:14px"><b>风险一 · 1/1 早上</b><span>6:40 要从机场酒店出发去沈阳北站。元旦清晨打车难，<b>必须前一晚约好车</b>。这一步没做好，后面全乱。</span></div>
+  <div class="tip"><b>雪票权益 · A 是四版里唯一不够的</b><span>日场 8:30—16:30、夜场 16:30—21:30，<b>每进一次算 1 次权益</b>。<br>A 滑：1/1 日场 + 1/2 日场 + 1/3 日场 = <b>3 次</b>（若加 1/1 夜场 = 4—5 次）。而住 2 晚通常只给 2 次，<b>差 1—3 次，需补票 ¥300—1,350</b>。<br><b>下单前务必问清套餐给的是「次」还是「天」，夜场算不算在内。</b></span></div>
+  <div class="tip warn"><b>风险二 · 1/3 返程很紧</b><span>G3558 16:02 到沈阳北，16:55 到机场，<b>距停办值机只剩 35 分钟</b>。<br><b>必须做两件事：</b>①1/2 晚上就把网上值机办掉，登机牌存手机　②行李额度提前在线买好（DZ6232 是低成本航空，柜台办又贵又慢）。<br><b>如果那天有暴雪预警，提前一晚改签到更早的车（G3568 12:53 / G3554 12:44）。</b></span></div>
+</section>
+
+<!-- ==================== B ==================== -->
+<section class="panel" id="b" hidden>
+  <div class="p-head" style="background:linear-gradient(135deg,#1b4a6b,#2e7d96)">
+    <span class="p-tag">方案 B · 延吉玩 5 小时</span>
+    <h2>红眼去 · 沈阳回</h2>
+    <p>12/31 21:00 飞，1/1 09:35 到延吉。白天在延吉玩 5 小时（水上市场、民俗园、冷面、延大、帽儿山），16:33 高铁当天进山。1/2 全天滑，1/3 上午滑到 12:30，从长白山西站下山，沈阳飞回深圳。</p>
+    <div class="p-stats">
+      <div><strong>2 晚</strong><span>万达住宿</span></div>
+      <div><strong>11.5h</strong><span>纯滑 · 需2次权益</span></div>
+      <div><strong>5 小时</strong><span>延吉游玩</span></div>
+      <div><strong>¥9,760</strong><span>起（2人）</span></div>
+    </div>
+  </div>
+
+  <div class="cmp"><table>
+    <tr><th>对比项</th><th>沈阳往返</th><th class="cur">延吉进山</th><th>C 半日自驾</th><th>沈阳进山</th></tr>
+    <tr><td>去程</td><td>12/31 20:05 飞沈阳</td><td class="cur">12/31 21:00 飞延吉</td><td>1/1 08:05 飞延吉</td><td>12/31 20:05 飞沈阳</td></tr>
+    <tr><td>进山</td><td>高铁 G8141</td><td class="cur">高铁 G8140 16:33</td><td>自驾 244km</td><td>高铁 G8141</td></tr>
+    <tr><td>到店</td><td>1/1 11:45</td><td class="cur">1/1 19:20</td><td>1/1 22:00</td><td>1/1 11:45</td></tr>
+    <tr><td>万达晚数</td><td>2 晚</td><td class="cur">2 晚</td><td>2 晚</td><td>1 晚</td></tr>
+    <tr><td>延吉游玩</td><td>无</td><td class="cur">5 小时</td><td>4 小时 · 4 站</td><td>4 小时 + 住一晚</td></tr>
+<tr><td>纯滑雪时长</td><td>15.5—20.5h</td><td class="cur"><b>11.5h</b></td><td>11h</td><td>14h</td></tr><tr><td>雪票权益</td><td>3 次（含夜场 5 次）</td><td class="cur"><b>2 次</b><br><span style="font-size:10.5px;color:#1c6e55">住2晚给2次，刚好</span></td><td>2 次<br><span style="font-size:10.5px;color:#1c6e55">够</span></td><td>3 次<br><span style="font-size:10.5px;color:#b14d38">差2次</span></td></tr>
+    <tr><td>预算（2人）</td><td>¥9,432—12,032</td><td class="cur">¥9,760—12,110</td><td>¥10,260—13,310</td><td>¥9,379—11,629</td></tr>
+    <tr><td>主要风险</td><td>早起赶车</td><td class="cur">红眼中转 7h30m</td><td>夜驾 3.5 小时</td><td>1/2 下午少滑 1 小时</td></tr>
+  </table></div>
+
+  <div class="tip alt"><b>雪票权益 · 刚好够</b><span>日场 8:30—16:30、夜场 16:30—21:30，每进一次算 1 次权益。B 滑 1/2 日场 + 1/3 日场 = <b>2 次</b>，住 2 晚套餐给 2 次，<b>不会超</b>。不滑夜场就不用考虑补票。</span></div>
+  <div class="tip warn"><b>这版的两个硬约束</b><span>① <b>12/31 21:00 起飞，中转北京 7 小时 30 分</b>——凌晨在首都机场熬着，这是全行程最难受的一段。<br>② <b>16:33 是当天最后一班进山高铁</b>，所以延吉只能玩到 15:50 就得往车站走，5 小时是上限。</span></div>
+
+  <div class="section-head"><h3>逐日行程</h3><p>12/31—1/3 · 万达 2 晚 · 全程只走长白山西站</p></div>
+
+  <div class="day" style="--day:#76a8d5">
+    <span class="pill">DAY 01 · 12/31 周四</span>
+    <h4>深圳 → 北京中转 → 延吉（红眼）</h4>
+    <p class="day-head">提前一小时出门，不用赶</p>
+    <div class="slots">
+      <div class="slot"><div class="time">19:30<small>UTC+8</small></div><div>
+        <b>出发宝安 T3</b>
+        <p>比 22:00 那班早一小时出门，下班回家收拾完再走都来得及。提前 90 分钟到机场。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B7%B1%E5%9C%B3%E5%AE%9D%E5%AE%89%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BAT3&dir_action=navigate">宝安 T3 ↗</a></div></div></div>
+      <div class="slot"><div class="time">21:00<small>UTC+8</small></div><div>
+        <b>宝安 T3 → 北京<span class="tag">¥1,554</span></b>
+        <p>东航（共享），第一程飞北京。全程 12 小时 35 分，1/1 09:35 到延吉朝阳川。</p></div></div>
+      <div class="slot"><div class="time">凌晨<small>UTC+8</small></div><div>
+        <b>北京中转 7 小时 30 分</b>
+        <p><b>这是全程最难受的一段。</b>凌晨在首都机场熬到早上，找能躺的座位或休息区。带个颈枕、眼罩，能睡多久睡多久——第二天 9:35 落地就要开始玩。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#62aa91">
+    <span class="pill">DAY 02 · 1/1 周五</span>
+    <h4>延吉 5 小时 → 长白山西 → 万达</h4>
+    <p class="day-head">元旦 · 白天玩满，傍晚进山</p>
+    <div class="slots">
+      <div class="slot"><div class="time">09:35<small>UTC+8</small></div><div>
+        <b>落地延吉朝阳川</b>
+        <p>出站打车进市区，约 19 分钟、¥30—40。<b>先去解决行李寄存</b>——推荐寄在民俗园（¥10—20），后面几站都是轻装。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E6%9C%9D%E9%98%B3%E5%B7%9D%E6%9C%BA%E5%9C%BA&dir_action=navigate">朝阳川机场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">10:40<small>UTC+8</small></div><div>
+        <b>延吉水上市场</b>
+        <p>元旦上午最热闹。<b>打糕、米肠、辣白菜、明太鱼、松茸</b>，边走边吃。买点带上车当晚饭。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E6%B0%B4%E4%B8%8A%E5%B8%82%E5%9C%BA&dir_action=navigate">水上市场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">11:50<small>UTC+8</small></div><div>
+        <b>中国朝鲜族民俗园</b>
+        <p>朝鲜族传统建筑群、服饰体验、长鼓鼓乐。<b>冬季 16:30 闭园，白天进得去</b>。行李就寄在这里，逛完直接取。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B8%AD%E5%9B%BD%E6%9C%9D%E9%B2%9C%E6%97%8F%E6%B0%91%E4%BF%97%E5%9B%AD&dir_action=navigate">民俗园 ↗</a></div></div></div>
+      <div class="slot"><div class="time">13:20<small>UTC+8</small></div><div>
+        <b>午餐 · 延吉冷面 + 烤肉</b>
+        <p><b>这趟延吉的重头戏。</b>别赶时间，吃满 50 分钟。延吉冷面是标配，烤肉也别错过。</p></div></div>
+      <div class="slot"><div class="time">14:40<small>UTC+8</small></div><div>
+        <b>延边大学正门</b>
+        <p>朝鲜族风格网红门楼 + 大学城街区，拍 20 分钟。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E8%BE%B9%E5%A4%A7%E5%AD%A6&dir_action=navigate">延边大学 ↗</a></div></div></div>
+      <div class="slot"><div class="time">15:30<small>UTC+8</small></div><div>
+        <b>帽儿山</b>
+        <p>白天看延吉全景，比夜景更好看。3.4 公里、7 分钟，待 20 分钟。<b>它离高速口最近，走的时候不折返。</b></p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%B8%BD%E5%84%BF%E5%B1%B1%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&dir_action=navigate">帽儿山 ↗</a></div></div></div>
+      <div class="slot"><div class="time">15:50<small>UTC+8</small></div><div>
+        <b>必须出发去延吉西站<span class="tag">硬截止</span></b>
+        <p>20 分钟车程，16:15 到站安检。<b>晚 15 分钟就要跑，晚 30 分钟就赶不上。</b></p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E8%A5%BF%E7%AB%99&dir_action=navigate">延吉西站 ↗</a></div></div></div>
+      <div class="slot"><div class="time">16:33<small>UTC+8</small></div><div>
+        <b>G8140 延吉西 → 长白山西<span class="tag">¥116 · 当天最后一班</span></b>
+        <p>2 小时 8 分，18:41 到。<b>16:06 那班 G142 到的是「长白山站」（北坡），离万达 85 公里，别上错。</b></p></div></div>
+      <div class="slot"><div class="time">18:50<small>UTC+8</small></div><div>
+        <b>西站接站车 → 万达</b>
+        <p>18 公里、27 分钟。<b>天已黑，必须提前订好车</b>，19:20 到店。</p></div></div>
+      <div class="slot"><div class="time">19:40<small>UTC+8</small></div><div>
+        <b>入住 · 晚餐 · 办雪具</b>
+        <p>当晚把雪具办好，第二天 7:30 吃完早餐就能直接上雪场。<b>红眼 + 玩一天，今晚一定要睡够。</b></p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#d79445">
+    <span class="pill">DAY 03 · 1/2 周六</span>
+    <h4>全天滑雪</h4>
+    <p class="day-head">唯一一整天 · 主攻日</p>
+    <div class="slots">
+      <div class="slot"><div class="time">07:30</div><div><b>早餐 → 上雪场</b><p>雪场 8:30 开。</p></div></div>
+      <div class="slot"><div class="time">08:30</div><div><b>上午雪 08:30—11:30</b><p>雪质最好、人最少。</p></div></div>
+      <div class="slot"><div class="time">12:00</div><div><b>午餐</b><p>40—60 分钟。</p></div></div>
+      <div class="slot"><div class="time">13:00</div><div><b>下午雪 13:00—16:30</b><p>体力够就上难的。</p></div></div>
+      <div class="slot"><div class="time">17:00</div><div><b>拉伸 · 温泉</b><p>先拉伸 15 分钟。</p></div></div>
+      <div class="slot"><div class="time">19:00</div><div><b>晚餐 · 收拾行李<span class="tag">别忘</span></b><p>明天 12:30 就要下雪道。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#ef755b">
+    <span class="pill">DAY 04 · 1/3 周日</span>
+    <h4>上午雪 → 西站 → 沈阳 → 深圳</h4>
+    <p class="day-head">G3558 是能接上 18:15 航班的最后一班</p>
+    <div class="slots">
+      <div class="slot"><div class="time">08:00</div><div><b>上午雪 08:00—12:30</b><p>4 小时 30 分，上午基本滑满。</p></div></div>
+      <div class="slot"><div class="time">12:30</div><div><b>下雪道 · 还雪具 · 退房<span class="tag">必须准时</span></b><p>12:40 前离开度假区。</p></div></div>
+      <div class="slot"><div class="time">12:45</div><div><b>车走 → 长白山西站</b><p>27 分钟，13:15 到站。</p></div></div>
+      <div class="slot"><div class="time">14:14</div><div><b>G3558 长白山西 → 沈阳北<span class="tag">¥205</span></b><p>16:02 到，三班里最晚的一班。</p></div></div>
+      <div class="slot"><div class="time">16:05</div><div><b>沈阳北 → 桃仙机场<span class="tag">时间很紧</span></b><p>50 分钟，约 16:55 到。出站直接上车。</p></div></div>
+      <div class="slot"><div class="time">18:15</div><div><b>DZ6232 沈阳 → 深圳<span class="tag">¥1,410</span></b><p>经停大同，00:15(+1) 到宝安。</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-head"><h3>预算明细</h3><p>按 2 人估算</p></div>
+  <div class="budget"><table>
+    <tr><th>项目</th><th>单价 / 明细</th><th>数量</th><th class="num">小计</th></tr>
+    <tr><td><b>机票 · 去</b></td><td>深圳21:00→北京→延吉09:35+1 · 全程12h35m<br><span style="font-size:11px;color:var(--muted)">¥1,554/人，北京中转 7h30m</span></td><td>2 人</td><td class="num">¥3,108</td></tr>
+    <tr><td><b>机票 · 回</b></td><td>DZ6232 ¥1,410/人 · 沈阳18:15→深圳00:15+1</td><td>2 人</td><td class="num">¥2,820</td></tr>
+    <tr><td><b>高铁 · 去</b></td><td>G8140 ¥116/人 · 延吉西16:33→长白山西18:41</td><td>2 人</td><td class="num">¥232</td></tr>
+    <tr><td><b>高铁 · 回</b></td><td>G3558 ¥205/人 · 长白山西14:14→沈阳北16:02</td><td>2 人</td><td class="num">¥410</td></tr>
+    <tr><td><b>雪场住宿</b><br><span style="font-size:11px;color:var(--muted)">景酒套餐含雪票</span></td><td>万达智选假日 ¥800—1,300/晚<br><span style="font-size:11px;color:var(--muted)">住 1/1、1/2 两晚，1/3 上午退房</span></td><td>2 晚</td><td class="num">¥1,600—2,600</td></tr>
+    <tr><td><b>地面 · 延吉</b></td><td>机场→市区 ¥30—40　市区→延吉西 ¥25—30　民俗园寄存 ¥20</td><td>3 段</td><td class="num">¥150—180</td></tr>
+    <tr><td><b>地面 · 雪场 / 沈阳</b></td><td>西站→万达 ¥60—80　北站→桃仙 ¥100—120</td><td>2 段</td><td class="num">¥160—200</td></tr>
+    <tr><td><b>餐饮</b><br><span style="font-size:11px;color:var(--muted)">含延吉一顿冷面/烤肉</span></td><td>¥150—250/人/天</td><td>3 天</td><td class="num">¥900—1,500</td></tr>
+    <tr><td><b>雪具 / 温泉 / 其他</b></td><td>套餐已含雪具，此为升级与零花</td><td>—</td><td class="num">¥300—700</td></tr>
+    <tr><td><b>应急金</b></td><td>红眼中转延误 / 改签（建议 10%）</td><td>—</td><td class="num">¥300—500</td></tr>
+    <tr><td><b>合计</b></td><td colspan="2" style="color:var(--muted);font-weight:400">上下限累计</td><td class="num">¥9,760—12,110</td></tr></table></div>
+
+  <div class="grid2">
+    <div class="card"><h4>这版拿到什么</h4><ul>
+      <li>延吉玩满 <b>5 小时</b>：水上市场、民俗园、冷面烤肉、延大、帽儿山</li>
+      <li>万达只住 <b>2 晚</b>，少花 ¥800—1,300</li>
+      <li>12/31 19:30 出门就够，比 22:00 那班从容</li>
+    </ul></div>
+    <div class="card"><h4>这版付出什么</h4><ul>
+      <li><b>北京中转 7 小时 30 分</b>，凌晨在机场熬一夜</li>
+      <li>机票 ¥2,964/人，比 A 贵 ¥654/人</li>
+      <li>延吉只能玩到 15:50，因为 16:33 是最后一班</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ==================== C ==================== -->
+<section class="panel" id="c" hidden>
+  <div class="p-head" style="background:linear-gradient(135deg,#5d3f2a,#a06a3f)">
+    <span class="p-tag">方案 C · 玩得最满</span>
+    <h2>延吉半日 · 自驾进山</h2>
+    <p>14:30 落地提车，民俗园、延边大学、水上市场、帽儿山一路玩下来，18:30 上高速，夜里开进长白山。不受高铁发车时间限制，玩满 4 小时。</p>
+    <div class="p-stats">
+      <div><strong>4 站</strong><span>延吉游玩</span></div>
+      <div><strong>244km</strong><span>夜驾距离</span></div>
+      <div><strong>22:00</strong><span>到店时间</span></div>
+      <div><strong>¥10,260</strong><span>起（2人）</span></div>
+    </div>
+  </div>
+
+  <div class="cmp"><table>
+    <tr><th>对比项</th><th>沈阳往返</th><th>延吉进山</th><th class="cur">C 半日自驾</th></tr>
+    <tr><td>去程</td><td>12/31 20:05 飞沈阳</td><td>1/1 08:05 飞延吉</td><td class="cur">1/1 08:05 飞延吉</td></tr>
+    <tr><td>进山</td><td>高铁 G8141</td><td>高铁 G8140 16:33</td><td class="cur">自驾 244km</td></tr>
+    <tr><td>延吉游玩</td><td>无</td><td>1 小时</td><td class="cur">4 小时 · 4 站</td></tr>
+    <tr><td>时间自由度</td><td>被高铁时刻绑住</td><td>只有一班车</td><td class="cur">自己开车，随时走</td></tr>
+    <tr><td>到店</td><td>1/1 11:45</td><td>1/1 19:20</td><td class="cur">1/1 22:00</td></tr>
+<tr><td>纯滑雪时长</td><td>15.5—20.5h</td><td>11.5h</td><td class="cur"><b>11h</b></td><td>14h</td></tr><tr><td>雪票权益</td><td>3 次（含夜场 5 次）</td><td>2 次</td><td class="cur"><b>2 次</b><br><span style="font-size:10.5px;color:#1c6e55">住2晚给2次，刚好</span></td><td>3 次<br><span style="font-size:10.5px;color:#b14d38">差2次</span></td></tr>
+    <tr><td>预算（2人）</td><td>¥9,432—12,032</td><td>¥9,760—12,110</td><td class="cur">¥10,260—13,310</td><td>¥9,379—11,629</td></tr>
+    <tr><td>主要风险</td><td>早起赶车</td><td>33 分钟赶车</td><td class="cur">夜驾 3.5 小时山路</td></tr>
+  </table></div>
+
+  <div class="section-head"><h3>1/1 延吉半日路线</h3><p>优先进园 · 14:30—18:30 · 4 个点</p></div>
+
+  <div class="day" style="--day:#76a8d5">
+    <span class="pill">DAY 01 · 1/1 周五</span>
+    <h4>深圳 → 延吉半日 → 夜驾进山</h4>
+    <p class="day-head">玩满 4 小时，22:00 到店</p>
+    <div class="slots">
+      <div class="slot"><div class="time">06:30<small>UTC+8</small></div><div><b>出发宝安 T3</b><p>08:05 起飞。</p></div></div>
+      <div class="slot"><div class="time">08:05<small>UTC+8</small></div><div>
+        <b>CZ5145 深圳 → 延吉<span class="tag">¥1,490</span></b>
+        <p>经停大连，14:30 落地朝阳川。<b>这条航线一天就这一班</b>，也是本方案的前提。</p></div></div>
+      <div class="slot"><div class="time">14:30<small>UTC+8</small></div><div>
+        <b>机场提车</b>
+        <p>出到达口就能取车。<b>建议选四驱或带雪地胎的车</b>，1 月山区路面有冰。行李直接放后备箱，全程不用进酒店。</p></div></div>
+      <div class="slot"><div class="time">15:00<small>UTC+8</small></div><div>
+        <b>中国朝鲜族民俗园<span class="tag">1 小时 · 优先进园</span></b>
+        <p>8.7 公里、18 分钟。<b>因为冬季 16:30 闭园，所以排在第一站</b>——放最后就只能看大门。建筑群、服饰体验、长鼓鼓乐，1 小时刚好。15:55 准备离场。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E4%B8%AD%E5%9B%BD%E6%9C%9D%E9%B2%9C%E6%97%8F%E6%B0%91%E4%BF%97%E5%9B%AD&dir_action=navigate">民俗园 ↗</a></div></div></div>
+      <div class="slot"><div class="time">16:20<small>UTC+8</small></div><div>
+        <b>延边大学正门</b>
+        <p>7.4 公里、18 分钟。朝鲜族风格的网红门楼 + 大学城街区，<b>拍照 20 分钟足够</b>。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E8%BE%B9%E5%A4%A7%E5%AD%A6&dir_action=navigate">延边大学 ↗</a></div></div></div>
+      <div class="slot"><div class="time">17:00<small>UTC+8</small></div><div>
+        <b>延吉水上市场</b>
+        <p>3.4 公里、9 分钟。<b>打糕、米肠、辣白菜、明太鱼、松茸</b>，边走边吃最地道。<b>顺手买点当宵夜</b>——等一下要开 3 个半小时夜车。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E6%B0%B4%E4%B8%8A%E5%B8%82%E5%9C%BA&dir_action=navigate">水上市场 ↗</a></div></div></div>
+      <div class="slot"><div class="time">18:00<small>UTC+8</small></div><div>
+        <b>帽儿山看夜景</b>
+        <p>3.4 公里、7 分钟。俯瞰延吉全景。<b>山上风大，30 分钟就够</b>。<b>它离 G1221 高速口最近</b>，所以排最后一站，走的时候不折返。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%B8%BD%E5%84%BF%E5%B1%B1%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&dir_action=navigate">帽儿山 ↗</a></div></div></div>
+      <div class="slot"><div class="time">18:30<small>UTC+8</small></div><div>
+        <b>出发进山<span class="tag">244 公里 / 3h26m</span></b>
+        <p><b>G1221 延长高速 → G1215</b>，往二道白河方向。<b>想稳就在 18:00 出发</b>，给自己留 30 分钟缓冲。</p>
+        <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%E5%B8%BD%E5%84%BF%E5%B1%B1%E5%9B%BD%E5%AE%B6%E6%A3%AE%E6%9E%97%E5%85%AC%E5%9B%AD&destination=%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B8%87%E8%BE%BE%E5%9B%BD%E9%99%85%E5%BA%A6%E5%81%87%E5%8C%BA&travelmode=driving&dir_action=navigate">帽儿山 → 万达 ↗</a></div></div></div>
+      <div class="slot"><div class="time">22:00<small>UTC+8</small></div><div>
+        <b>抵达万达智选假日</b>
+        <p>办入住直接睡。<b>当晚别折腾雪具</b>，第二天早上再办，1/2 直接滑全天。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#62aa91">
+    <span class="pill">DAY 02 · 1/2 周六</span>
+    <h4>全天滑雪</h4>
+    <p class="day-head">前一晚开夜车，9 点起也够</p>
+    <div class="slots">
+      <div class="slot"><div class="time">08:00</div><div><b>早餐 · 办雪具</b><p>比常规晚 30 分钟——前一晚 22:00 才到，睡够更重要。</p></div></div>
+      <div class="slot"><div class="time">09:00</div><div><b>上午雪 09:00—11:30</b><p>雪质还过得去，人比早上少。</p></div></div>
+      <div class="slot"><div class="time">12:00</div><div><b>午餐</b></div></div>
+      <div class="slot"><div class="time">13:00</div><div><b>下午雪 13:00—16:30</b></div></div>
+      <div class="slot"><div class="time">17:00</div><div><b>拉伸 · 温泉</b><p>开了一晚车 + 滑一天，先拉伸 15 分钟。</p></div></div>
+      <div class="slot"><div class="time">19:00</div><div><b>晚餐 · 收拾行李</b></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#ef755b">
+    <span class="pill">DAY 03 · 1/3 周日</span>
+    <h4>上午雪 → 西站 → 沈阳 → 深圳</h4>
+    <p class="day-head">和 A 方案一样，G3558 是最后一班</p>
+    <div class="slots">
+      <div class="slot"><div class="time">08:00</div><div><b>上午雪 08:00—12:30</b><p>4 小时 30 分，上午基本滑满。</p></div></div>
+      <div class="slot"><div class="time">12:30</div><div><b>下雪道 · 还雪具 · 退房 · 处理车<span class="tag">必须准时</span></b><p>押金当场退。还车方式前一晚已确认。</p></div></div>
+      <div class="slot"><div class="time">12:45</div><div><b>车走 → 长白山西站</b><p>27 分钟，13:15 到站。</p></div></div>
+      <div class="slot"><div class="time">14:14</div><div><b>G3558 长白山西 → 沈阳北<span class="tag">¥205</span></b><p>16:02 到，三班里最晚的一班。</p></div></div>
+      <div class="slot"><div class="time">16:05</div><div><b>沈阳北 → 桃仙机场<span class="tag">时间很紧</span></b><p>50 分钟，约 16:55 到。</p></div></div>
+      <div class="slot"><div class="time">18:15</div><div><b>DZ6232 沈阳 → 深圳<span class="tag">¥1,410</span></b><p>经停大同，00:15(+1) 到宝安。</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-head"><h3>夜驾 244 公里</h3><p>这是 C 方案唯一但也是真实的风险</p></div>
+  <div class="grid2">
+    <div class="card"><h4>路线与车程</h4><ul>
+      <li>帽儿山 → 万达：<b>244 公里、3 小时 26 分</b></li>
+      <li>民俗园 → 万达：241 公里、3 小时 23 分</li>
+      <li>机场 → 万达：236 公里、3 小时 10 分</li>
+      <li>主线是 <b>G1221 延长高速</b>，转 <b>G1215</b> 往二道白河</li>
+    </ul></div>
+    <div class="card"><h4>车速与安全</h4><ul>
+      <li>1 月夜里路面可能结冰，<b>车速控制在 90 以内</b></li>
+      <li>弯道、隧道口提前减速，别急刹</li>
+      <li>服务区停 1 次（约 10 分钟），<b>顺便换厚衣服</b></li>
+      <li>万达海拔比延吉高，<b>温差 10 度以上</b></li>
+    </ul></div>
+  </div>
+
+  <div class="section-head"><h3>预算明细</h3><p>按 2 人估算</p></div>
+  <div class="budget"><table>
+    <tr><th>项目</th><th>单价 / 明细</th><th>数量</th><th class="num">小计</th></tr>
+    <tr><td><b>机票 · 去</b></td><td>CZ5145 ¥1,490/人 · 深圳08:05→延吉14:30</td><td>2 人</td><td class="num">¥2,980</td></tr>
+    <tr><td><b>机票 · 回</b></td><td>DZ6232 ¥1,410/人 · 沈阳18:15→深圳00:15+1</td><td>2 人</td><td class="num">¥2,820</td></tr>
+    <tr><td><b>高铁 · 回</b></td><td>G3558 ¥205/人 · 长白山西14:14→沈阳北16:02</td><td>2 人</td><td class="num">¥410</td></tr>
+    <tr><td><b>雪场住宿</b><br><span style="font-size:11px;color:var(--muted)">景酒套餐含雪票</span></td><td>万达智选假日 ¥800—1,300/晚<br><span style="font-size:11px;color:var(--muted)">住 1/1、1/2 两晚，1/3 上午退房</span></td><td>2 晚</td><td class="num">¥1,600—2,600</td></tr>
+    <tr><td><b>租车 1/1—1/3</b></td><td>¥250—450/天（含保险、雪地胎）<br><span style="font-size:11px;color:var(--muted)">异地还车费用未计入</span></td><td>3 天</td><td class="num">¥750—1,350</td></tr>
+    <tr><td><b>油费 + 过路费</b></td><td>夜驾 244km 高速 + 市区约 50km</td><td>—</td><td class="num">¥300—450</td></tr>
+    <tr><td><b>地面 · 雪场 / 沈阳</b></td><td>西站→万达 ¥60—80　北站→桃仙 ¥100—120</td><td>2 段</td><td class="num">¥160—200</td></tr>
+    <tr><td><b>餐饮</b><br><span style="font-size:11px;color:var(--muted)">含延吉一顿冷面/烤肉</span></td><td>¥150—250/人/天</td><td>3 天</td><td class="num">¥900—1,500</td></tr>
+    <tr><td><b>雪具 / 温泉 / 其他</b></td><td>套餐已含雪具，此为升级与零花</td><td>—</td><td class="num">¥300—700</td></tr>
+    <tr><td><b>应急金</b></td><td>夜驾路况 / 车辆故障 / 改签</td><td>—</td><td class="num">¥400—800</td></tr>
+    <tr><td><b>合计</b></td><td colspan="2" style="color:var(--muted);font-weight:400">上下限累计</td><td class="num">¥10,260—13,310</td></tr></table></div>
+
+  <div class="tip alt" style="margin-top:14px"><b>C 方案真正的优势</b><span><b>不受高铁发车时间限制</b>。B 方案 16:33 赶不上当天就进不了山；C 方案想几点走就几点走，晚 30 分钟只是晚 30 分钟到店，不会全盘崩溃。这是自驾最大的价值。</span></div>
+</section>
+
+
+<!-- ==================== D ==================== -->
+<section class="panel" id="d" hidden>
+  <div class="p-head" style="background:linear-gradient(135deg,#4a2f5d,#8a5fa8)">
+    <span class="p-tag">方案 D · 沈阳进 · 长春出</span>
+    <h2>雪场落日</h2>
+    <p>12/31 飞沈阳，1/1 早班高铁进山下午首滑。1/2 全天滑，傍晚撤去延吉住一晚。1/3 在延吉玩半天，15:50 坐 C1016 到龙嘉机场，19:00 飞回深圳。</p>
+    <div class="p-stats">
+      <div><strong>1+1</strong><span>万达 / 延吉</span></div>
+      <div><strong>11h</strong><span>纯滑 · 需2次权益</span></div>
+      <div><strong>4 小时</strong><span>延吉游玩</span></div>
+      <div><strong>¥10,260</strong><span>起（2人）</span></div>
+    </div>
+  </div>
+
+  <div class="cmp"><table>
+    <tr><th>对比项</th><th>沈阳往返</th><th>延吉进山</th><th>C 半日自驾</th><th class="cur">沈阳进山</th></tr>
+    <tr><td>去程</td><td>12/31 20:05 飞沈阳</td><td>12/31 21:00 飞延吉</td><td>1/1 08:05 飞延吉</td><td class="cur">12/31 20:05 飞沈阳</td></tr>
+    <tr><td>进山</td><td>高铁 G8141</td><td>高铁 G8140 16:33</td><td>自驾 244km</td><td class="cur">高铁 G8141</td></tr>
+    <tr><td>到店</td><td>1/1 11:45</td><td>1/1 19:20</td><td>1/1 22:00</td><td class="cur">1/1 11:45</td></tr>
+    <tr><td>万达晚数</td><td>2 晚</td><td>2 晚</td><td>2 晚</td><td class="cur">1 晚</td></tr>
+    <tr><td>延吉游玩</td><td>无</td><td>5 小时</td><td>4 小时 · 4 站</td><td class="cur">4 小时 + 住一晚</td></tr>
+    <tr><td>返程</td><td>1/3 沈阳 18:15</td><td>1/3 沈阳 18:15</td><td>1/3 沈阳 18:15</td><td class="cur">1/3 长春 19:00</td></tr>
+<tr><td>纯滑雪时长</td><td>15.5—20.5h</td><td>11.5h</td><td>11h</td><td class="cur"><b>14h</b></td></tr><tr><td>雪票权益</td><td>3 次（含夜场 5 次）</td><td>2 次</td><td>2 次</td><td class="cur"><b>3 次</b><br><span style="font-size:10.5px;color:#b14d38">住1晚给1次，差2次</span></td></tr>
+    <tr><td>预算（2人）</td><td>¥9,432—12,032</td><td>¥9,760—12,110</td><td>¥10,260—13,310</td><td class="cur">¥9,379—11,629</td></tr>
+    <tr><td>主要风险</td><td>早起赶车</td><td>红眼中转</td><td>夜驾 3.5 小时</td><td class="cur">1/2 下午少滑 1 小时</td></tr>
+  </table></div>
+
+  <div class="tip"><b>雪票权益 · D 只住 1 晚，需要额外买票</b><span>D 滑：1/1 日场 + 1/1 夜场 + 1/2 日场 = <b>3 次</b>，但住 1 晚套餐通常只给 1 次，<b>差 2 次，需补票 ¥600—900</b>。<br>这笔钱没算在下面的预算表里，下单时记得加上。</span></div>
+  <div class="tip alt"><b>这版的取舍</b><span>1/2 下午要 <b>15:30 收雪</b>（比 A 方案早一小时），赶 17:53 的车去延吉。同站换乘 32 分钟，不出站、跟着换乘标识走即可。<br>换来的是 <b>延吉一整晚 + 半天</b>：夜宵冷面、1/3 上午逛市场民俗园，再从龙嘉直飞深圳。</span></div>
+  <div class="tip"><b>1/2 傍晚备选车次</b><span>万一没赶上 17:53 的 G3567，还有两条路：<br>① <b>16:47 长白山站 → 敦化转 → 18:40 延吉西</b>（C1335 + C1021，¥80）——但要先到北坡站，从万达 85 公里<br>② <b>下午提前走</b>：15:53 西站 → 敦化转 → 17:55 延吉西（G8133 + D517，¥116），代价是 14:30 就要收雪<br>③ 实在晚了就住长白山站附近，1/3 早上 11:57 G8139 → 13:53 延吉西，但会挤掉延吉半日游</span></div>
+
+  <div class="section-head"><h3>逐日行程</h3><p>12/31—1/3 · 万达 1 晚（1/1）+ 延吉 1 晚（1/2）</p></div>
+
+  <div class="day" style="--day:#76a8d5">
+    <span class="pill">DAY 01 · 12/31 周四</span>
+    <h4>深圳 → 沈阳过夜</h4>
+    <p class="day-head">和 A 方案完全一样</p>
+    <div class="slots">
+      <div class="slot"><div class="time">17:30</div><div><b>出发宝安 T3</b><p>跨年前夜堵车，宁可早到。</p></div></div>
+      <div class="slot"><div class="time">20:05</div><div><b>ZH9605 深圳 → 沈阳<span class="tag">¥900</span></b><p>23:50 落地桃仙 T3。</p></div></div>
+      <div class="slot"><div class="time">00:30</div><div><b>桃仙机场周边酒店</b><p>¥200—300。确认能否早上送去沈阳北站。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#62aa91">
+    <span class="pill">DAY 02 · 1/1 周五</span>
+    <h4>沈阳 → 长白山西 → 下午首滑</h4>
+    <p class="day-head">元旦 · 上午赶路，下午上雪</p>
+    <div class="slots">
+      <div class="slot"><div class="time">06:40</div><div><b>退房 → 沈阳北站</b><p>打车 40—50 分钟，提前一晚约车。</p></div></div>
+      <div class="slot"><div class="time">09:11</div><div><b>G8141 沈阳北 → 长白山西<span class="tag">¥176</span></b><p>1 小时 54 分，11:05 到。</p></div></div>
+      <div class="slot"><div class="time">11:10</div><div><b>接站车 → 万达</b><p>18 公里、27 分钟，11:45 到店。寄存行李、办雪具。</p></div></div>
+      <div class="slot"><div class="time">13:00</div><div><b>午餐 → 下午首滑 13:30—16:30</b><p>半天，找脚感。别买全天票，问有没有 4 小时票。</p></div></div>
+      <div class="slot"><div class="time">18:00</div><div><b>晚餐 · 早睡</b><p>前一晚红眼落地 + 早起，今晚必须睡够。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#d79445">
+    <span class="pill">DAY 03 · 1/2 周六</span>
+    <h4>全天滑雪 → 傍晚撤去延吉</h4>
+    <p class="day-head">这版最关键的一天，滑雪和赶车都要</p>
+    <div class="slots">
+      <div class="slot"><div class="time">08:30</div><div><b>上午雪 08:30—11:30</b><p>雪质最好的 3 小时。</p></div></div>
+      <div class="slot"><div class="time">12:00</div><div><b>午餐</b><p>吃快一点，下午要提前收。</p></div></div>
+      <div class="slot"><div class="time">13:00</div><div><b>下午雪 13:00—15:30<span class="tag">比平时早收 1 小时</span></b><p>因为 17:53 要赶车。</p></div></div>
+      <div class="slot"><div class="time">15:40</div><div><b>还雪具 · 退房 · 拿行李</b><p>押金当场退。</p></div></div>
+      <div class="slot"><div class="time">16:30</div><div><b>车走 → 长白山西站</b><p>27 分钟，17:00 到站。提前一晚订好车。</p></div></div>
+      <div class="slot"><div class="time">17:53</div><div><b>G3567 长白山西 → 长白山<span class="tag">¥41</span></b><p>18:12 到。</p></div></div>
+      <div class="slot"><div class="time">18:12</div><div><b>长白山站 · 同站换乘 32 分钟</b><p>不出站，跟着站内换乘标识走即可。</p></div></div>
+      <div class="slot"><div class="time">18:44</div><div><b>D8091 长白山 → 延吉西<span class="tag">¥85</span></b><p>20:27 到。</p></div></div>
+      <div class="slot"><div class="time">20:40</div><div><b>打车去市区酒店</b><p>约 20 分钟，21:00 到。延吉住一晚 ¥250—350。</p></div></div>
+      <div class="slot"><div class="time">21:15</div><div><b>延吉夜宵</b><p>冷面或烤肉。这一天从雪道赶到延吉，值得吃一顿。</p></div></div>
+    </div>
+  </div>
+
+  <div class="day" style="--day:#ef755b">
+    <span class="pill">DAY 04 · 1/3 周日</span>
+    <h4>延吉半日 → 龙嘉 → 深圳</h4>
+    <p class="day-head">15:50 的高铁，玩到 14:30 就得走</p>
+    <div class="slots">
+      <div class="slot"><div class="time">08:00</div><div><b>早餐 · 酒店寄存行李</b><p>空手出门。</p></div></div>
+      <div class="slot"><div class="time">09:00</div><div><b>延吉水上市场</b><p>早市最热闹，打糕、米肠、辣白菜。</p></div></div>
+      <div class="slot"><div class="time">10:30</div><div><b>中国朝鲜族民俗园</b><p>白天进得去，1.5 小时逛完。</p></div></div>
+      <div class="slot"><div class="time">12:00</div><div><b>午餐 · 延吉冷面 + 烤肉</b><p>这趟延吉的正餐。</p></div></div>
+      <div class="slot"><div class="time">13:10</div><div><b>延边大学 + 帽儿山</b><p>延大拍照 20 分钟，帽儿山看全景 20 分钟。</p></div></div>
+      <div class="slot"><div class="time">14:30</div><div><b>回酒店取行李 → 延吉西站</b><p>20 分钟车程，15:05 到站。</p></div></div>
+      <div class="slot"><div class="time">15:50</div><div><b>C1016 延吉西 → 龙嘉<span class="tag">¥107.5</span></b><p>2 小时 27 分，18:17 到。<b>龙嘉站就在航站楼下方</b>，出站步行或摆渡到 T2。</p></div></div>
+      <div class="slot"><div class="time">19:00</div><div><b>9C6482 龙嘉 T2 → 深圳宝安 T3<span class="tag">¥1,680</span></b><p>春秋航空，经停东营，45 分钟。<b>00:55(+1) 到宝安。</b>行李额度提前在线买。</p></div></div>
+    </div>
+  </div>
+
+  <div class="section-head"><h3>预算明细</h3><p>按 2 人估算</p></div>
+  <div class="budget"><table>
+    <tr><th>项目</th><th>单价 / 明细</th><th>数量</th><th class="num">小计</th></tr>
+    <tr><td><b>机票 · 去</b></td><td>ZH9605 ¥900/人 · 深圳20:05→沈阳23:50</td><td>2 人</td><td class="num">¥1,800</td></tr>
+    <tr><td><b>机票 · 回</b></td><td>9C6482 ¥1,680/人 · 龙嘉19:00→深圳00:55+1（经停东营）</td><td>2 人</td><td class="num">¥3,360</td></tr>
+    <tr><td><b>高铁 ①</b></td><td>G8141 ¥176/人 · 沈阳北09:11→长白山西11:05</td><td>2 人</td><td class="num">¥352</td></tr>
+    <tr><td><b>高铁 ②</b></td><td>G3567 ¥41/人 · 长白山西17:53→长白山18:12</td><td>2 人</td><td class="num">¥82</td></tr>
+    <tr><td><b>高铁 ③</b></td><td>D8091 ¥85/人 · 长白山18:44→延吉西20:27</td><td>2 人</td><td class="num">¥170</td></tr>
+    <tr><td><b>高铁 ④</b></td><td>C1016 ¥107.5/人 · 延吉西15:50→龙嘉18:17</td><td>2 人</td><td class="num">¥215</td></tr>
+    <tr><td><b>雪场住宿</b><br><span style="font-size:11px;color:var(--muted)">景酒套餐含雪票</span></td><td>万达智选假日 ¥800—1,300/晚<br><span style="font-size:11px;color:var(--muted)">只住 1/1 一晚，1/2 下午退房</span></td><td>1 晚</td><td class="num">¥800—1,300</td></tr>
+    <tr><td><b>延吉住宿</b></td><td>市区酒店 ¥250—350/间</td><td>1 晚</td><td class="num">¥250—350</td></tr>
+    <tr><td><b>沈阳住宿</b></td><td>桃仙机场周边 ¥250—300/间</td><td>1 间</td><td class="num">¥250—300</td></tr>
+    <tr><td><b>地面 · 沈阳</b></td><td>机场→沈阳北 ¥100—120　北站→桃仙 ¥100—120</td><td>2 段</td><td class="num">¥200—240</td></tr>
+    <tr><td><b>地面 · 雪场 / 延吉</b></td><td>西站↔万达 ¥120—160　延吉西→市区 ¥20—30　市区→车站 ¥25—30</td><td>4 段</td><td class="num">¥165—220</td></tr>
+    <tr><td><b>餐饮</b><br><span style="font-size:11px;color:var(--muted)">含延吉夜宵 + 正餐两顿</span></td><td>¥150—250/人/天</td><td>4 天</td><td class="num">¥1,200—2,000</td></tr>
+    <tr><td><b>雪具 / 温泉 / 其他</b></td><td>套餐已含雪具，此为升级与零花</td><td>—</td><td class="num">¥300—700</td></tr>
+    <tr><td><b>应急金</b></td><td>换乘晚点 / 改签（建议 10%）</td><td>—</td><td class="num">¥400—600</td></tr>
+    <tr><td><b>合计</b></td><td colspan="2" style="color:var(--muted);font-weight:400">上下限累计</td><td class="num">¥9,379—11,629</td></tr></table></div>
+
+  <div class="grid2">
+    <div class="card"><h4>这版的取舍</h4><ul>
+      <li><b>滑雪和延吉都要</b>：1/1 下午 + 1/2 全天（少 1 小时）+ 延吉 4 小时</li>
+      <li>机票 <b>¥2,580/人</b>，比 A 贵 ¥270，比 B 便宜 ¥384</li>
+      <li>万达只住 2 晚，省下一晚 ¥800—1,300</li>
+      <li>多消耗一个延吉住宿夜（¥250—350）</li>
+    </ul></div>
+    <div class="card"><h4>适合谁</h4><ul>
+      <li>想滑够、又不想放弃延吉吃玩的人</li>
+      <li>能接受 1/2 下午提前 1 小时收雪</li>
+      <li>能接受回程在延吉多住一晚、多搬一次行李</li>
+      <li><b>不接受</b>：红眼航班熬一夜（那就选 A 或 D）</li>
+    </ul></div>
+  </div>
+</section>
+
+
+<section id="skihours" hidden>
+  <div class="section-head"><h3>滑雪时长与雪票权益总览</h3><p>日场 8:30—16:30 · 夜场 16:30—21:30 · 每进一次算 1 次权益</p></div>
+
+  <div class="tips" style="margin-bottom:14px">
+    <div class="tip warn"><b>规则先弄清，这条最容易踩</b><span>雪票的「天」不是「随便滑一天」，而是<b>按场次消耗权益</b>：日场进一次 = 1 次，夜场进一次 = 1 次。<br><b>同一天日场 + 夜场都滑 = 2 次权益。</b>中途出来再进去，过了时段界限就再扣一次——别卡着 16:00 进日场，滑 30 分钟就被断。</span></div>
+  </div>
+
+  <div class="budget"><table>
+    <tr><th>方案</th><th>1/1</th><th>1/2</th><th>1/3</th><th class="num">纯滑时长</th><th class="num">需权益</th><th class="num">套餐约给</th><th class="num">缺口</th></tr>
+    <tr><td><b>A</b></td><td>日场 13:30—16:30（3h）<br>+ 夜场（5h，可选）</td><td>日场 08:30—16:30（8h）<br>+ 夜场（可选）</td><td>日场 08:00—12:30（4.5h）</td><td class="num"><b>15.5—20.5h</b></td><td class="num"><b>3 次</b><br><span style="font-size:10.5px;color:var(--muted)">加夜场 5 次</span></td><td class="num">2 次<br><span style="font-size:10.5px;color:var(--muted)">住 2 晚</span></td><td class="num" style="color:#b14d38"><b>差 1 次</b><br>¥300—450</td></tr>
+    <tr><td><b>B</b></td><td>在延吉玩<br><span style="font-size:10.5px;color:var(--muted)">19:20 到店</span></td><td>日场 08:30—16:30（8h）</td><td>日场 08:00—12:30（4.5h）</td><td class="num"><b>11.5h</b></td><td class="num"><b>2 次</b></td><td class="num">2 次<br><span style="font-size:10.5px;color:var(--muted)">住 2 晚</span></td><td class="num" style="color:#1c6e55">✅ 够</td></tr>
+    <tr><td><b>C</b></td><td>在延吉玩<br><span style="font-size:10.5px;color:var(--muted)">22:00 到店</span></td><td>日场 09:00—16:30（7.5h）</td><td>日场 08:00—12:30（4.5h）</td><td class="num"><b>11h</b></td><td class="num"><b>2 次</b></td><td class="num">2 次<br><span style="font-size:10.5px;color:var(--muted)">住 2 晚</span></td><td class="num" style="color:#1c6e55">✅ 够</td></tr>
+    <tr><td><b>D</b></td><td>日场 13:30—16:30（3h）<br>+ 夜场（5h）</td><td>日场 08:30—15:30（7h）<br><span style="font-size:10.5px;color:var(--muted)">15:30 收赶车</span></td><td>在延吉玩</td><td class="num"><b>14h</b></td><td class="num"><b>3 次</b></td><td class="num">1 次<br><span style="font-size:10.5px;color:var(--muted)">住 1 晚</span></td><td class="num" style="color:#b14d38"><b>差 2 次</b><br>¥600—900</td></tr>
+  </table></div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>为什么 A 滑得最多</h4><ul>
+      <li>唯一能在 <b>1/1 傍晚滑夜场</b> 的方案：18:00—21:30 多出 3.5—5 小时</li>
+      <li>1/2 是完整一整天，8 小时</li>
+      <li>1/3 到 12:30 才收，比 B、C 多不了多少，但前面两天拉开了差距</li>
+    </ul></div>
+    <div class="card"><h4>为什么 B / C 权益刚好</h4><ul>
+      <li>两天各滑一次日场，正好 2 次</li>
+      <li>不滑夜场就不超，也不用补票</li>
+      <li><b>B 比 C 多 0.5h</b>：B 的 1/2 从 8:30 就开始，C 22:00 才到店，1/2 睡到 9:00 才上雪</li>
+    </ul></div>
+  </div>
+
+  <div class="tip alt" style="margin-top:12px"><b>怎么选</b><span><b>只想滑够、不在意多花钱</b> → A（15.5—20.5h，但补票 ¥300—1,350）<br><b>想要延吉还想滑够</b> → D（14h，补票 ¥600—900）<br><b>想省心又不想补票</b> → B 或 C（11—11.5h，权益刚好）</span></div>
+</section>
+
+<div class="footer">长白山滑雪 · 三方案详解 · 2026-11-23<br>机票价格来自同程实时查询；高铁票价为携程查询；景酒套餐为区间估算，以实际订单为准</div>
+</div>
+
+<script>
+const tabs=[...document.querySelectorAll('.switch button')];
+function show(p){
+  tabs.forEach(x=>x.setAttribute('aria-selected', String(x.dataset.p===p)));
+  document.querySelectorAll('.panel').forEach(el=>{el.hidden = el.id!==p});
+  const sh=document.getElementById('skihours'); if(sh) sh.hidden = (p!=='ski');
+  try{localStorage.setItem('cb_plan3',p)}catch(e){}
+}
+tabs.forEach(b=>b.addEventListener('click',()=>{
+  show(b.dataset.p);
+  window.scrollTo({top:document.getElementById('switch').offsetTop-2,behavior:'smooth'});
+}));
+try{const last=localStorage.getItem('cb_plan3'); if(last&&['a','b','c','d','ski'].includes(last)) show(last);}catch(e){}
+</script>
+</body>
+</html>

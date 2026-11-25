@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1a2e">
+<title>夜航班｜延吉进山 · 沈阳返程</title>
+<style>
+:root{--ink:#0b1a2e;--ink2:#132b47;--muted:#6b7d92;--paper:#eef2f7;--card:#ffffff;--line:#d3dde8;--ice:#6fb7e8;--amber:#e8a33d;--mint:#4fbfa0;--rose:#e0657a;--shadow:0 16px 44px #0b1a2e1f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}button{font:inherit}
+header{position:relative;overflow:hidden;border-radius:26px;margin:20px 0 0;padding:30px 26px 34px;color:#eaf3fb;
+  background:linear-gradient(150deg,#0b1a2e 0%,#123a5c 45%,#1b5a72 100%)}
+header:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 88% 12%,#6fb7e833 0,transparent 42%),
+  radial-gradient(circle at 12% 88%,#4fbfa022 0,transparent 46%)}
+header:after{content:"";position:absolute;right:-90px;bottom:-120px;pointer-events:none;width:180px;height:180px;border:1px solid #ffffff1f;border-radius:50%;box-shadow:0 0 0 30px #ffffff09}
+.eyebrow{position:relative;font-size:10px;letter-spacing:.24em;color:#8fc6e6}
+.hero{position:relative;font-size:clamp(38px,9vw,60px);line-height:1.04;letter-spacing:-.055em;margin:18px 0 14px;font-weight:800}
+.hero em{font-style:normal;color:var(--amber)}
+.hero-copy{position:relative;margin:0;color:#c3d7e6;max-width:520px;font-size:14px}
+.badge{position:relative;display:inline-flex;gap:6px;align-items:center;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:.08em;
+  background:#ffffff14;border:1px solid #ffffff2e;border-radius:99px;padding:7px 13px;color:#d8e9f5}
+.badge b{color:var(--amber)}
+.badge.alt b{color:var(--mint)}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 70px}
+.focus{margin:18px 0 22px;background:var(--card);border-radius:22px;padding:18px 19px;box-shadow:var(--shadow);position:relative;border-top:4px solid var(--ice)}
+.focus-top{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.kicker,.label{font-size:10px;letter-spacing:.16em;color:var(--rose);font-weight:800}
+.focus h2{margin:5px 0 2px;font-size:22px;overflow-wrap:anywhere;letter-spacing:-.03em}
+.focus p{margin:0;color:var(--muted);font-size:12px}
+.zone{font-size:10px;background:#e7f2fa;padding:5px 9px;border-radius:99px;white-space:nowrap;color:#2b6b93;display:inline-block;font-weight:700}
+.count{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:15px}
+.count div{background:linear-gradient(160deg,#123a5c,#0b1a2e);color:#fff;border-radius:14px;text-align:center;padding:10px 4px}
+.count strong{display:block;font-size:clamp(24px,6.6vw,36px);line-height:1;font-variant-numeric:tabular-nums;font-weight:800}
+.count span{font-size:9px;color:#8fb3cc;letter-spacing:.1em}
+.nav{position:sticky;top:0;z-index:10;display:flex;gap:7px;overflow:auto;padding:11px 16px;background:#eef2f7;border-bottom:1px solid #d3dde899;max-width:100%}
+.nav a{background:#fff;border:1px solid var(--line);border-radius:99px;padding:8px 13px;text-decoration:none;font-size:12px;white-space:nowrap;font-weight:600}
+.nav a:first-child{background:linear-gradient(135deg,#123a5c,#0b1a2e);color:#fff;border-color:transparent}
+section{scroll-margin-top:66px;margin:34px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.section-head h2{font-size:26px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.section-head p{margin:0;color:var(--muted);font-size:12px;max-width:330px}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border-radius:20px;padding:17px;box-shadow:var(--shadow);min-width:0}
+.card h3{margin:0 0 4px;font-size:17px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:12px}
+.day{position:relative;min-width:0;background:var(--card);border-radius:20px;padding:16px 16px 14px 18px;box-shadow:var(--shadow);border-left:4px solid var(--day)}
+.day h3{margin:7px 0 0;font-size:19px;letter-spacing:-.03em}
+.day-head p{margin:3px 0 11px;color:var(--muted);font-size:12px}
+.pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.12em;border-radius:99px;padding:4px 10px;background:var(--ink);color:#fff}
+.pill.ice{background:#e3f0fa;color:#2b6b93}.pill.amber{background:#fdf0db;color:#a36b13}.pill.mint{background:#e2f5ee;color:#25795f}.pill.rose{background:#fce8ec;color:#a83a52}
+.slots{display:grid;gap:6px}
+.slot{display:grid;grid-template-columns:58px 1fr;gap:10px;padding:11px;background:#f7fafd;border-radius:12px;min-width:0}
+.time{font-size:12px;font-weight:800;color:#2b6b93;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.time small{display:block;font-size:9px;font-weight:600;color:#93a9bb;letter-spacing:.04em}
+.slot h4{margin:0;font-size:14px}
+.slot p{margin:3px 0 0;color:var(--muted);font-size:12px}
+.tag{color:#b8452f;font-size:10px;font-weight:800;margin-left:4px}
+.tag.ice{color:#2b6b93}
+.placelinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:5px}
+.place{font-size:12px;color:#1d6a8f;text-decoration:none;display:inline-block;padding:4px 0}
+.tips{display:grid;gap:9px}
+.tip{background:linear-gradient(150deg,#132b47,#0b1a2e);color:#e3eefa;border-radius:15px;padding:13px 15px}
+.tip b{display:block;color:var(--amber);font-size:13px}
+.tip span{font-size:12px;color:#b8cddf}
+.tip.warn{background:linear-gradient(150deg,#5c2330,#3a1420)}.tip.warn b{color:#ffb3c1}
+.tip.alt{background:linear-gradient(150deg,#12483c,#0b1a2e)}.tip.alt b{color:#7fe0bd}
+.checklist{list-style:none;padding:0;margin:0;display:grid;gap:7px}
+.check{display:flex;gap:10px;align-items:flex-start;background:var(--card);border-radius:14px;padding:11px 13px;font-size:13px;min-height:46px;box-shadow:0 6px 18px #0b1a2e10}
+.check:before{content:'';width:9px;height:9px;margin-top:6px;border-radius:3px;background:var(--ice);flex:0 0 auto}
+.check span{flex:1}
+.route{border:none;background:#e7f2fa;color:#2b6b93;text-decoration:none;border-radius:11px;padding:9px 12px;font-size:11px;font-weight:700;display:inline-flex;align-items:center;min-height:40px;cursor:pointer}
+.cmp{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:var(--card)}
+.cmp table{width:100%;border-collapse:collapse;font-size:13px}
+.cmp th{background:#0b1a2e;color:#c8dcec;font-size:11px;letter-spacing:.06em;padding:11px 8px;text-align:left;font-weight:700}
+.cmp td{padding:11px 8px;border-bottom:1px solid #eaf0f6}
+.cmp tr:last-child td{border-bottom:none}
+.cmp .win{background:#e9f8f2;font-weight:700;color:#1c6e55}
+.footer{text-align:center;color:#8496a8;font-size:11px;padding-top:30px;line-height:1.8}
+body.night{--paper:#081522;--card:#122336;--ink:#e4eef7;--muted:#93a9bb;--line:#24405a;--shadow:0 16px 44px #0006;color-scheme:dark}
+body.night .nav{background:#081522}
+body.night .nav a{background:#122336;color:#dbe8f3;border-color:#24405a}
+body.night .slot{background:#0e1c2c}
+body.night .check{box-shadow:none;border:1px solid #24405a}
+body.night .focus{border-top-color:var(--ice)}
+body.night .cmp td{border-bottom-color:#1e3247}
+body.night .cmp .win{background:#123c31;color:#7fe0bd}
+body.night .zone{background:#16324a;color:#8fc6e6}
+body.night .route{background:#16324a;color:#8fc6e6}
+body.night .pill.ice,body.night .pill.amber,body.night .pill.mint,body.night .pill.rose{background:#16324a;color:#9fd2ee}
+@media(max-width:700px){.section-head{display:block}.section-head p{margin-top:3px}.focus-top{display:block}.zone{margin-top:8px}.slot{grid-template-columns:56px 1fr}}
+
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;
+background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;
+padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;letter-spacing:.02em;
+box-shadow:0 8px 24px #13242b40;transition:.18s}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+</style>
+</head>
+<body>
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
+<main class="wrap">
+<header>
+  <div class="eyebrow">SHENZHEN → YANJI → CHANGBAISHAN → SHENYANG</div>
+  <h1 class="hero">夜航<br><em>上山</em></h1>
+  <p class="hero-copy">1/1 直飞延吉，傍晚高铁进山，雪场住两晚。1/3 上午滑雪后从长白山西站下山，沈阳飞回深圳。</p>
+  <div class="badge"><b>备选方案 B</b> · 对比 v1 沈阳往返</div>
+</main>
+
+<article class="focus">
+  <div class="focus-top">
+    <div>
+      <div class="kicker">此刻关注 · NEXT UP</div>
+      <h2 id="next">准备出发 · 深圳 → 延吉</h2>
+      <p id="nextcopy">所有时间为北京时间（UTC+8）。</p>
+    </div>
+    <span class="zone" id="tz">Asia/Shanghai · UTC+8</span>
+  </div>
+  <div class="count">
+    <div><strong id="d">00</strong><span>DAYS</span></div>
+    <div><strong id="h">00</strong><span>HRS</span></div>
+    <div><strong id="m">00</strong><span>MIN</span></div>
+    <div><strong id="s">00</strong><span>SEC</span></div>
+  </div>
+</article>
+
+<nav class="nav">
+  <a href="#compare">对比</a>
+  <a href="#days">逐日</a>
+  <a href="#budget">预算</a>
+  <a href="#todo">待办</a>
+  <a href="#tips">贴士</a>
+</nav>
+
+<section id="compare">
+  <div class="section-head">
+    <div><div class="label">01 · V1 vs V2</div><h2>两版的差别</h2></div>
+    <p>V2 省在万达少住一晚，代价是去程只有一班直飞</p>
+  </div>
+  <div class="cmp">
+    <table>
+      <tr><th>对比项</th><th>V1 沈阳往返</th><th>V2 延吉进 · 沈阳出</th></tr>
+      <tr><td>去程</td><td>12/31 20:05 飞沈阳</td><td class="win">1/1 08:05 直飞延吉</td></tr>
+      <tr><td>1/1 白天</td><td>11:05 到长白山西</td><td>14:30 落地延吉，傍晚 16:33 高铁</td></tr>
+      <tr><td>到万达</td><td>11:45（1/1）</td><td>19:10（1/1，夜路）</td></tr>
+      <tr><td>万达住宿</td><td>3 晚</td><td class="win">2 晚</td></tr>
+      <tr><td>滑雪时长</td><td>1/1 半天 + 1/2 全天 + 1/3 上午</td><td class="win">1/2 全天 + 1/3 上午</td></tr>
+      <tr><td>返程</td><td>G3554 12:44 → 沈阳 18:15</td><td>G3554 12:44 → 沈阳 18:15</td></tr>
+      <tr><td>机票（2人）</td><td>¥4,954</td><td>¥5,800</td></tr>
+      <tr><td>高铁（2人）</td><td>¥762</td><td class="win">¥720</td></tr>
+      <tr><td>总价估算</td><td>¥10,600—13,700</td><td class="win">¥9,900—12,700</td></tr>
+    </table>
+  </div>
+  <div class="tips" style="margin-top:14px">
+    <div class="tip alt"><b>V2 的真实优势</b><span>万达少住一晚，省 ¥800—1,300；1/1 不用起大早赶沈阳北 07:41 的高铁，直接睡饱飞延吉。</span></div>
+    <div class="tip warn"><b>V2 的三个代价</b><span>① 延吉直飞全天只有 CZ5145 一班（08:05），售罄就没退路　② 16:33 高铁到西站 18:41，再 27 分钟夜路进山　③ 比 V1 少一整天雪（1/1 下午没了）</span></div>
+  </div>
+</section>
+
+<section id="days">
+  <div class="section-head">
+    <div><div class="label">02 · DAY BY DAY</div><h2>逐日行程</h2></div>
+    <p>01/01—01/03 · 万达 2 晚 · 全程只走长白山西站</p>
+  </div>
+  <div class="grid">
+
+    <article class="day" id="d1" style="--day:#6fb7e8">
+      <div class="day-head"><div>
+        <span class="pill ice">DAY 01</span>
+        <h3>1/1 周五 · 深圳 → 延吉 → 长白山西</h3>
+        <p>元旦 · 傍晚进山</p>
+      </div></div>
+      <div class="slots">
+        <div class="slot"><div class="time"><time datetime="2027-01-01T06:30:00+08:00">06:30</time><small>UTC+8</small></div><div>
+          <h4>出发宝安 T3</h4><p>08:05 起飞，元旦清晨路况好，6:30 出门足够。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-01T08:05:00+08:00">08:05</time><small>UTC+8</small></div><div>
+          <h4>CZ5145 深圳 → 延吉<span class="tag ice">全天唯一班</span></h4><p>宝安 T3 → 延吉朝阳川，经停大连，6 小时 25 分，14:30 到。¥1,490。</p>
+          <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E6%9C%9D%E9%98%B3%E5%B7%9D%E6%9C%BA%E5%9C%BA&dir_action=navigate">朝阳川机场 ↗</a></div></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-01T15:00:00+08:00">15:00</time><small>UTC+8</small></div><div>
+          <h4>机场 → 延吉西站</h4><p>朝阳川机场到延吉西站约 10 分钟，打车 ¥20 内。<b>不用进城</b>，直接去车站。<span style="color:#2b6b93">想吃口冷面就留 40 分钟，延吉西站附近有店。</span></p>
+          <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E5%BB%B6%E5%90%89%E8%A5%BF%E7%AB%99&dir_action=navigate">延吉西站 ↗</a></div></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-01T16:33:00+08:00">16:33</time><small>UTC+8</small></div><div>
+          <h4>G8140 延吉西 → 长白山西<span class="tag">¥116</span></h4><p>1 小时 45 分，18:18 到。<b>认准「长白山西」</b>——16:06 那班 G142 是到北坡长白山站的，别上错。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-01T18:20:00+08:00">18:20</time><small>UTC+8</small></div><div>
+          <h4>西站接站车 → 万达</h4><p>18 公里、27 分钟，¥60—80。<b>天已黑，务必提前让酒店订车</b>，现场叫车难。18:50 到店。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-01T19:30:00+08:00">19:30</time><small>UTC+8</small></div><div>
+          <h4>入住 · 晚餐 · 租雪具</h4><p>当天夜里把雪具办好，第二天 7:30 吃完早餐就能直接上雪场。</p></div></div>
+      </div>
+    </article>
+
+    <article class="day" id="d2" style="--day:#4fbfa0">
+      <div class="day-head"><div>
+        <span class="pill mint">DAY 02</span>
+        <h3>1/2 周六 · 全天滑雪</h3>
+        <p>唯一一整天 · 主攻日</p>
+      </div></div>
+      <div class="slots">
+        <div class="slot"><div class="time"><time datetime="2027-01-02T07:30:00+08:00">07:30</time><small>UTC+8</small></div><div>
+          <h4>早餐 → 上雪场</h4><p>雪场 8:30 开，度假区内步行/摆渡可达。早饭吃饱，一上午热量消耗很大。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-02T08:30:00+08:00">08:30</time><small>UTC+8</small></div><div>
+          <h4>上午雪 08:30—11:30</h4><p>挑一条主雪道反复练。上午雪质最好、人最少，这是全天最值钱的 3 小时。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-02T12:00:00+08:00">12:00</time><small>UTC+8</small></div><div>
+          <h4>午餐 40—60 分钟</h4><p>1 月下午 4:30 天黑，别吃太久。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-02T13:00:00+08:00">13:00</time><small>UTC+8</small></div><div>
+          <h4>下午雪 13:00—16:30</h4><p>体力允许上一条更难的；不行就守一条练基本功。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-02T17:00:00+08:00">17:00</time><small>UTC+8</small></div><div>
+          <h4>拉伸 · 温泉</h4><p>滑雪后先拉伸 15 分钟，再泡温泉。拉伸比温泉管用。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-02T19:30:00+08:00">19:30</time><small>UTC+8</small></div><div>
+          <h4>晚餐 · 收拾行李<span class="tag">别忘</span></h4><p>明天只滑到 10:45，所有东西当晚就能 5 分钟打包完毕。</p></div></div>
+      </div>
+    </article>
+
+    <article class="day" id="d3" style="--day:#e8a33d">
+      <div class="day-head"><div>
+        <span class="pill amber">DAY 03</span>
+        <h3>1/3 周日 · 上午雪 → 西站 → 沈阳 → 深圳</h3>
+        <p>半天雪 · 12:44 那班高铁不能错过</p>
+      </div></div>
+      <div class="slots">
+        <div class="slot"><div class="time"><time datetime="2027-01-03T07:30:00+08:00">07:30</time><small>UTC+8</small></div><div>
+          <h4>早餐 · 穿雪服 · <b>先不退房</b></h4><p>行李收好放房间。退了房没地方换衣服。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T08:00:00+08:00">08:00</time><small>UTC+8</small></div><div>
+          <h4>上午雪 08:00—10:45</h4><p>2 小时 45 分。<b>10:45 必须下雪道</b>，多滑 15 分钟就是误机风险。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T10:45:00+08:00">10:45</time><small>UTC+8</small></div><div>
+          <h4>还雪具 · 退房</h4><p>押金当场退。留 20 分钟余量。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T11:45:00+08:00">11:45</time><small>UTC+8</small></div><div>
+          <h4>午饭（吃快一点）</h4><p>12:10 结账。或者买包子路上吃。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T12:15:00+08:00">12:15</time><small>UTC+8</small></div><div>
+          <h4>车走 → 长白山西站</h4><p>27 分钟，12:40 到站。<b>提前一晚订车</b>。</p>
+          <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=%E9%95%BF%E7%99%BD%E5%B1%B1%E4%B8%87%E8%BE%BE%E5%9B%BD%E9%99%85%E5%BA%A6%E5%81%87%E5%8C%BA&destination=%E9%95%BF%E7%99%BD%E5%B1%B1%E8%A5%BF%E7%AB%99&travelmode=driving&dir_action=navigate">万达 → 西站 ↗</a></div></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T12:44:00+08:00">12:44</time><small>UTC+8</small></div><div>
+          <h4>G3554 长白山西 → 沈阳北<span class="tag">¥205 · 必赶</span></h4><p>1 小时 41 分，14:25 到。下一班 13:39 到沈阳站已 15:46，接 18:15 航班风险太大。</p></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T14:30:00+08:00">14:30</time><small>UTC+8</small></div><div>
+          <h4>沈阳北 → 桃仙机场</h4><p>打车 50 分钟，约 15:20 到。距起飞还有 3 小时，可以踏实吃顿饭。</p>
+          <div class="placelinks"><a class="place" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=%E6%B2%88%E9%98%B3%E6%A1%83%E4%BB%99%E5%9B%BD%E9%99%85%E6%9C%BA%E5%9C%BA&dir_action=navigate">桃仙机场 ↗</a></div></div></div>
+        <div class="slot"><div class="time"><time datetime="2027-01-03T18:15:00+08:00">18:15</time><small>UTC+8</small></div><div>
+          <h4>DZ6232 沈阳 → 深圳<span class="tag ice">回程</span></h4><p>桃仙 T3 → 宝安 T3，经停大同，6 小时。00:15(+1) 落地，1/4 周一上班。</p></div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="budget">
+  <div class="section-head">
+    <div><div class="label">03 · BUDGET</div><h2>花费与预算</h2></div>
+    <p>按 2 人 · 景酒套餐 2 晚 · 价格来自实时查询</p>
+  </div>
+  <div class="card" style="margin-bottom:14px">
+    <h3>总预算（2 人）</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:10px;margin-top:14px">
+      <div style="background:linear-gradient(160deg,#123a5c,#0b1a2e);color:#fff;border-radius:16px;padding:15px;text-align:center">
+        <div style="font-size:25px;font-weight:800;line-height:1.1">¥9,900</div>
+        <div style="font-size:10px;color:#8fb3cc;margin-top:5px;letter-spacing:.1em">LOW</div>
+      </div>
+      <div style="background:#e7f2fa;border:1px solid #bcd9ee;color:#2b6b93;border-radius:16px;padding:15px;text-align:center">
+        <div style="font-size:25px;font-weight:800;line-height:1.1">¥11,300</div>
+        <div style="font-size:10px;margin-top:5px;letter-spacing:.1em">MID</div>
+      </div>
+      <div style="background:#fdf0db;border:1px solid #eed4a8;color:#a36b13;border-radius:16px;padding:15px;text-align:center">
+        <div style="font-size:25px;font-weight:800;line-height:1.1">¥12,700</div>
+        <div style="font-size:10px;margin-top:5px;letter-spacing:.1em">HIGH</div>
+      </div>
+    </div>
+    <p style="margin-top:12px;font-size:12px">人均 <b>¥4,950—6,350</b>。比 V1 省约 <b>¥700—1,000</b>，省在万达少住一晚。</p>
+  </div>
+  <div class="card">
+    <h3>逐项拆解</h3>
+    <table style="width:100%;border-collapse:collapse;margin-top:10px;font-size:13px">
+      <thead><tr style="color:var(--muted);font-size:11px;letter-spacing:.06em;text-align:left">
+        <th style="padding:8px 6px;border-bottom:1px solid var(--line)">项目</th>
+        <th style="padding:8px 6px;border-bottom:1px solid var(--line)">单价</th>
+        <th style="padding:8px 6px;border-bottom:1px solid var(--line)">数量</th>
+        <th style="padding:8px 6px;border-bottom:1px solid var(--line);text-align:right">小计</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>机票</b><br><span style="font-size:11px;color:var(--muted)">CZ5145 去 ¥1,490 + DZ6232 回 ¥1,410</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">¥2,900/人</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">2 人</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥5,800</b></td></tr>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>景酒套餐</b><br><span style="font-size:11px;color:var(--muted)">万达 2 晚 + 含雪票</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">¥800—1,300/晚</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">2 晚</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥1,600—2,600</b></td></tr>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>高铁</b><br><span style="font-size:11px;color:var(--muted)">延吉西→西站 ¥116 + 西站→沈阳北 ¥205</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">¥321/人</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">2 人</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥642</b></td></tr>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>地面交通</b><br><span style="font-size:11px;color:var(--muted)">机场→延吉西、西站↔万达、沈阳北→桃仙</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">¥40—150/段</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">约 5 段</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥400—650</b></td></tr>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>餐饮</b><br><span style="font-size:11px;color:var(--muted)">含延吉一顿冷面/烤肉</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">¥150—250/人/天</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">3 天</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥900—1,500</b></td></tr>
+        <tr><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6"><b>备用金</b><br><span style="font-size:11px;color:var(--muted)">雪具升级 / 温泉 / 意外</span></td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">—</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6">—</td><td style="padding:10px 6px;border-bottom:1px solid #eaf0f6;text-align:right"><b>¥500—1,000</b></td></tr>
+        <tr style="background:#f2f7fb"><td style="padding:12px 6px"><b>合计</b></td><td colspan="2" style="padding:12px 6px;color:var(--muted);font-size:12px">上下限累计</td><td style="padding:12px 6px;text-align:right;font-size:16px"><b>¥9,842—12,192</b></td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px;font-size:11px;color:var(--muted)">※ 机票是固定的大头（占总额 48—59%）。能动的只有景酒套餐和餐饮。若延吉机票涨到 ¥1,800，总价会再加 ¥620。</p>
+  </div>
+</section>
+
+<section id="todo">
+  <div class="section-head">
+    <div><div class="label">04 · BEFORE YOU GO</div><h2>行前待办</h2></div>
+    <p>延吉直飞只有一班，机票是这版最大的风险点</p>
+  </div>
+  <ul class="checklist">
+    <li class="check"><span><b>先锁 CZ5145</b>：1/1 深圳 08:05 → 延吉，全天唯一一班直飞，¥1,490 是基准价，元旦会涨且售罄无退路。<b>这版能不能成，全看这一班。</b></span></li>
+    <li class="check"><span><b>高铁两张</b>：12/17 开售当天抢 ①G8140 延吉西 1/1 16:33 → 长白山西 18:18　②G3554 长白山西 1/3 12:44 → 沈阳北 14:25</span></li>
+    <li class="check"><span><b>万达 2 晚景酒套餐</b>：确认含雪票天数是否按晚数配（2 晚可能只给 2 天票，正好覆盖 1/2 全天 + 1/3 上午）</span></li>
+    <li class="check"><span><b>1/1 夜间接站车</b>：18:18 到西站，天已黑，提前 2 天让智选假日前台订车。这是本版最容易翻车的一环。</span></li>
+    <li class="check"><span><b>1/3 上午送站车</b>：12:15 出发去西站，同样提前订。</span></li>
+    <li class="check"><span><b>返程机票</b>：DZ6232 沈阳 18:15，雪具托运和行李额度提前在线买，柜台贵很多。</span></li>
+    <li class="check"><span><b>回程熬夜预案</b>：1/4 00:15 落地深圳，约好接机或打车预算 ¥80—120。</span></li>
+  </ul>
+</section>
+
+<section id="tips">
+  <div class="section-head">
+    <div><div class="label">05 · FIELD NOTES</div><h2>实用贴士</h2></div>
+    <p>这版的风险比 V1 集中，都是时间卡点</p>
+  </div>
+  <div class="tips">
+    <div class="tip warn"><b>最大的坑：16:06 那班车不是给你坐的</b><span>延吉西 16:06 的 G142 到的是<b>长白山站（北坡）</b>，离万达 85 公里。你要坐 16:33 的 <b>G8140 到长白山西</b>。站名差一个字，差 67 公里。</span></div>
+    <div class="tip warn"><b>1/1 当晚是夜路进山</b><span>18:18 到西站，接站车 27 分钟。1 月雪天路滑，车速慢，实际可能 40 分钟。<b>别订太晚的晚餐</b>。</span></div>
+    <div class="tip"><b>延吉可以吃一顿</b><span>14:30 落地，16:33 发车，中间有近 2 小时。延吉西站附近有冷面馆，或者机场附近打包一份上车。别去太远的市区。</span></div>
+    <div class="tip"><b>车站别选错</b><span>「长白山西站」在松江河，离万达 18 公里；「长白山站」在北坡二道白河，85 公里；「白河站」又是另一个。买票逐字核对。</span></div>
+    <div class="tip"><b>沈阳两个站</b><span>G3554 到的是<b>沈阳北站</b>。桃仙机场到沈阳北站约 50 分钟。</span></div>
+    <div class="tip"><b>雪票</b><span>这版滑 3 段：1/2 全天、1/3 上午。2 晚套餐若配 2 天票正好；若只配 1 天，1/3 上午要单独买半日。</span></div>
+    <div class="tip"><b>天气</b><span>1 月长白山白天 −15～−25℃。手机户外瞬间掉电，贴肉放；相机电池带备用。</span></div>
+    <div class="tip alt"><b>什么时候该退回 V1</b><span>如果 CZ5145 售罄、或涨价到 ¥1,900 以上、或你不想走夜路进山——<b>直接回 V1 沈阳往返</b>，它更稳，只是贵 ¥700—1,000。</span></div>
+  </div>
+  <div style="margin-top:14px;display:flex;gap:9px;flex-wrap:wrap">
+    <button class="route" id="download" type="button">保存离线手册 ↓</button>
+    <button class="route" id="print" type="button">打印 / 存 PDF</button>
+    <a class="route" href="index-v1-shenyang.html">← 回到 V1 沈阳往返</a>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:14px">机票价格来自同程实时查询（2026-11-23）；高铁时刻与票价来自携程火车票查询（2027-01-01 / 01-03）。均为参考价，以出票时为准。</p>
+</section>
+
+<div class="footer">Changbaishan · V2 备选方案 · 01.01—01.03<br>延吉进，沈阳出，全程只走长白山西站</div>
+</main>
+
+<script>
+const events=[
+ {at:"2027-01-01T06:30:00+08:00",title:"出发宝安 T3",copy:"08:05 起飞，元旦清晨路况好。",zone:"Asia/Shanghai",status:"建议安排"},
+ {at:"2027-01-01T08:05:00+08:00",title:"CZ5145 深圳 → 延吉",copy:"经停大连，14:30 落地朝阳川。全天唯一一班直飞。",zone:"Asia/Shanghai",status:"必订"},
+ {at:"2027-01-01T16:33:00+08:00",title:"G8140 延吉西 → 长白山西",copy:"18:18 到，¥116。别坐 16:06 那班（去北坡）。",zone:"Asia/Shanghai",status:"必抢"},
+ {at:"2027-01-01T19:30:00+08:00",title:"入住万达智选假日",copy:"夜路进山，记得提前订接站车。",zone:"Asia/Shanghai",status:"建议安排"},
+ {at:"2027-01-02T08:30:00+08:00",title:"全天滑雪",copy:"唯一一整天，主攻日。",zone:"Asia/Shanghai",status:"建议安排"},
+ {at:"2027-01-03T10:45:00+08:00",title:"下雪道 · 退房",copy:"这一刻必须离开雪道，否则误机。",zone:"Asia/Shanghai",status:"关键时间"},
+ {at:"2027-01-03T12:44:00+08:00",title:"G3554 长白山西 → 沈阳北",copy:"14:25 到，¥205。最后一班安全的。",zone:"Asia/Shanghai",status:"必赶"},
+ {at:"2027-01-03T18:15:00+08:00",title:"DZ6232 沈阳 → 深圳",copy:"经停大同，00:15(+1) 到宝安。",zone:"Asia/Shanghai",status:"回程航班"}
+];
+function focusEvent(n){return events.find(x=>Date.parse(x.at)>n)||null}
+function isNight(n){const h=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Shanghai',hour:'2-digit',hourCycle:'h23'}).format(new Date(n)));return h<6||h>=18}
+function tick(){
+  const now=Date.now(),ev=focusEvent(now),night=isNight(now);
+  document.body.classList.toggle('night',night);
+  document.querySelector('meta[name="theme-color"]').content=night?'#081522':'#eef2f7';
+  const n=ev?Math.max(0,Math.floor((Date.parse(ev.at)-now)/1000)):0;
+  const v=[Math.floor(n/86400),Math.floor(n/3600)%24,Math.floor(n/60)%60,n%60];
+  ['d','h','m','s'].forEach((k,i)=>{const el=document.getElementById(k);if(el)el.textContent=String(v[i]).padStart(2,'0')});
+  const nt=document.getElementById('next'),nc=document.getElementById('nextcopy');
+  if(nt)nt.textContent=ev?ev.title:'旅程已结束 · 欢迎回家';
+  if(nc)nc.textContent=ev?new Intl.DateTimeFormat('zh-CN',{timeZone:ev.zone,month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(new Date(ev.at))+' · '+ev.status+' · '+ev.copy:'所有行程已完成。';
+}
+tick();setInterval(tick,1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick()});
+const dl=document.getElementById('download');
+if(dl)dl.addEventListener('click',()=>{
+  const c=document.documentElement.cloneNode(true);c.querySelectorAll('script').forEach(s=>s.remove());
+  const b=new Blob(['<!doctype html>\n'+c.outerHTML],{type:'text/html;charset=utf-8'});
+  const u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='长白山V2-延吉进山.html';a.click();
+  setTimeout(()=>URL.revokeObjectURL(u),3000);
+});
+const pr=document.getElementById('print');if(pr)pr.addEventListener('click',()=>window.print());
+</script>
+</body>
+</html>
