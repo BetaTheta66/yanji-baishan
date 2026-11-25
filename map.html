@@ -3,79 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f2a33">
-<title>长白山 · 旅行动线地图</title>
+<meta name="theme-color" content="#13242b">
+<title>延吉白山 · 万达度假区地图与酒店攻略</title>
 <style>
-:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--pine:#2f6b5a;--snow:#e8f1f6;--shadow:0 14px 40px #14252a18}
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8;--pine:#2f6b5a}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
-a{color:inherit}button{font:inherit;cursor:pointer}
-.wrap{max-width:1080px;margin:auto;padding:0 16px 70px}
-header{background:linear-gradient(150deg,#0f2a33 0%,#1d4f52 55%,#2f6b5a 100%);color:#fff;padding:30px 24px 34px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 90px}
+header{background:linear-gradient(150deg,#0f2a33 0%,#1d4f52 55%,#2f6b5a 100%);color:#fff;padding:32px 26px 36px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
 header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
 .eyebrow{font-size:11px;letter-spacing:.18em;color:#a8d8ce}
-.hero{font-size:clamp(32px,8vw,50px);line-height:1.02;letter-spacing:-.055em;margin:18px 0 12px;font-weight:800}
-.hero-copy{margin:0;color:#cfe6df;max-width:600px;font-size:14px;line-height:1.7}
+.hero{font-size:clamp(32px,8vw,48px);line-height:1.05;letter-spacing:-.05em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#cfe6df;max-width:620px;font-size:15px;line-height:1.75}
 .stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
 .nav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid #ded8ce99}
 .nav-in{max-width:1080px;margin:auto;padding:0 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
 .nav-in::-webkit-scrollbar{display:none}
 .nav a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap}
 .nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-section{scroll-margin-top:70px;margin:32px 0}
-.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:28px 0 13px}
-.sh h2{font-size:24px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
-.sh p{margin:0;color:var(--muted);font-size:11.5px;text-align:right;max-width:320px}
-.label{font-size:10px;letter-spacing:.15em;color:var(--coral);font-weight:800}
-.card{background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--shadow);min-width:0}
+section{scroll-margin-top:66px;margin:34px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 14px}
+.sh h2{font-size:26px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.sh p{margin:0;color:var(--muted);font-size:12px;text-align:right;max-width:330px}
+.label{font-size:11px;letter-spacing:.15em;color:var(--coral);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
 .mapbox{background:var(--card);border-radius:20px;padding:12px;box-shadow:var(--shadow);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
 .mapbox::-webkit-scrollbar{height:5px}
 .mapbox::-webkit-scrollbar-thumb{background:#cfc7b9;border-radius:9px}
-.mapbox svg{min-width:680px}
-.scroll-hint{font-size:11px;color:var(--muted);text-align:center;margin-top:8px;display:none}
+.mapbox svg{min-width:680px;display:block}
+.scroll-hint{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;display:none}
 @media(max-width:700px){.scroll-hint{display:block}}
-.mapbox svg{width:100%;height:auto;display:block;border-radius:14px}
-.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin-top:10px;padding:0 4px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px;padding:0 4px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
-.legend .ln{display:inline-block;width:16px;height:3px;border-radius:2px;margin-right:5px;vertical-align:2px}
-.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-.hotel{background:var(--card);border-radius:16px;padding:14px 15px;box-shadow:var(--shadow);border-left:4px solid var(--tier);position:relative}
-.hotel h4{margin:0 0 3px;font-size:15px}
-.hotel .tier{display:inline-block;font-size:9.5px;font-weight:800;letter-spacing:.08em;border-radius:99px;padding:2px 8px;background:#eef2f4;color:#4a656d;margin-bottom:7px}
-.hotel ul{margin:6px 0 0;padding-left:16px;font-size:12px;color:var(--muted);line-height:1.75}
-.hotel li b{color:var(--ink)}
-.hotel .dist{position:absolute;right:14px;top:13px;font-size:11px;font-weight:800;color:var(--pine)}
-.hotel .pass{display:inline-block;margin-top:8px;font-size:11px;font-weight:800;border-radius:8px;padding:3px 8px;background:#e7f5ef;color:#1c6e55}
-.hotel .pass.no{background:#fdf0e6;color:#a9653a}
-.timeline{background:var(--card);border-radius:18px;padding:6px 16px;box-shadow:var(--shadow)}
-.trow{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:13px 0;border-bottom:1px dashed #eae4da}
-.trow:last-child{border-bottom:none}
-.trow .tl{font-size:12px;font-weight:800;color:var(--pine);font-variant-numeric:tabular-nums}
-.trow .tl small{display:block;font-size:9.5px;color:var(--muted);font-weight:600;margin-top:2px}
-.trow b{font-size:13.5px}
-.trow p{margin:3px 0 0;color:var(--muted);font-size:12px;line-height:1.6}
-.trow .mv{display:inline-block;font-size:10.5px;font-weight:800;border-radius:6px;padding:2px 7px;margin-top:5px;background:#e8eef6;color:#3f6f9b}
-.trow .mv.foot{background:#e7f5ef;color:#1c6e55}
-.trow .mv.ski{background:#f2edf9;color:#6a4f9c}
-.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:13px 15px;margin-bottom:9px}
-.tip>b{display:block;color:var(--gold);font-size:12.5px;margin-bottom:4px}
-.tip span{font-size:12px;color:#cad6d5;line-height:1.7}
-.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}
-.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}
-.tip b{display:inline;color:#f0d9a4;font-size:inherit}
-.tip>b{display:block;color:var(--gold);font-size:12.5px;margin-bottom:4px}
-.tip ul{margin:8px 0 0;padding-left:17px;font-size:12px;color:#cad6d5;line-height:1.8}
-.footer{text-align:center;color:#74817b;font-size:11px;padding-top:28px;line-height:1.9}
-@media(max-width:700px){.sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}.trow{grid-template-columns:56px 1fr}}
 
-.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;
-background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;
-padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;letter-spacing:.02em;
-box-shadow:0 8px 24px #13242b40;transition:.18s}
+/* 酒店表 */
+.hotel-table{background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.hotel-table table{width:100%;border-collapse:collapse;font-size:13px}
+.hotel-table th{background:var(--ink);color:#c8dcec;font-size:11px;padding:11px 8px;text-align:left;font-weight:700;white-space:nowrap}
+.hotel-table td{padding:12px 8px;border-bottom:1px solid #f0ebe3;vertical-align:top}
+.hotel-table tr:last-child td{border-bottom:none}
+.hotel-table .mine{background:#fdf6e8}
+.hotel-table .mine td:first-child{box-shadow:inset 3px 0 0 #c0653f}
+.hotel-table b{font-size:13.5px}
+.hotel-table .price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.hotel-table .dist{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--pine);font-weight:700}
+.hotel-table .tagx{display:inline-block;font-size:9.5px;font-weight:800;border-radius:5px;padding:2px 6px;margin-left:5px;background:#e7f5ef;color:#1c6e55}
+.hotel-table .tagx.hot{background:#fbe9e4;color:#a8412c}
+.hotel-table small{color:var(--muted);font-size:11px;display:block;margin-top:2px;font-weight:400}
+
+.tier{display:inline-flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tier span{font-size:11.5px;font-weight:700;border-radius:9px;padding:6px 11px;background:var(--card);box-shadow:var(--shadow)}
+.tier span i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px;margin-top:13px}
+.card h4{margin:0 0 9px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.82}
+.card li{margin-bottom:5px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.tip>b{display:block;color:var(--gold);font-size:14px;margin-bottom:5px}
+.tip span{font-size:13.5px;color:#cad6d5;line-height:1.72}
+.tip b{display:inline;color:#f0d9a4;font-size:inherit}
+.tip ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:#cad6d5;line-height:1.8}
+.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}.tip.alt b{color:#9fe6c9}
+.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}.tip.warn b{color:#ffd0c2}
+
+.pole{background:var(--card);border-radius:18px;padding:18px;box-shadow:var(--shadow);border-top:4px solid var(--c)}
+.pole .lb{font-size:11px;letter-spacing:.12em;font-weight:800;color:var(--c)}
+.pole h4{margin:7px 0 8px;font-size:18px}
+.pole p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+.pole .verdict{display:inline-block;margin-top:11px;font-size:12px;font-weight:800;border-radius:8px;padding:5px 10px;background:#f0f4f2;color:#41605a}
+
+.food{display:grid;gap:10px}
+.food-row{display:grid;grid-template-columns:1fr auto;gap:12px;background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);align-items:start}
+.food-row b{font-size:14.5px}
+.food-row p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.6}
+.food-row .loc{font-size:11.5px;font-weight:800;color:var(--pine);white-space:nowrap;text-align:right}
+
+.footer{text-align:center;color:#74817b;font-size:11.5px;padding-top:32px;line-height:1.9}
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #13242b40}
 .home-btn:active{transform:scale(.95)}
 .home-btn span{font-size:15px;line-height:1}
 @media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+@media(max-width:700px){
+  .sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}
+  .hotel-table table{font-size:12px}
+  .hotel-table th,.hotel-table td{padding:10px 6px}
+  .hotel-table .hide-m{display:none}
+}
 </style>
 </head>
 <body>
@@ -83,25 +99,26 @@ box-shadow:0 8px 24px #13242b40;transition:.18s}
 <div class="wrap">
 
 <header>
-  <div class="eyebrow">CHANGBAISHAN · SKI RESORT MAP &amp; ROUTE</div>
-  <h1 class="hero">长白山<br>怎么走</h1>
-  <p class="hero-copy">几个坡在哪、酒店离雪道多远、哪些含雪票。以及「夜行入山」方案在景区内的完整动线——从西站到雪道，每一步用多久。</p>
-  <div class="stamp">B 方案<br>动线图</div>
+  <div class="eyebrow">WANDA RESORT · MAP &amp; HOTEL GUIDE</div>
+  <h1 class="hero">万达度假区<br>地图与住宿</h1>
+  <p class="hero-copy">11 家酒店的价位与距离、雪场和餐厅在哪、西坡怎么去。全部按实际坐标绘制，距离为直线测算。</p>
+  <div class="stamp">西坡 · 松江河<br>2027 元旦</div>
 </header>
 
 <nav class="nav">
   <div class="nav-in">
-    <a href="#map" class="on">全景地图</a>
-    <a href="#poles">三个坡</a>
-    <a href="#hotels">酒店选择</a>
-    <a href="#route">B 方案动线</a>
-    <a href="#tips">实地提醒</a>
+    <a href="#map" class="on">地图</a>
+    <a href="#hotel">酒店对比</a>
+    <a href="#pole">三个坡</a>
+    <a href="#food">吃什么</a>
+    <a href="#view">西坡景点</a>
+    <a href="#traffic">交通</a>
   </div>
 </nav>
 
 <section id="map">
-  <div class="sh"><div><div class="label">01 · THE MAP</div><h2>万达度假区 · 住吃滑</h2></div>
-    <p>按经纬度等比绘制 · 聚焦本次行程活动范围</p></div>
+  <div class="sh"><div><div class="label">01 · THE MAP</div><h2>住 · 吃 · 滑</h2></div>
+    <p>按经纬度等比绘制 · 金色为本次住宿</p></div>
 
   <div class="mapbox">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1112" width="820" height="1112" font-family="PingFang SC,Hiragino Sans GB,sans-serif"><defs>
@@ -123,280 +140,241 @@ box-shadow:0 8px 24px #13242b40;transition:.18s}
     </div>
   </div>
 
-  <div class="grid3" style="margin-top:14px">
-    <div class="card"><h4 style="margin:0 0 6px;font-size:15px">住 → 滑</h4><p style="margin:0;color:var(--muted);font-size:13px">假日智选到雪场 1.2 km<br>步行 15 分钟，或坐酒店穿梭巴士</p></div>
-    <div class="card"><h4 style="margin:0 0 6px;font-size:15px">住 → 吃</h4><p style="margin:0;color:var(--muted);font-size:13px">度假小镇 1.1 km，步行 14 分钟<br>铁锅炖 / 烤肉 / 东北菜集中在此</p></div>
-    <div class="card"><h4 style="margin:0 0 6px;font-size:15px">西站 → 住</h4><p style="margin:0;color:var(--muted);font-size:13px">18 km，车程 27 分钟<br>套餐含西站接驳巴士，需预约班次</p></div>
+  <div class="grid2">
+    <div class="card"><h4>这张图怎么看</h4><ul>
+      <li>蓝色大块是<b>雪场</b>，30+ 雪道向西南方向铺开</li>
+      <li>橙色虚线是<b>度假区主路</b>，酒店基本沿这条路排布</li>
+      <li>金色带光晕的点是<b>假日智选</b>，我们住的</li>
+      <li>虚线圈的<b>悦华 loft</b> 是备选住宿</li>
+      <li>东北角两个小图标：<b>汉拿山温泉</b>与<b>水乐园</b>，套餐都含</li>
+    </ul></div>
+    <div class="card"><h4>两条必走的路</h4><ul>
+      <li><b>去雪场</b>：智选 → 雪场 1.2 km，走 15—18 分钟，或坐酒店穿梭巴士</li>
+      <li><b>去吃饭</b>：智选 → 度假小镇 1.1 km，走 14 分钟</li>
+      <li>两条路方向不同，但都在 15 分钟内</li>
+      <li><b>行李不用带着走</b>——雪场有寄存柜</li>
+    </ul></div>
   </div>
 </section>
 
-<section id="poles">
-  <div class="sh"><div><div class="label">02 · THREE SLOPES</div><h2>三个坡，怎么选</h2></div>
-    <p>滑雪住西坡，看天池才去北坡</p></div>
+<section id="hotel">
+  <div class="sh"><div><div class="label">02 · HOTELS</div><h2>11 家酒店详细对比</h2></div>
+    <p>价格为 1/1 入住、连住 2 晚、一间房</p></div>
 
-  <div class="grid3">
-    <div class="card" style="border-top:4px solid #c0653f">
-      <div class="label" style="color:#c0653f">西坡 · 松江河</div>
-      <h4 style="margin:6px 0 6px">滑雪主场</h4>
-      <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.75">
-        <b>万达国际度假区</b>在这里，30+ 雪道、33 km、雪场无风。<br>
-        长白山西站 18 km，是整个景区交通最顺的落脚点。<br>
-        <b>冬季滑雪就住这里，没有第二个答案。</b>
-      </p>
-      <div style="margin-top:9px;font-size:11px;font-weight:800;color:#c0653f">✓ 本次行程全部在西坡</div>
-    </div>
-
-    <div class="card" style="border-top:4px solid #4a7fa5">
-      <div class="label" style="color:#4a7fa5">北坡 · 二道白河</div>
-      <h4 style="margin:6px 0 6px">看天池主线</h4>
-      <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.75">
-        北景区山门、天池主线路、长白瀑布、聚龙泉。<br>
-        <b>但离万达 127 km、单程 2 小时。</b><br>
-        专门去一趟要占掉一整天，滑雪行程塞不进去。
-      </p>
-      <div style="margin-top:9px;font-size:11px;font-weight:800;color:#4a7fa5">△ 3 天行程不建议加</div>
-    </div>
-
-    <div class="card" style="border-top:4px solid #9db8c7">
-      <div class="label" style="color:#7f9a90">南坡 · 漫江</div>
-      <h4 style="margin:6px 0 6px">冬季多封闭</h4>
-      <p style="margin:0;color:var(--muted);font-size:12px;line-height:1.75">
-        南坡路线每年开放时间短，冬季多数封闭。<br>
-        附近有<b>鲁能胜地</b>（另一个滑雪场），但规模比万达小，离万达 21.6 km。
-      </p>
-      <div style="margin-top:9px;font-size:11px;font-weight:800;color:#7f9a90">— 不纳入本次</div>
-    </div>
+  <div class="tier">
+    <span><i style="background:#9b8ec4"></i>高端 ¥1,500+/晚</span>
+    <span><i style="background:#81c6b4"></i>舒适 ¥1,700—2,000/晚</span>
+    <span><i style="background:#c9a24b"></i>经济 ¥1,300—1,450/晚</span>
   </div>
 
-  <div class="tip alt" style="margin-top:14px"><b>一句话</b><span><b>滑雪在西坡，天池在北坡</b>。三天两晚的行程里，去北坡意味着 4 小时往返车程 + 一整天，等于把滑雪全砍掉。这也是为什么推荐只走西站、只在万达活动。</span></div>
-</section>
+  <div class="hotel-table"><table>
+    <tr>
+      <th>酒店</th><th class="hide-m">房型 / 特点</th><th>距雪场</th><th class="price">2 晚价</th>
+    </tr>
+    <tr class="mine">
+      <td><b>假日智选</b><span class="tagx hot">本次</span><small>白云路 87 号</small></td>
+      <td class="hide-m">标准间 · 经济型主力<small>距小镇与雪场各约 1.2 km</small></td>
+      <td class="dist">1.2 km<br><small>15—18 min</small></td>
+      <td class="price">¥2,821<small>早鸟 ¥1,600</small></td>
+    </tr>
+    <tr>
+      <td><b>悦华 loft</b><span class="tagx">备选</span><small>上下层结构</small></td>
+      <td class="hide-m">复式 loft · 分层使用<small>两人入住可各占一层</small></td>
+      <td class="dist">1.4 km<br><small>20—23 min</small></td>
+      <td class="price">¥2,714</td>
+    </tr>
+    <tr>
+      <td><b>万达悦华</b><small>503 间</small></td>
+      <td class="hide-m">标准间 · 紧邻高级道<small>规模最大的经济型</small></td>
+      <td class="dist">1.4 km<br><small>20—22 min</small></td>
+      <td class="price">—</td>
+    </tr>
+    <tr>
+      <td><b>Momoland</b><small>497 间</small></td>
+      <td class="hide-m">魔法主题房 · 亲子向<small>毗邻果松服务中心</small></td>
+      <td class="dist">1.5 km<br><small>22—25 min</small></td>
+      <td class="price">—</td>
+    </tr>
+    <tr>
+      <td><b>喜来登</b><span class="tagx">舒适</span></td>
+      <td class="hide-m">标准间 · 与威斯汀长廊互通<small>两家可共用设施</small></td>
+      <td class="dist">0.7 km<br><small>10—12 min</small></td>
+      <td class="price">¥3,399</td>
+    </tr>
+    <tr>
+      <td><b>威斯汀</b><span class="tagx">舒适</span></td>
+      <td class="hide-m">标准间 · 专属雪道直通<small>天梦之床，睡眠口碑好</small></td>
+      <td class="dist">0.7 km<br><small>10—12 min</small></td>
+      <td class="price">¥3,899</td>
+    </tr>
+    <tr>
+      <td><b>锦华度假</b><small>368 间</small></td>
+      <td class="hide-m">一楼出门即初级道<small>度假区核心位置</small></td>
+      <td class="dist">0.7 km<br><small>10—12 min</small></td>
+      <td class="price">¥4,055</td>
+    </tr>
+    <tr>
+      <td><b>锦华套房</b></td>
+      <td class="hide-m">二居室 · 可住 4 人<small>按套计价，人多更划算</small></td>
+      <td class="dist">0.9 km<br><small>13—15 min</small></td>
+      <td class="price">—</td>
+    </tr>
+    <tr>
+      <td><b>凯悦</b><span class="tagx">高端</span></td>
+      <td class="hide-m">B1 直通雪场，馆内直滑<small>唯一室内直达雪道的酒店</small></td>
+      <td class="dist">0.5 km<br><small>直通，不计步行</small></td>
+      <td class="price">—</td>
+    </tr>
+    <tr>
+      <td><b>柏悦</b><span class="tagx">高端</span></td>
+      <td class="hide-m">雪场直面 · 私汤<small>档次最高，价格最高</small></td>
+      <td class="dist">0.4 km<br><small>5—8 min</small></td>
+      <td class="price">—</td>
+    </tr>
+  </table></div>
 
-<section id="hotels">
-  <div class="sh"><div><div class="label">03 · WHERE TO STAY</div><h2>万达的酒店怎么挑</h2></div>
-    <p>按「离雪道距离」和「含不含雪票」两件事排序</p></div>
+  <div class="tip" style="margin-top:14px"><b>价格怎么看</b><span>上表为<b>同一日期、同一套餐（2 晚 + 早餐 + 温泉 + 水乐园 + 滑雪）</b>的一间房报价。<br>「—」表示截图未覆盖该酒店，实际需向平台确认。<br>智选现价 ¥2,821，已购早鸟 <b>¥1,600</b>，省 ¥1,221。</span></div>
 
   <div class="grid2">
-    <div class="hotel" style="--tier:#e9bd64">
-      <div class="tier">性价比 · 我们选的</div>
-      <h4>万达智选假日</h4>
-      <div class="dist">0.8 km / 2 min</div>
-      <ul>
-        <li><b>含雪票</b>的景酒套餐，住 N 晚配 N 次权益</li>
-        <li>离雪场最近的一档经济型，步行或摆渡车 2 分钟</li>
-        <li>元旦约 ¥800—1,300/晚（套餐价）</li>
-        <li>早餐、雪具租赁都在楼下</li>
-      </ul>
-      <div class="pass">✓ 含雪票权益</div>
-    </div>
-
-    <div class="hotel" style="--tier:#ef755b">
-      <div class="tier">亲子 · 网红</div>
-      <h4>长白山万达 MOMOLAND</h4>
-      <div class="dist">2.3 km / 8 min</div>
-      <ul>
-        <li>欧式建筑、497 间房，主打亲子主题客房</li>
-        <li><b>也含雪票</b>：常见套餐是「1—2 晚 + 早餐 + 雪票 + 滑雪 + 水乐园」</li>
-        <li>毗邻海东青游客服务中心，交通便利</li>
-        <li>比智选假日远 1.5 km，但设施更全</li>
-      </ul>
-      <div class="pass">✓ 含雪票权益</div>
-    </div>
-
-    <div class="hotel" style="--tier:#81c6b4">
-      <div class="tier">品质档</div>
-      <h4>喜来登 / 威斯汀</h4>
-      <div class="dist">约 1.2 km</div>
-      <ul>
-        <li>两家挨着，都在度假区核心，含雪票</li>
-        <li>元旦约 ¥800—1,200/晚</li>
-        <li>家庭亲子优先，房间大、餐饮好</li>
-      </ul>
-      <div class="pass">✓ 含雪票权益</div>
-    </div>
-
-    <div class="hotel" style="--tier:#9b8ec4">
-      <div class="tier">顶配 · ski-in/out</div>
-      <h4>柏悦 / 凯悦</h4>
-      <div class="dist">凯悦有专属通道</div>
-      <ul>
-        <li><b>凯悦</b>有专属通道直通雪场，出门就能上雪</li>
-        <li><b>柏悦</b>主楼步行约 8 分钟</li>
-        <li>元旦 ¥1,500+/晚，是三档里最贵的</li>
-        <li>如果只滑两天，这钱花得不太值</li>
-      </ul>
-      <div class="pass">✓ 含雪票权益</div>
-    </div>
-
-    <div class="hotel" style="--tier:#8fa9a0">
-      <div class="tier">一楼即雪场</div>
-      <h4>锦华度假 / 锦华套房</h4>
-      <div class="dist">出门就是初级道</div>
-      <ul>
-        <li><b>一楼出门就是雪场初级道</b>，比智选还近</li>
-        <li>常见套餐含两大一小雪票</li>
-        <li>¥500—800/晚，性价比很高</li>
-        <li>如果想要「推门就滑」，这家比智选更直接</li>
-      </ul>
-      <div class="pass">✓ 含雪票权益</div>
-    </div>
-
-    <div class="hotel" style="--tier:#b5b5b5">
-      <div class="tier">参考 · 不建议</div>
-      <h4>鲁能胜地酒店群</h4>
-      <div class="dist">21.6 km / 25 min</div>
-      <ul>
-        <li>另一个滑雪场，规模小、雪道少</li>
-        <li>离万达 25 分钟，两头跑不划算</li>
-        <li>除非专门想避开人多</li>
-      </ul>
-      <div class="pass no">— 与本行程不匹配</div>
-    </div>
-  </div>
-
-  <div class="tip warn" style="margin-top:14px"><b>订之前一定问清这三件事</b><span>雪票是「<b>次</b>」还是「<b>天</b>」？夜场算不算在权益里？中途出雪场再进，会不会再扣一次？<br>这三点不同酒店口径不一样，去年就有人卡在日场末端进场、滑 30 分钟权益就失效了。</span></div>
-</section>
-
-<section id="route">
-  <div class="sh"><div><div class="label">04 · ROUTE · PLAN B</div><h2>「夜行入山」景区动线</h2></div>
-    <p>从长白山西站到雪道，每一步用多久</p></div>
-
-  <div class="timeline">
-    <div class="trow">
-      <div class="tl">16:33<div><small>1/1</small></div></div>
-      <div>
-        <b>延吉西 → 长白山西（G8140）</b>
-        <p>2 小时 8 分，18:41 到。<b>注意别坐到「长白山站」</b>——那是北坡，离万达 127 公里。</p>
-        <span class="mv">高铁 2h08m</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">18:41<div><small>1/1</small></div></div>
-      <div>
-        <b>长白山西站出站</b>
-        <p>站前广场等接站车。<b>天黑得早，别在站外自己找车</b>，提前让酒店订好。</p>
-        <span class="mv">出站 5 min</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">18:50<div><small>1/1</small></div></div>
-      <div>
-        <b>接站车 → 万达智选假日</b>
-        <p>18.4 km / 27 分钟，包车 ¥60—80。<b>这段是全程唯一一段夜路</b>，雪天可能 40 分钟。</p>
-        <span class="mv">车 27 min</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">19:20<div><small>1/1</small></div></div>
-      <div>
-        <b>到店 · 办入住</b>
-        <p>智选假日离雪场 0.8 km、步行 2 分钟。<b>当晚把雪具租好</b>，第二天早上省 40 分钟。</p>
-        <span class="mv foot">步行 2 min 到雪场</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">19:40<div><small>1/1</small></div></div>
-      <div>
-        <b>晚餐 · 早睡</b>
-        <p>红眼 + 玩一天，今晚必须睡够。度假区内餐厅都在步行范围。</p>
-        <span class="mv foot">步行</span>
-      </div>
-    </div>
-
-    <div class="trow">
-      <div class="tl">08:20<div><small>1/2</small></div></div>
-      <div>
-        <b>早餐 → 雪场</b>
-        <p>从酒店走到雪场入口 2 分钟，<b>8:30 准时上雪</b>。</p>
-        <span class="mv foot">步行 2 min</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">08:30<div><small>1/2</small></div></div>
-      <div>
-        <b>日场开始 · 全天滑雪</b>
-        <p>日场 8:30—16:30。<b>进一次 = 1 次权益</b>，中途出来吃午饭不回扣，但过了 16:30 再进就是夜场，另算一次。</p>
-        <span class="mv ski">权益 1 次</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">16:30<div><small>1/2</small></div></div>
-      <div>
-        <b>日场结束 · 拉伸 · 温泉</b>
-        <p>先拉伸 15 分钟再泡温泉。度假区有汉拿山温泉。</p>
-        <span class="mv foot">步行 5—10 min</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">19:00<div><small>1/2</small></div></div>
-      <div>
-        <b>晚餐 · 收拾行李</b>
-        <p>明天 12:30 就要下雪道，今晚把东西收好。</p>
-      </div>
-    </div>
-
-    <div class="trow">
-      <div class="tl">08:00<div><small>1/3</small></div></div>
-      <div>
-        <b>日场 08:00—12:30</b>
-        <p>上午滑 4.5 小时。<b>12:30 必须下雪道</b>——回店、还雪具、退房，每一步都卡着。</p>
-        <span class="mv ski">权益 1 次</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">12:45<div><small>1/3</small></div></div>
-      <div>
-        <b>酒店 → 长白山西站</b>
-        <p>27 分钟，13:15 到站。提前一晚订车。</p>
-        <span class="mv">车 27 min</span>
-      </div>
-    </div>
-    <div class="trow">
-      <div class="tl">14:14<div><small>1/3</small></div></div>
-      <div>
-        <b>G3558 长白山西 → 沈阳北</b>
-        <p>16:02 到，接 18:15 沈阳飞深圳的航班。</p>
-        <span class="mv">高铁 1h48m</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid3" style="margin-top:14px">
-    <div class="card"><h4 style="margin:0 0 6px;font-size:14px">全部步行可达</h4><p style="margin:0;color:var(--muted);font-size:12px">住智选假日，从房间到雪场 0.8 km / 2 分钟，<b>不用叫车</b></p></div>
-    <div class="card"><h4 style="margin:0 0 6px;font-size:14px">全程只有一次夜路</h4><p style="margin:0;color:var(--muted);font-size:12px">1/1 傍晚西站进山那 27 分钟，其余都在度假区内</p></div>
-    <div class="card"><h4 style="margin:0 0 6px;font-size:14px">雪票刚好 2 次</h4><p style="margin:0;color:var(--muted);font-size:12px">1/2 日场 + 1/3 日场，住 2 晚给 2 次，<b>不多不少</b></p></div>
+    <div class="card"><h4>为什么选智选</h4><ul>
+      <li>早鸟 <b>¥1,600</b> 是全场最低，比现价省 43%</li>
+      <li>1.2 km 到雪场，配穿梭巴士，实际不打折</li>
+      <li>离小镇 1.1 km，吃饭方便</li>
+      <li>经济型里房型最规整，无主题房溢价</li>
+    </ul></div>
+    <div class="card"><h4>什么情况换悦华 loft</h4><ul>
+      <li>智选早鸟售罄，或需要退改</li>
+      <li><b>¥2,714 比智选现价还低 ¥107</b></li>
+      <li>上下两层，两人可各占一层，互不打扰</li>
+      <li>代价是离雪场再远 200 米</li>
+    </ul></div>
   </div>
 </section>
 
-<section id="tips">
-  <div class="sh"><div><div class="label">05 · FIELD NOTES</div><h2>实地怎么走</h2></div>
-    <p>按你在景区里的真实动作整理</p></div>
+<section id="pole">
+  <div class="sh"><div><div class="label">03 · THREE SLOPES</div><h2>三个坡，怎么选</h2></div>
+    <p>滑雪住西坡，看天池才去北坡</p></div>
 
-  <div class="tips">
-    <div class="tip warn"><b>西站出站那 5 分钟最关键</b><span>元旦、天黑、站前叫车难。<b>提前两天让酒店订接站车</b>，把车次号和时间报给前台。现场叫车会被报到 ¥300—400。</span></div>
-    <div class="tip"><b>度假区内靠走</b><span>万达核心区不大：智选假日到雪场 2 分钟，到温泉 5—10 分钟，到餐厅都在步行圈内。<b>不用买车、不用叫车</b>。</span></div>
-    <div class="tip"><b>雪具在酒店租</b><span>智选假日楼下就有雪具租赁，当晚租好，第二天直接上雪。<b>从深圳背雪具过去不划算</b>——托运费比租金贵。</span></div>
-    <div class="tip"><b>别想着加北坡</b><span>万达 → 北景区山门 126 km / 116 分钟，往返 4 小时。<b>看天池是天亮前出发、下午才回来的量级</b>，会砍掉一整天滑雪。三天两晚塞不进去。</span></div>
-    <div class="tip alt"><b>如果想看天池</b><span>建议另开一次行程，住二道白河（北坡），专门留 2 天。<b>滑雪和看天池是两趟旅行</b>，硬凑一趟两头都不够。</span></div>
-    <div class="tip"><b>夜场值不值得加</b><span>夜场 16:30—21:30，要多消耗 1 次权益。<b>B 方案住 2 晚只有 2 次</b>，加夜场就要补票（约 ¥300—450）。除非你特别想体验灯光雪道，否则不建议。</span></div>
+  <div class="grid2">
+    <div class="pole" style="--c:#c0653f">
+      <div class="lb">西坡 · 松江河</div>
+      <h4>滑雪主场</h4>
+      <p><b>万达国际度假区</b>在这里，30+ 雪道、33 km、雪场无风。长白山西站 18 km，是整个景区交通最顺的落脚点。</p>
+      <div class="verdict">✓ 本次行程全部在西坡</div>
+    </div>
+    <div class="pole" style="--c:#4a7fa5">
+      <div class="lb">北坡 · 二道白河</div>
+      <h4>看天池主线</h4>
+      <p>北景区山门、天池主线路、长白瀑布。但离万达 <b>126 km、单程 2 小时</b>。去一趟要占掉一整天。</p>
+      <div class="verdict">△ 三天行程塞不进去</div>
+    </div>
+    <div class="pole" style="--c:#8a8f9a">
+      <div class="lb">南坡 · 漫江</div>
+      <h4>冬季关闭</h4>
+      <p>南坡路线每年仅 6—9 月开放。附近有<b>鲁能胜地</b>另一个雪场，规模比万达小，离万达 21.6 km。</p>
+      <div class="verdict">— 不纳入本次</div>
+    </div>
   </div>
 
-  <p style="font-size:11px;color:var(--muted);margin-top:16px">
-    位置与距离来自 Apple 地图实测（2026-11-25）；酒店雪票权益来自万达官网及攻略交叉核对，具体以订单权益页为准。
-  </p>
+  <div class="tip alt" style="margin-top:14px"><b>一句话</b><span><b>滑雪在西坡，天池在北坡。</b>三天两晚的行程里，去北坡意味着 4 小时往返加一整天，等于把滑雪全砍掉。若想上天池，建议另开一次行程，直接住二道白河。</span></div>
 </section>
 
-<div class="footer">长白山 · 旅行动线地图 · 2026-11-25<br>西坡滑雪 · 西站进出 · 不绕北坡</div>
+<section id="food">
+  <div class="sh"><div><div class="label">04 · WHERE TO EAT</div><h2>度假区里吃什么</h2></div>
+    <p>按位置分三处</p></div>
+
+  <div class="food">
+    <div class="food-row">
+      <div><b>度假小镇 · 餐饮集中区</b>
+        <p>铁锅炖、烤肉、东北家常菜都在这条街上。从智选步行 14 分钟，或坐穿梭巴士 5 分钟。<br>滑完一天推荐吃带汤的热食。</p></div>
+      <div class="loc">距智选<br>1.1 km</div>
+    </div>
+    <div class="food-row">
+      <div><b>雪场餐厅</b>
+        <p>雪道下方的快餐厅，人均 ¥50—80。中午不用回酒店，滑完直接吃。<br>座位在饭点紧张，建议 11:30 前或 13:00 后去。</p></div>
+      <div class="loc">雪场旁<br>0 m</div>
+    </div>
+    <div class="food-row">
+      <div><b>酒店早餐（套餐含）</b>
+        <p>假日智选早餐 7:30 开餐，每日 2 份。吃饱再上雪，一上午消耗很大。<br>午餐若在雪场解决，早餐是全天最重要的一顿。</p></div>
+      <div class="loc">楼下<br>0 m</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><h4>小镇里点什么</h4><ul>
+      <li><b>铁锅炖</b>——东北特色，人多才点得动，两人可选小锅</li>
+      <li><b>烤肉</b>——延边风味，与延吉的烤肉同源</li>
+      <li><b>小鸡炖蘑菇 / 酸菜白肉</b>——天冷吃这个最实在</li>
+      <li>价格参考：人均 ¥60—120</li>
+    </ul></div>
+    <div class="card"><h4>省钱与时间</h4><ul>
+      <li>早餐吃足，午餐简单，晚餐正经吃</li>
+      <li>雪场餐厅排队高峰是 <b>12:00—12:40</b></li>
+      <li>1/3 中午要赶车，<b>提前买好面包泡面</b></li>
+      <li>套餐含温泉、水乐园，别重复买票</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="view">
+  <div class="sh"><div><div class="label">05 · WEST SLOPE</div><h2>西坡景点</h2></div>
+    <p>离万达约 28 km，车程 40 分钟</p></div>
+
+  <div class="grid2">
+    <div class="card"><h4>西景区山门</h4><ul>
+      <li>万达出发 <b>28 km / 40 分钟</b>，包车往返约 ¥300—400</li>
+      <li>进门后需换乘景区环保车</li>
+      <li>冬季主看<b>梯子河、锦江大峡谷</b></li>
+      <li>登顶需爬 <b>1,442 级台阶</b>，冬季常因积雪封闭</li>
+      <li><b>冬季开放情况每日变化，出发前查官方公告</b></li>
+    </ul></div>
+    <div class="card"><h4>锦江大峡谷</h4><ul>
+      <li>西坡线内的火山峡谷地貌，冬季有雾凇</li>
+      <li>栈道往返约 1 小时</li>
+      <li>与滑雪行程冲突较大，<b>三天两晚建议不去</b></li>
+      <li>若 1/2 下午提前收雪，可考虑</li>
+    </ul></div>
+  </div>
+
+  <div class="tip warn" style="margin-top:14px"><b>本次行程不建议加西坡景点</b><span>1/1 傍晚进山、1/2 全天滑雪、1/3 中午撤——<b>没有整块时间</b>。<br>西坡山门往返 80 分钟车程，加上游览至少 4 小时，会把 1/2 的唯一完整滑雪日吃掉。<br><b>天池留给下一次行程更合适。</b></span></div>
+</section>
+
+<section id="traffic">
+  <div class="sh"><div><div class="label">06 · GETTING HERE</div><h2>怎么到度假区</h2></div>
+    <p>三个入口，两种方式</p></div>
+
+  <div class="grid2">
+    <div class="card"><h4>长白山西站（高铁）</h4><ul>
+      <li>距万达 <b>18 km / 27 分钟</b></li>
+      <li>套餐含<b>西站接驳巴士</b>，需提前向前台预约班次</li>
+      <li>打车约 ¥60—80（可拼车）</li>
+      <li>本次去程 1/1 18:41 到站、返程 1/3 12:45 出发</li>
+    </ul></div>
+    <div class="card"><h4>长白山机场 NBS</h4><ul>
+      <li>距万达 <b>16 km / 20 分钟</b></li>
+      <li>套餐含<b>机场穿梭巴士</b></li>
+      <li>打车约 ¥100—150</li>
+      <li>本次行程未使用（延吉进、沈阳出）</li>
+    </ul></div>
+  </div>
+
+  <div class="tip" style="margin-top:14px"><b>接驳巴士要预约</b><span>套餐写的是「定点接送」，不是随到随走。<b>提前两天给前台报车次和时间</b>，否则可能等不到车。<br>本次需预约两趟：<b>1/1 18:41 接站</b>、<b>1/3 12:45 送站</b>。</span></div>
+</section>
+
+<div class="footer">延吉白山 · 万达度假区地图与住宿攻略<br>坐标与距离按实测绘制 · 价格为 2027 元旦档参考</div>
 </div>
 
 <script>
 const links=[...document.querySelectorAll('.nav a')];
 const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
-window.addEventListener('scroll',()=>{
+function paint(){
   const y=window.scrollY+120;
   let cur=0;
   secs.forEach((s,i)=>{ if(s && s.offsetTop<=y) cur=i; });
   links.forEach((a,i)=>a.classList.toggle('on', i===cur));
-},{passive:true});
+}
+window.addEventListener('scroll',paint,{passive:true}); paint();
 </script>
 </body>
 </html>
