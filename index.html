@@ -74,6 +74,17 @@ header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;hei
 .alt-plan .ap-stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:#d8c6e8}
 .alt-plan .ap-stats b{color:#fff;font-size:13px;margin-right:2px}
 .alt-plan .ap-go{display:inline-block;margin-top:15px;background:#fff;color:#4a2f66;border-radius:10px;padding:9px 16px;font-size:13px;font-weight:800}
+
+.maps2{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-bottom:10px}
+@media(max-width:520px){.maps2{grid-template-columns:1fr}}
+.mapcard{display:block;background:var(--card);border-radius:18px;padding:18px;box-shadow:var(--shadow);border-top:4px solid var(--c);position:relative;overflow:hidden}
+.mapcard:active{transform:scale(.99)}
+.mapcard .mc-lb{font-size:9.5px;letter-spacing:.16em;font-weight:800;color:var(--c)}
+.mapcard h3{margin:6px 0 2px;font-size:20px;font-weight:800;letter-spacing:-.03em}
+.mapcard .mc-top p{margin:0;font-size:11.5px;color:var(--muted);letter-spacing:.08em}
+.mapcard .mc-desc{margin:10px 0 0;font-size:12.5px;color:var(--muted);line-height:1.6}
+.mapcard .mc-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;font-size:10.5px;color:#8a9999}
+.mapcard .mc-meta span{background:#f4f1ea;border-radius:6px;padding:3px 8px}
 </style>
 </head>
 <body>
@@ -99,18 +110,31 @@ header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;hei
   <span class="go">查看完整方案 →</span>
 </a>
 
-<div class="subs">
-  <a href="map.html" style="--c:#2f6b5a">
-    <h3>地图与住宿</h3>
-    <p>11 家酒店价格对比 · 位置 · 吃在哪</p>
+<div class="maps2">
+  <a href="map.html" class="mapcard" style="--c:#2f6b5a">
+    <div class="mc-top">
+      <span class="mc-lb">BAISHAN MAP</span>
+      <h3>白山地图</h3>
+      <p>万达度假区 · 住吃滑</p>
+    </div>
+    <p class="mc-desc">11 家酒店价位与距离、雪场和餐厅在哪、西坡怎么去。</p>
+    <div class="mc-meta"><span>10 家酒店价格</span><span>1.2km 到雪场</span></div>
   </a>
+  <a href="yanji.html" class="mapcard" style="--c:#8f4a2c">
+    <div class="mc-top">
+      <span class="mc-lb">YANJI MAP</span>
+      <h3>延吉地图</h3>
+      <p>市区半日动线</p>
+    </div>
+    <p class="mc-desc">机场到西站的完整动线，民俗园、水上市场、全州拌饭都在图上。</p>
+    <div class="mc-meta"><span>5 小时走完</span><span>4 顿饭推荐</span></div>
+  </a>
+</div>
+
+<div class="subs" style="margin-top:10px">
   <a href="plan-a-final.html#meal" style="--c:#c0653f">
     <h3>每顿饭吃什么</h3>
     <p>冷面 · 石锅拌饭 · 水上市场</p>
-  </a>
-  <a href="yanji.html" style="--c:#8f4a2c">
-    <h3>延吉攻略</h3>
-    <p>半天动线 · 民俗园 · 吃什么</p>
   </a>
   <a href="plan-a-final.html#gear" style="--c:#4a7fa5">
     <h3>滑雪装备</h3>
