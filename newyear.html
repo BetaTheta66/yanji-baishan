@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>跨年地图 · 烟台与北京两个方案</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8;--pine:#2f6b5a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 90px}
+header{background:linear-gradient(150deg,#0f2a33 0%,#1d4f52 55%,#2f6b5a 100%);color:#fff;padding:32px 26px 36px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#a8d8ce}
+.hero{font-size:clamp(32px,8vw,48px);line-height:1.05;letter-spacing:-.05em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#cfe6df;max-width:620px;font-size:15px;line-height:1.75}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+.nav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid #ded8ce99}
+.nav-in{max-width:1080px;margin:auto;padding:0 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap}
+.nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+section{scroll-margin-top:66px;margin:34px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 14px}
+.sh h2{font-size:26px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.sh p{margin:0;color:var(--muted);font-size:12px;text-align:right;max-width:330px}
+.label{font-size:11px;letter-spacing:.15em;color:var(--coral);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
+.mapbox{background:var(--card);border-radius:20px;padding:12px;box-shadow:var(--shadow);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.mapbox::-webkit-scrollbar{height:5px}
+.mapbox::-webkit-scrollbar-thumb{background:#cfc7b9;border-radius:9px}
+.mapbox svg{min-width:680px;display:block}
+.scroll-hint{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;display:none}
+@media(max-width:700px){.scroll-hint{display:block}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px;padding:0 4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+/* 酒店表 */
+.hotel-table{background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.hotel-table table{width:100%;border-collapse:collapse;font-size:13px}
+.hotel-table th{background:var(--ink);color:#c8dcec;font-size:11px;padding:11px 8px;text-align:left;font-weight:700;white-space:nowrap}
+.hotel-table td{padding:12px 8px;border-bottom:1px solid #f0ebe3;vertical-align:top}
+.hotel-table tr:last-child td{border-bottom:none}
+.hotel-table .mine{background:#fdf6e8}
+.hotel-table .mine td:first-child{box-shadow:inset 3px 0 0 #c0653f}
+.hotel-table b{font-size:13.5px}
+.hotel-table .price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.hotel-table .dist{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--pine);font-weight:700}
+.hotel-table .tagx{display:inline-block;font-size:9.5px;font-weight:800;border-radius:5px;padding:2px 6px;margin-left:5px;background:#e7f5ef;color:#1c6e55}
+.hotel-table .tagx.hot{background:#fbe9e4;color:#a8412c}
+.hotel-table small{color:var(--muted);font-size:11px;display:block;margin-top:2px;font-weight:400}
+
+.tier{display:inline-flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tier span{font-size:11.5px;font-weight:700;border-radius:9px;padding:6px 11px;background:var(--card);box-shadow:var(--shadow)}
+.tier span i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px;margin-top:13px}
+.card h4{margin:0 0 9px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.82}
+.card li{margin-bottom:5px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.tip>b{display:block;color:var(--gold);font-size:14px;margin-bottom:5px}
+.tip span{font-size:13.5px;color:#cad6d5;line-height:1.72}
+.tip b{display:inline;color:#f0d9a4;font-size:inherit}
+.tip ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:#cad6d5;line-height:1.8}
+.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}.tip.alt b{color:#9fe6c9}
+.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}.tip.warn b{color:#ffd0c2}
+
+.pole{background:var(--card);border-radius:18px;padding:18px;box-shadow:var(--shadow);border-top:4px solid var(--c)}
+.pole .lb{font-size:11px;letter-spacing:.12em;font-weight:800;color:var(--c)}
+.pole h4{margin:7px 0 8px;font-size:18px}
+.pole p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+.pole .verdict{display:inline-block;margin-top:11px;font-size:12px;font-weight:800;border-radius:8px;padding:5px 10px;background:#f0f4f2;color:#41605a}
+
+.food{display:grid;gap:10px}
+.food-row{display:grid;grid-template-columns:1fr auto;gap:12px;background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);align-items:start}
+.food-row b{font-size:14.5px}
+.food-row p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.6}
+.food-row .loc{font-size:11.5px;font-weight:800;color:var(--pine);white-space:nowrap;text-align:right}
+
+.footer{text-align:center;color:#74817b;font-size:11.5px;padding-top:32px;line-height:1.9}
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #13242b40}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+@media(max-width:700px){
+  .sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}
+  .hotel-table table{font-size:12px}
+  .hotel-table th,.hotel-table td{padding:10px 6px}
+  .hotel-table .hide-m{display:none}
+}
+.sub-poem{margin:0 0 14px;font-size:15px;letter-spacing:.26em;color:#e9bd64;font-weight:600}
+
+.fliggy-btn{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,#FF8A1F,#FF5400);color:#fff;border-radius:16px;padding:14px 18px;text-decoration:none;box-shadow:0 10px 26px #ff6a0033;margin-bottom:14px;transition:.16s}
+.fliggy-btn:active{transform:scale(.985)}
+.fliggy-btn .ico{width:40px;height:40px;flex:0 0 auto;display:block}
+.fliggy-btn .tx{flex:1}
+.fliggy-btn .tx b{display:block;font-size:15.5px;font-weight:800}
+.fliggy-btn .tx span{display:block;font-size:11.5px;opacity:.92;margin-top:2px}
+.fliggy-btn .arrow{font-size:18px;opacity:.85}
+
+.tl{background:var(--card);border-radius:18px;padding:4px 0;box-shadow:var(--shadow)}
+.tl .row{display:grid;grid-template-columns:62px 1fr;gap:11px;padding:12px 16px;border-bottom:1px solid #f2ece0}
+.tl .row:last-child{border-bottom:none}
+.tl .t{font-weight:800;color:var(--pine);font-size:13px;font-variant-numeric:tabular-nums;padding-top:1px}
+.tl .row b{display:block;font-size:14px;margin-bottom:3px;font-weight:800;color:var(--ink)}
+.tl p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.68}
+.budget{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.budget table{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed}
+.budget col.c1{width:27%}.budget col.c3{width:18%}.budget col.c4{width:19%}
+.budget th{background:var(--soft);color:var(--muted);font-size:10.5px;padding:9px 8px;text-align:left;font-weight:700}
+.budget td{padding:10px 8px;border-bottom:1px solid #f0ebe3;overflow-wrap:anywhere}
+.budget tr:last-child td{border-bottom:none;background:var(--soft);font-weight:700}
+@media(max-width:700px){.budget table{table-layout:auto}.budget td,.budget th{padding:9px 6px;font-size:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">NEW YEAR EVE · TWO ROUTES</div>
+  <h1 class="hero">跨年地图</h1>
+  <p class="sub-poem">同一晚出发，两地倒数</p>
+  <p class="hero-copy">12/31 晚从深圳起飞，1/1 早到延吉。中转的一夜正好是跨年夜——<b>烟台海边</b>与<b>北京城</b>，两种过法。</p>
+  <div class="stamp">12.31—01.01<br>2027</div>
+</header>
+<nav class="nav">
+  <a href="index.html">← 总览</a>
+  <a href="#cmp">两案对比</a>
+  <a href="#yantai">甲 · 烟台</a>
+  <a href="#beijing">乙 · 北京</a>
+  <a href="#choose">怎么选</a>
+</nav>
+<section id="cmp">
+  <div class="sh"><div><div class="label">01 · FLIGHT &amp; PRICE</div><h2>两个方案，同一晚出发</h2></div>
+    <p>12/31 晚起飞，1/1 早到延吉</p></div>
+
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid #c0653f">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+        <h4 style="margin:0;font-size:16px">甲 · 烟台中转</h4>
+        <span style="font-size:21px;font-weight:800;color:#c0653f">¥1,569</span>
+      </div>
+      <table style="width:100%;font-size:12.5px;border-collapse:collapse">
+        <tr><td style="color:#8a9a93;padding:5px 0;width:52px">一程</td><td><b>ZH8919</b> 深圳 16:45 → 烟台 19:55<br><span style="color:#8a9a93;font-size:11px">737MAX8 · 正餐 · 20kg</span></td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">中转</td><td><b style="color:#c0653f">11 小时 15 分</b>（烟台）</td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">二程</td><td><b>MU9823</b> 烟台 07:10 → 延吉 09:00<br><span style="color:#8a9a93;font-size:11px">A320NEO · 茶点 · 20kg</span></td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">退改</td><td>一程 ¥54 起 · 二程<span style="color:#2f6b5a">限时退改免费</span></td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="border-top:4px solid #4a7fa5">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+        <h4 style="margin:0;font-size:16px">乙 · 北京中转</h4>
+        <span style="font-size:21px;font-weight:800;color:#4a7fa5">¥1,676</span>
+      </div>
+      <table style="width:100%;font-size:12.5px;border-collapse:collapse">
+        <tr><td style="color:#8a9a93;padding:5px 0;width:52px">一程</td><td><b>DZ6209</b> 深圳 17:55 → 大兴 22:00<br><span style="color:#8a9a93;font-size:11px">经停长治 50 分 · 20kg</span></td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">中转</td><td><b style="color:#4a7fa5">9 小时 10 分</b>（大兴）</td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">二程</td><td><b>KN5537</b> 大兴 07:10 → 延吉 09:20<br><span style="color:#8a9a93;font-size:11px">737 · 无餐食 · 20kg</span></td></tr>
+        <tr><td style="color:#8a9a93;padding:5px 0">退改</td><td>一程 ¥450 起 · 二程 ¥158 起</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="budget" style="margin-top:12px"><table>
+    <colgroup><col class="c1"><col><col class="c3"><col class="c4"></colgroup>
+    <tr><th>对比项</th><th>甲 · 烟台</th><th>乙 · 北京</th></tr>
+    <tr><td><b>票价</b></td><td style="color:#c0653f;font-weight:800">¥1,569 / 人</td><td>¥1,676 / 人</td></tr>
+    <tr><td><b>到延吉</b></td><td style="color:#2f6b5a;font-weight:800">09:00</td><td>09:20</td></tr>
+    <tr><td><b>中转时长</b></td><td>11h15m</td><td style="color:#2f6b5a;font-weight:800">9h10m</td></tr>
+    <tr><td><b>机场↔市区</b></td><td>70 km · 单程 70 分钟</td><td style="color:#2f6b5a;font-weight:800">50 km · 单程 50 分钟</td></tr>
+    <tr><td><b>往返打车</b></td><td>¥300—360</td><td>¥360—440</td></tr>
+    <tr><td><b>可睡</b></td><td>约 3.5—4 小时</td><td>约 4—4.5 小时</td></tr>
+    <tr><td><b>机上餐</b></td><td style="color:#2f6b5a;font-weight:800">两程都有</td><td>无</td></tr>
+    <tr><td><b>跨年氛围</b></td><td>海边小城 · 安静</td><td style="color:#2f6b5a;font-weight:800">70+ 场活动</td></tr>
+  </table></div>
+</section>
+<section id="yantai">
+  <div class="sh"><div><div class="label">02 · PLAN A</div><h2>甲 · 烟台跨年</h2></div>
+    <p>19:55 落地，海边倒计时</p></div>
+
+  <div class="mapbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 730" font-family="-apple-system,PingFang SC,Helvetica,sans-serif">
+<rect width="820" height="730" fill="#fbf7ef"/>
+<text x="44" y="58" fill="#1d2b2a" font-size="30" font-weight="800" letter-spacing="-0.5">烟台跨年</text>
+<text x="44" y="86" fill="#8a9a93" font-size="14" letter-spacing="3">YANTAI · NEW YEAR NIGHT</text>
+<text x="776" y="58" text-anchor="end" fill="#c0653f" font-size="12" font-weight="700" letter-spacing="2">方案甲 · 中转 11h15m</text>
+<line x1="44" y1="104" x2="776" y2="104" stroke="#e6dfd2" stroke-width="2"/>
+<path d="M44 118 Q300 150 400 132 T776 122 L776 150 Q500 172 400 164 T44 158 Z" fill="#cfe4f0" opacity="0.75"/><text x="70" y="142" fill="#6f9ab5" font-size="11">渤海</text><path d="M320 362 Q420 440 560 480 T706 498" stroke="#c0653f" stroke-width="3.5" fill="none" stroke-dasharray="11 8"/><rect x="430" y="404" width="196" height="26" rx="13" fill="#fff" stroke="#c0653f" stroke-opacity="0.35"/><text x="528" y="422" text-anchor="middle" fill="#c0653f" font-size="12" font-weight="700">打车 70 km · 约 70 分钟</text><circle cx="320" cy="362" r="11" fill="#4a7fa5"/><text x="320" y="366.2" text-anchor="middle" fill="#fff" font-size="11.55" font-weight="700">✈</text><text x="298" y="350" text-anchor="end" fill="#2c4f66" font-size="15" font-weight="800">烟台蓬莱机场 T2</text><text x="298" y="370" text-anchor="end" fill="#8a9a93" font-size="11">19:55 落地 · 次日 07:10 起飞</text><circle cx="99" cy="158" r="8" fill="#c9a24b"/><text x="99" y="186" text-anchor="middle" fill="#8a6a2f" font-size="13" font-weight="700">蓬莱阁</text><text x="99" y="204" text-anchor="middle" fill="#8a9a93" font-size="10">离机场 30 km</text><circle cx="706" cy="498" r="12" fill="#c0653f"/><text x="706" y="502.2" text-anchor="middle" fill="#fff" font-size="12.600000000000001" font-weight="700">★</text><text x="706" y="470" text-anchor="middle" fill="#a8412c" font-size="15" font-weight="800">烟台山 · 滨海广场</text><text x="706" y="532" text-anchor="middle" fill="#8a9a93" font-size="11">跨年倒计时 · 海景</text><rect x="44" y="612" width="726" height="46" rx="12" fill="#fff" stroke="#e6dfd2"/><text x="62" y="640" fill="#1d2b2a" font-size="12.5" font-weight="800">19:55 落地</text><text x="150" y="640" fill="#8a9a93" font-size="11.5">→ 21:10 市区</text>
+<text x="270" y="640" fill="#1d2b2a" font-size="12.5" font-weight="800">23:00 跨年</text><text x="360" y="640" fill="#8a9a93" font-size="11.5">→ 00:30 收场</text>
+<text x="480" y="640" fill="#c0653f" font-size="12.5" font-weight="800">05:00 出发回机场</text><text x="620" y="640" fill="#8a9a93" font-size="11.5">→ 06:10 到</text>
+<line x1="44" y1="672" x2="776" y2="672" stroke="#e6dfd2" stroke-width="1.5"/>
+<text x="44" y="696" fill="#8a9a93" font-size="11">机场到市区单程 70 km，双向都要打车</text>
+<text x="776" y="696" text-anchor="end" fill="#8a9a93" font-size="11">按经纬度等比绘制</text>
+</svg></div>
+  <div class="scroll-hint">← 左右滑动查看细节 →</div>
+
+  <div class="tl" style="margin-top:16px">
+    <div class="row"><span class="t">16:45</span><div><b>深圳宝安 T3 起飞</b><p>ZH8919，737MAX8，含正餐。三小时飞行到烟台。</p></div></div>
+    <div class="row"><span class="t">19:55</span><div><b>落地烟台蓬莱机场 T2</b><p>取行李约 20 分钟。<b>机场在蓬莱，离市区 70 公里。</b></p></div></div>
+    <div class="row"><span class="t">20:20</span><div><b>打车进市区</b><p>走荣乌高速，约 70 分钟，¥150—180。凌晨回程同样要打车。</p></div></div>
+    <div class="row"><span class="t">21:30</span><div><b>夜宵 · 烟台味道</b><p>焖子、鲅鱼水饺、海肠捞饭。<b>所城里</b>一带老城小吃集中，营业到深夜。</p></div></div>
+    <div class="row"><span class="t">23:00</span><div><b>滨海广场 / 烟台山跨年</b><p>海边倒数、灯光。<b>冬季海风大，穿厚。</b>烟台山景区夜间开放以公告为准。</p></div></div>
+    <div class="row"><span class="t">00:30</span><div><b>回酒店</b><p>市区连锁酒店 ¥200—300。到 05:00 起床，约睡 4 小时。</p></div></div>
+    <div class="row" style="border-left:3px solid #c0653f"><span class="t">05:00</span><div><b>出发回机场</b><p>70 公里，05:00 走能保证 06:10 到。<b>凌晨叫车难，前一晚预约。</b></p></div></div>
+    <div class="row"><span class="t">07:10</span><div><b>MU9823 → 延吉 09:00</b><p>两小时飞行，有茶点。<b>比北京方案早 20 分钟到。</b></p></div></div>
+  </div>
+
+  <div class="tip warn"><b>方案甲最大的代价</b><span>机场↔市区 <b>140 公里往返</b>，睡 4 小时就要爬起来再跑 70 公里。凌晨 5 点打车是这一版最不确定的环节——<b>务必前一晚约好车</b>，或在机场附近住下、放弃进城。</span></div>
+</section>
+<section id="beijing">
+  <div class="sh"><div><div class="label">03 · PLAN B</div><h2>乙 · 北京跨年</h2></div>
+    <p>22:00 落地，进城零点</p></div>
+
+  <div class="mapbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 700" font-family="-apple-system,PingFang SC,Helvetica,sans-serif">
+<rect width="820" height="700" fill="#fbf7ef"/>
+<text x="44" y="58" fill="#1d2b2a" font-size="30" font-weight="800" letter-spacing="-0.5">北京跨年</text>
+<text x="44" y="86" fill="#8a9a93" font-size="14" letter-spacing="3">BEIJING · NEW YEAR NIGHT</text>
+<text x="776" y="58" text-anchor="end" fill="#c0653f" font-size="12" font-weight="700" letter-spacing="2">方案乙 · 中转 9h10m</text>
+<line x1="44" y1="104" x2="776" y2="104" stroke="#e6dfd2" stroke-width="2"/>
+<path d="M600 537 Q420 400 200 190" stroke="#c0653f" stroke-width="3.5" fill="none" stroke-dasharray="11 8"/><rect x="250" y="330" width="220" height="26" rx="13" fill="#fff" stroke="#c0653f" stroke-opacity="0.35"/><text x="360" y="348" text-anchor="middle" fill="#c0653f" font-size="12" font-weight="700">地铁 40 min / 打车 50 min</text><circle cx="600" cy="537" r="11" fill="#4a7fa5"/><text x="600" y="541.2" text-anchor="middle" fill="#fff" font-size="11.55" font-weight="700">✈</text><text x="622" y="530" text-anchor="start" fill="#2c4f66" font-size="15" font-weight="800">北京大兴机场</text><text x="622" y="550" text-anchor="start" fill="#8a9a93" font-size="11">22:00 落地</text><text x="622" y="566" text-anchor="start" fill="#8a9a93" font-size="11">次日 07:10 起飞</text><circle cx="145" cy="152" r="12" fill="#c0653f"/><text x="145" y="156.2" text-anchor="middle" fill="#fff" font-size="12.600000000000001" font-weight="700">★</text><text x="145" y="124" text-anchor="middle" fill="#a8412c" font-size="15" font-weight="800">首钢园</text><text x="145" y="186" text-anchor="middle" fill="#8a9a93" font-size="10.5">工业风烟花 · 空间大</text><circle cx="358" cy="158" r="9" fill="#c9a24b"/><text x="358" y="162.2" text-anchor="middle" fill="#fff" font-size="9.450000000000001" font-weight="700">●</text><text x="358" y="132" text-anchor="middle" fill="#8a6a2f" font-size="13" font-weight="700">五棵松</text><text x="358" y="190" text-anchor="middle" fill="#8a9a93" font-size="10.5">华熙 LIVE</text><circle cx="560" cy="158" r="7" fill="#2f6b5a"/><text x="560" y="136" text-anchor="middle" fill="#2f6b5a" font-size="12" font-weight="700">天安门</text><circle cx="694" cy="119" r="9" fill="#c9a24b"/><text x="694" y="123.2" text-anchor="middle" fill="#fff" font-size="9.450000000000001" font-weight="700">●</text><text x="694" y="94" text-anchor="middle" fill="#8a6a2f" font-size="13" font-weight="700">蓝色港湾</text><text x="694" y="152" text-anchor="middle" fill="#8a9a93" font-size="10.5">灯光节</text><rect x="44" y="582" width="726" height="46" rx="12" fill="#fff" stroke="#e6dfd2"/><text x="62" y="610" fill="#1d2b2a" font-size="12.5" font-weight="800">22:00 落地</text><text x="150" y="610" fill="#8a9a93" font-size="11.5">→ 23:40 市区</text>
+<text x="270" y="610" fill="#1d2b2a" font-size="12.5" font-weight="800">00:00 跨年</text><text x="360" y="610" fill="#8a9a93" font-size="11.5">→ 00:35 打车</text>
+<text x="470" y="610" fill="#c0653f" font-size="12.5" font-weight="800">01:30 回机场</text><text x="580" y="610" fill="#8a9a93" font-size="11.5">→ 05:40 值机</text>
+<line x1="44" y1="642" x2="776" y2="642" stroke="#e6dfd2" stroke-width="1.5"/>
+<text x="44" y="666" fill="#8a9a93" font-size="11">大兴机场线末班约 23:00，回程必须打车</text>
+<text x="776" y="666" text-anchor="end" fill="#8a9a93" font-size="11">按经纬度等比绘制</text>
+</svg></div>
+  <div class="scroll-hint">← 左右滑动查看细节 →</div>
+
+  <div class="tl" style="margin-top:16px">
+    <div class="row"><span class="t">17:55</span><div><b>深圳宝安 T3 起飞</b><p>DZ6209，经停长治 50 分钟，全程 4 小时。</p></div></div>
+    <div class="row"><span class="t">22:00</span><div><b>落地北京大兴</b><p>取行李 35 分钟。<b>大兴机场线末班约 23:00，要赶。</b></p></div></div>
+    <div class="row"><span class="t">22:45</span><div><b>大兴机场线 → 草桥</b><p>20 分钟，¥35。到草桥换 19 号线，往北到市区。</p></div></div>
+    <div class="row"><span class="t">23:40</span><div><b>抵达跨年点</b><p><b>首钢园</b>（工业风烟花）／<b>五棵松</b>（华熙 LIVE）／<b>蓝色港湾</b>（灯光节）。</p></div></div>
+    <div class="row"><span class="t">00:00</span><div><b>跨年倒计时</b><p>各场地零点火光、灯光或演出。</p></div></div>
+    <div class="row" style="border-left:3px solid #c0653f"><span class="t">00:35</span><div><b>打车回大兴</b><p>50 公里，约 55 分钟，¥180—220。<b>散场难叫车，提前预约。</b></p></div></div>
+    <div class="row"><span class="t">01:30</span><div><b>美宸酒店（航站楼二层）</b><p>¥314.2 起。睡到 05:40，约 4 小时。</p></div></div>
+    <div class="row"><span class="t">07:10</span><div><b>KN5537 → 延吉 09:20</b><p>无餐食，建议在机场买点带上。</p></div></div>
+  </div>
+
+  <div class="tip"><b>为什么这版更稳</b><span>进城只有 <b>一趟往返</b>，且住在<b>航站楼里</b>——01:30 到酒店，05:40 起床，中间不用再跑路。北京跨年夜往年会延长 10 条左右地铁运营，但<b>大兴机场线是否延时不固定</b>，别指望，按打车准备。</span></div>
+</section>
+<section id="choose">
+  <div class="sh"><div><div class="label">04 · HOW TO CHOOSE</div><h2>怎么选</h2></div>
+    <p>一句话分界</p></div>
+
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid #c0653f">
+      <h4 style="margin:0 0 10px;font-size:15px">选甲 · 烟台</h4>
+      <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.9">
+        <li>想<b>省 ¥107/人</b>，还多一点机上餐</li>
+        <li>希望<b>早 20 分钟</b>到延吉</li>
+        <li>跨年不需要大场面，海边走走就够</li>
+        <li>愿意承担凌晨双向 140 公里的不确定</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top:4px solid #4a7fa5">
+      <h4 style="margin:0 0 10px;font-size:15px">选乙 · 北京</h4>
+      <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.9">
+        <li>跨年<b>想有真气氛</b>（烟花、灯光、人潮）</li>
+        <li>不想凌晨还跑长途</li>
+        <li>住在航站楼里，<b>多睡半小时</b></li>
+        <li>愿意多花 ¥107/人</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="budget" style="margin-top:12px"><table>
+    <colgroup><col class="c1"><col><col class="c3"><col class="c4"></colgroup>
+    <tr><th>成本合计</th><th>甲 · 烟台</th><th>乙 · 北京</th></tr>
+    <tr><td>机票（2 人）</td><td>¥3,138</td><td>¥3,352</td></tr>
+    <tr><td>跨年住宿（2 人）</td><td>¥400—600（市区）</td><td>¥628（美宸 2 间）</td></tr>
+    <tr><td>往返打车（2 人分摊）</td><td>¥300—360</td><td>¥360—440</td></tr>
+    <tr><td><b>合计</b></td><td><b>¥3,838—4,098</b></td><td><b>¥4,340—4,420</b></td></tr>
+  </table></div>
+
+  <div class="tip alt"><b>一句话</b><span>甲省 <b>¥300—500（2人）</b>，乙省一趟往返折腾。<br><b>如果跨年对你只是个"顺便"——选甲。如果是这趟行程的一部分——选乙。</b></span></div>
+</section>
+<div class="footer">跨年地图 · 烟台与北京两个方案<br>2026-11-26 · 价格取自飞猪实时</div>
+</div>
+</body>
+</html>
