@@ -114,9 +114,18 @@ section{scroll-margin-top:66px;margin:34px 0}
 .budget td{padding:10px 8px;border-bottom:1px solid #f0ebe3;overflow-wrap:anywhere}
 .budget tr:last-child td{border-bottom:none;background:var(--soft);font-weight:700}
 @media(max-width:700px){.budget table{table-layout:auto}.budget td,.budget th{padding:9px 6px;font-size:12px}}
+
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;
+background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;
+padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;letter-spacing:.02em;
+box-shadow:0 8px 24px #13242b40;transition:.18s}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
 </style>
 </head>
 <body>
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
 <div class="wrap">
 <header>
   <div class="eyebrow">NEW YEAR EVE · TWO ROUTES</div>
@@ -126,7 +135,6 @@ section{scroll-margin-top:66px;margin:34px 0}
   <div class="stamp">12.31—01.01<br>2027</div>
 </header>
 <nav class="nav">
-  <a href="index.html">← 总览</a>
   <a href="#cmp">两案对比</a>
   <a href="#yantai">甲 · 烟台</a>
   <a href="#beijing">乙 · 北京</a>
@@ -202,12 +210,36 @@ section{scroll-margin-top:66px;margin:34px 0}
     <div class="row"><span class="t">20:20</span><div><b>打车进市区</b><p>走荣乌高速，约 70 分钟，¥150—180。凌晨回程同样要打车。</p></div></div>
     <div class="row"><span class="t">21:30</span><div><b>夜宵 · 烟台味道</b><p>焖子、鲅鱼水饺、海肠捞饭。<b>所城里</b>一带老城小吃集中，营业到深夜。</p></div></div>
     <div class="row"><span class="t">23:00</span><div><b>滨海广场 / 烟台山跨年</b><p>海边倒数、灯光。<b>冬季海风大，穿厚。</b>烟台山景区夜间开放以公告为准。</p></div></div>
-    <div class="row"><span class="t">00:30</span><div><b>回酒店</b><p>市区连锁酒店 ¥200—300。到 05:00 起床，约睡 4 小时。</p></div></div>
+    <div class="row"><span class="t">00:30</span><div><b>回酒店</b><p>市区连锁酒店 ¥200—300。到 05:00 起床，约睡 4 小时。<b>若改住蓬莱城区，可多睡 2 小时。</b></p></div></div>
     <div class="row" style="border-left:3px solid #c0653f"><span class="t">05:00</span><div><b>出发回机场</b><p>70 公里，05:00 走能保证 06:10 到。<b>凌晨叫车难，前一晚预约。</b></p></div></div>
     <div class="row"><span class="t">07:10</span><div><b>MU9823 → 延吉 09:00</b><p>两小时飞行，有茶点。<b>比北京方案早 20 分钟到。</b></p></div></div>
   </div>
 
-  <div class="tip warn"><b>方案甲最大的代价</b><span>机场↔市区 <b>140 公里往返</b>，睡 4 小时就要爬起来再跑 70 公里。凌晨 5 点打车是这一版最不确定的环节——<b>务必前一晚约好车</b>，或在机场附近住下、放弃进城。</span></div>
+  <div class="sh" style="margin-top:26px"><div><div class="label">WHERE TO SLEEP</div><h2 style="font-size:20px">烟台那一晚，住哪</h2></div>
+    <p>三个选择，差在距离与气氛</p></div>
+
+  <div class="budget"><table>
+    <colgroup><col class="c1"><col><col class="c3"><col class="c4"></colgroup>
+    <tr><th>住哪</th><th>能做什么</th><th>到机场</th><th>睡眠</th></tr>
+    <tr><td><b>A · 烟台市区</b><br><span style="font-size:11px;color:#8a9a93">芝罘区</span></td><td>滨海广场／烟台山倒计时、所城里夜宵</td><td>70 km · 70 min</td><td>约 4h</td></tr>
+    <tr><td><b>B · 蓬莱城区</b><br><span style="font-size:11px;color:#8a9a93">蓬莱阁一带</span></td><td>蓬莱阁夜景、八仙渡海边、海鲜小馆</td><td style="color:#2f6b5a;font-weight:800">30 km · 35 min</td><td style="color:#2f6b5a;font-weight:800">约 6h</td></tr>
+    <tr><td><b>C · 机场周边</b><br><span style="font-size:11px;color:#8a9a93">潮水镇</span></td><td>基本没有夜间活动</td><td style="color:#2f6b5a;font-weight:800">5 km · 8 min</td><td style="color:#2f6b5a;font-weight:800">约 7h</td></tr>
+  </table></div>
+
+  <div class="grid2" style="margin-top:12px">
+    <div class="card" style="border-top:4px solid #2f6b5a">
+      <h4 style="margin:0 0 8px;font-size:14.5px">B 蓬莱城区 · 推荐</h4>
+      <p style="margin:0;font-size:12.5px;color:#8a9a93;line-height:1.75">离机场只有 30 公里，比市区少跑 40 公里；蓬莱阁就在城里，夜里的灯光和海风比市区人潮安静得多。<br><b>05:00 出发也来得及</b>，睡 6 小时不是不可能。</p>
+    </div>
+    <div class="card" style="border-top:4px solid #c0653f">
+      <h4 style="margin:0 0 8px;font-size:14.5px">A 市区 · 只有想要人潮才选</h4>
+      <p style="margin:0;font-size:12.5px;color:#8a9a93;line-height:1.75">烟台山的跨年倒计确实更热闹，但代价是双向 140 公里、睡 4 小时、凌晨 5 点在最难叫车的时段上路。</p>
+    </div>
+  </div>
+
+  <div class="tip alt"><b>结论</b><span><b>住蓬莱城区（B）</b>——既没有放弃跨年，也不用凌晨跑 70 公里。<br>如果你只想要「睡够」，那就直接住机场周边（C），把跨年改成在酒店看直播。</span></div>
+
+  <div class="tip warn"><b>无论住哪，这一条必须做</b><span>出发前一晚<b>在 App 上预约好次日 05:00 的车</b>。烟台冬季凌晨的网约车响应率很低，现场叫车大概率要等 20 分钟以上。</span></div>
 </section>
 <section id="beijing">
   <div class="sh"><div><div class="label">03 · PLAN B</div><h2>乙 · 北京跨年</h2></div>
