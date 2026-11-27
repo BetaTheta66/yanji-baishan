@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>滑雪地图 · 万达雪场教练攻略</title>
+<style>
+:root{--ink:#13242b;--muted:#6a777a;--paper:#f5f0e8;--card:#fffdf9;--line:#ded8ce;--coral:#ef755b;--mint:#81c6b4;--blue:#76a8d5;--gold:#e9bd64;--shadow:0 14px 40px #14252a18;--soft:#f7f9f8;--pine:#2f6b5a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1080px;margin:auto;padding:0 16px 90px}
+header{background:linear-gradient(150deg,#0f2a33 0%,#1d4f52 55%,#2f6b5a 100%);color:#fff;padding:32px 26px 36px;position:relative;overflow:hidden;border-radius:24px;margin:20px 0}
+header:after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid #ffffff2a;border-radius:50%;box-shadow:0 0 0 32px #ffffff0a}
+.eyebrow{font-size:11px;letter-spacing:.18em;color:#a8d8ce}
+.hero{font-size:clamp(32px,8vw,48px);line-height:1.05;letter-spacing:-.05em;margin:18px 0 12px;font-weight:800}
+.hero-copy{margin:0;color:#cfe6df;max-width:620px;font-size:15px;line-height:1.75}
+.stamp{position:absolute;right:24px;bottom:26px;border:1px solid #e9bd6480;color:var(--gold);padding:10px;border-radius:50%;font-size:10px;text-align:center;transform:rotate(8deg);line-height:1.3}
+.nav{position:sticky;top:0;z-index:20;background:var(--paper);padding:10px 0;border-bottom:1px solid #ded8ce99}
+.nav-in{max-width:1080px;margin:auto;padding:0 16px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:0 0 auto;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:8px 14px;text-decoration:none;font-size:12.5px;font-weight:700;white-space:nowrap}
+.nav a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+section{scroll-margin-top:66px;margin:34px 0}
+.sh{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 14px}
+.sh h2{font-size:26px;letter-spacing:-.045em;margin:4px 0 0;font-weight:800}
+.sh p{margin:0;color:var(--muted);font-size:12px;text-align:right;max-width:330px}
+.label{font-size:11px;letter-spacing:.15em;color:var(--coral);font-weight:800}
+.card{background:var(--card);border-radius:18px;padding:17px;box-shadow:var(--shadow);min-width:0}
+.mapbox{background:var(--card);border-radius:20px;padding:12px;box-shadow:var(--shadow);overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.mapbox::-webkit-scrollbar{height:5px}
+.mapbox::-webkit-scrollbar-thumb{background:#cfc7b9;border-radius:9px}
+.mapbox svg{min-width:680px;display:block}
+.scroll-hint{font-size:11.5px;color:var(--muted);text-align:center;margin-top:9px;display:none}
+@media(max-width:700px){.scroll-hint{display:block}}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px;padding:0 4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+
+/* 酒店表 */
+.hotel-table{background:var(--card);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.hotel-table table{width:100%;border-collapse:collapse;font-size:13px}
+.hotel-table th{background:var(--ink);color:#c8dcec;font-size:11px;padding:11px 8px;text-align:left;font-weight:700;white-space:nowrap}
+.hotel-table td{padding:12px 8px;border-bottom:1px solid #f0ebe3;vertical-align:top}
+.hotel-table tr:last-child td{border-bottom:none}
+.hotel-table .mine{background:#fdf6e8}
+.hotel-table .mine td:first-child{box-shadow:inset 3px 0 0 #c0653f}
+.hotel-table b{font-size:13.5px}
+.hotel-table .price{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:700}
+.hotel-table .dist{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--pine);font-weight:700}
+.hotel-table .tagx{display:inline-block;font-size:9.5px;font-weight:800;border-radius:5px;padding:2px 6px;margin-left:5px;background:#e7f5ef;color:#1c6e55}
+.hotel-table .tagx.hot{background:#fbe9e4;color:#a8412c}
+.hotel-table small{color:var(--muted);font-size:11px;display:block;margin-top:2px;font-weight:400}
+
+.tier{display:inline-flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.tier span{font-size:11.5px;font-weight:700;border-radius:9px;padding:6px 11px;background:var(--card);box-shadow:var(--shadow)}
+.tier span i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;vertical-align:0}
+
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:13px;margin-top:13px}
+.card h4{margin:0 0 9px;font-size:16px}
+.card ul{margin:0;padding-left:18px;color:var(--muted);font-size:13.5px;line-height:1.82}
+.card li{margin-bottom:5px}
+.card li b{color:var(--ink)}
+.tip{background:var(--ink);color:#eff6f3;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.tip>b{display:block;color:var(--gold);font-size:14px;margin-bottom:5px}
+.tip span{font-size:13.5px;color:#cad6d5;line-height:1.72}
+.tip b{display:inline;color:#f0d9a4;font-size:inherit}
+.tip ul{margin:8px 0 0;padding-left:18px;font-size:13px;color:#cad6d5;line-height:1.8}
+.tip.alt{background:#1c4a3c}.tip.alt>b{color:#9fe6c9}.tip.alt b{color:#9fe6c9}
+.tip.warn{background:#5b2c22}.tip.warn>b{color:#ffd0c2}.tip.warn b{color:#ffd0c2}
+
+.pole{background:var(--card);border-radius:18px;padding:18px;box-shadow:var(--shadow);border-top:4px solid var(--c)}
+.pole .lb{font-size:11px;letter-spacing:.12em;font-weight:800;color:var(--c)}
+.pole h4{margin:7px 0 8px;font-size:18px}
+.pole p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.75}
+.pole .verdict{display:inline-block;margin-top:11px;font-size:12px;font-weight:800;border-radius:8px;padding:5px 10px;background:#f0f4f2;color:#41605a}
+
+.food{display:grid;gap:10px}
+.food-row{display:grid;grid-template-columns:1fr auto;gap:12px;background:var(--card);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);align-items:start}
+.food-row b{font-size:14.5px}
+.food-row p{margin:4px 0 0;color:var(--muted);font-size:12.5px;line-height:1.6}
+.food-row .loc{font-size:11.5px;font-weight:800;color:var(--pine);white-space:nowrap;text-align:right}
+
+.footer{text-align:center;color:#74817b;font-size:11.5px;padding-top:32px;line-height:1.9}
+.home-btn{position:fixed;left:14px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:6px;background:rgba(19,36,43,.86);color:#f2f7f7;border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:9px 15px 9px 12px;font-size:12.5px;font-weight:800;text-decoration:none;box-shadow:0 8px 24px #13242b40}
+.home-btn:active{transform:scale(.95)}
+.home-btn span{font-size:15px;line-height:1}
+@media(min-width:760px){.home-btn{left:calc((100% - 1080px)/2 - 6px)}}
+@media(max-width:700px){
+  .sh{display:block}.sh p{text-align:left;margin-top:3px}.stamp{display:none}
+  .hotel-table table{font-size:12px}
+  .hotel-table th,.hotel-table td{padding:10px 6px}
+  .hotel-table .hide-m{display:none}
+}
+.sub-poem{margin:0 0 14px;font-size:15px;letter-spacing:.26em;color:#e9bd64;font-weight:600}
+
+.fliggy-btn{display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,#FF8A1F,#FF5400);color:#fff;border-radius:16px;padding:14px 18px;text-decoration:none;box-shadow:0 10px 26px #ff6a0033;margin-bottom:14px;transition:.16s}
+.fliggy-btn:active{transform:scale(.985)}
+.fliggy-btn .ico{width:40px;height:40px;flex:0 0 auto;display:block}
+.fliggy-btn .tx{flex:1}
+.fliggy-btn .tx b{display:block;font-size:15.5px;font-weight:800}
+.fliggy-btn .tx span{display:block;font-size:11.5px;opacity:.92;margin-top:2px}
+.fliggy-btn .arrow{font-size:18px;opacity:.85}
+
+.tl{background:var(--card);border-radius:18px;padding:4px 0;box-shadow:var(--shadow)}
+.tl .row{display:grid;grid-template-columns:62px 1fr;gap:11px;padding:12px 16px;border-bottom:1px solid #f2ece0}
+.tl .row:last-child{border-bottom:none}
+.tl .t{font-weight:800;color:var(--pine);font-size:13px;font-variant-numeric:tabular-nums;padding-top:1px}
+.tl .row b{display:block;font-size:14px;margin-bottom:3px;font-weight:800;color:var(--ink)}
+.tl p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.68}
+.budget{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.budget table{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed}
+.budget col.c1{width:28%}.budget col.c3{width:22%}
+.budget th{background:var(--soft);color:var(--muted);font-size:10.5px;padding:9px 8px;text-align:left;font-weight:700}
+.budget td{padding:10px 8px;border-bottom:1px solid #f0ebe3}
+.budget tr:last-child td{border-bottom:none;background:var(--soft);font-weight:700}
+.budget .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media(max-width:700px){.budget table{table-layout:auto}}
+</style>
+</head>
+<body>
+
+<a class="home-btn" href="index.html"><span>←</span>方案总览</a>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">SKI MAP · WANDA SNOW PARK</div>
+  <h1 class="hero">滑雪地图</h1>
+  <p class="sub-poem">雪道 · 教练 · 一天的节奏</p>
+  <p class="hero-copy">1/2 是唯一完整的滑雪日，全天 1 对 1 教练。这张图回答三件事：雪道怎么分、教练从哪来、这一天怎么过。</p>
+  <div class="stamp">1/2 周六<br>全天教学</div>
+</header>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#map">雪道图</a>
+    <a href="#coach">教练政策</a>
+    <a href="#price">价格</a>
+    <a href="#day">这一天的节奏</a>
+    <a href="#tips">注意事项</a>
+  </div>
+</nav>
+
+<section id="map">
+  <div class="sh"><div><div class="label">01 · TRAIL MAP</div><h2>雪道分布</h2></div>
+    <p>43 条雪道 · 20 初 / 14 中 / 9 高 · 总长约 30 km</p></div>
+  <div class="mapbox"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif">
+<rect width="820" height="620" fill="#faf6ef"/>
+<text x="40" y="50" fill="#22403f" font-size="26" font-weight="800">万达雪场 · 雪道分布</text>
+<text x="40" y="72" fill="#8a9a93" font-size="11.5" letter-spacing="2">30+ 条雪道 · 落差约 500 m · 侧视示意</text>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8f1f7"/><stop offset="1" stop-color="#f6fafc"/></linearGradient></defs>
+<path d="M40 100 L780 100 L780 470 L40 470 Z" fill="url(#sky)" opacity="0.75"/>
+<path d="M40 470 L40 300 Q200 250 380 220 Q560 190 700 170 L780 165 L780 470 Z" fill="#eef3f0" stroke="#ddd4c4" stroke-width="1.5"/>
+<path d="M700 172 L780 167 L780 240 L700 245 Z" fill="#4a4a4a" opacity="0.55"/>
+<text x="742" y="212" text-anchor="middle" fill="#fff" font-size="11" font-weight="800">黑道</text>
+<path d="M520 200 L700 176 L700 290 L520 315 Z" fill="#6fa8cc" opacity="0.5"/>
+<text x="612" y="248" text-anchor="middle" fill="#204a63" font-size="11" font-weight="800">蓝道</text>
+<path d="M300 240 L520 202 L520 380 L300 415 Z" fill="#7fc09a" opacity="0.55"/>
+<text x="410" y="310" text-anchor="middle" fill="#1f5a3c" font-size="11" font-weight="800">绿道 / 初级</text>
+<rect x="70" y="400" width="200" height="62" rx="6" fill="#c8e6d2" opacity="0.85"/>
+<text x="170" y="426" text-anchor="middle" fill="#1f5a3c" font-size="11" font-weight="800">魔毯区 A</text>
+<text x="170" y="443" text-anchor="middle" fill="#8a9a93" font-size="9">零基础 · 最缓</text>
+<rect x="70" y="318" width="180" height="60" rx="6" fill="#d5ecd9" opacity="0.8"/>
+<text x="160" y="344" text-anchor="middle" fill="#1f5a3c" font-size="11" font-weight="800">魔毯区 B</text>
+<text x="160" y="361" text-anchor="middle" fill="#8a9a93" font-size="9">练习犁式</text>
+<line x1="120" y1="470" x2="740" y2="180" stroke="#c0653f" stroke-width="2" stroke-dasharray="7 5" opacity="0.8"/>
+<circle cx="740" cy="180" r="7" fill="#c0653f"/>
+<text x="700" y="146" fill="#c0653f" font-size="10.5" font-weight="800">轿厢索道 → 山顶</text>
+<line x1="300" y1="410" x2="470" y2="300" stroke="#c9a24b" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.85"/>
+<line x1="380" y1="380" x2="560" y2="265" stroke="#c9a24b" stroke-width="1.6" stroke-dasharray="4 4" opacity="0.85"/>
+<circle cx="470" cy="300" r="5" fill="#c9a24b"/><circle cx="560" cy="265" r="5" fill="#c9a24b"/>
+<text x="486" y="356" fill="#8a6a2f" font-size="10" font-weight="700">吊椅 → 半山</text>
+<rect x="300" y="440" width="180" height="40" rx="8" fill="#22403f"/>
+<text x="390" y="465" text-anchor="middle" fill="#fff" font-size="12" font-weight="800">雪具大厅 · 教练集合点</text>
+<circle cx="390" cy="432" r="6" fill="#c9a24b" stroke="#fff" stroke-width="2"/>
+<text x="40" y="540" fill="#22403f" font-size="11" font-weight="800">怎么用这张图</text>
+<text x="40" y="560" fill="#8a9a93" font-size="10.5">· 1/2 全天教练在雪具大厅集合，先做 20 分钟评估再定雪道</text>
+<text x="40" y="578" fill="#8a9a93" font-size="10.5">· 零基础从魔毯区 A 起，第一次课基本不会上到绿道</text>
+<text x="40" y="596" fill="#8a9a93" font-size="10.5">· 有基础的话教练会直接带去绿道上段，避开人群</text>
+</svg></div>
+  <div class="scroll-hint">← 左右滑动查看细节 →</div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>雪道分级</h4><ul>
+      <li><b>魔毯区 ×2</b>　零基础专用，坡度约 5—8°，全程魔毯传送</li>
+      <li><b>绿道</b>　初级，宽、缓，适合第一次上道</li>
+      <li><b>蓝道</b>　中级，需要能连续转弯</li>
+      <li><b>黑道</b>　高级，含 FIS 认证赛道，需有基础</li>
+    </ul></div>
+    <div class="card"><h4>索道</h4><ul>
+      <li><b>轿厢索道 1 条</b>　直达山顶，黑道入口</li>
+      <li><b>吊椅索道 3 条</b>　到半山，蓝道与绿道上段</li>
+      <li><b>魔毯</b>　两条，都在底部平缓区</li>
+      <li>缆车票包含在套餐雪票里，不用另买</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="coach">
+  <div class="sh"><div><div class="label">02 · COACH POLICY</div><h2>教练从哪来</h2></div>
+    <p>这一条决定你能不能自带教练</p></div>
+
+  <div class="tip warn"><b>结论：俱乐部教练不能在场内执教</b><span>长白山万达国际度假区滑雪场有明文规定，禁止「非授权教学行为」。<br>官方声明写明：<b>「度假区未与任何滑雪俱乐部及个人建立官方合作关系，严禁任何外部教练、俱乐部、社会团体在场内开展教学活动。」</b><br>所以网上找的俱乐部教练、私人教练，<b>都不能在雪场内带你滑</b>。</span></div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>为什么这么规定</h4><ul>
+      <li>雪场对场内安全承担责任，只认自家持证教练</li>
+      <li>外部教练无备案，出事责任无法追溯</li>
+      <li>2020 年曾发生「教朋友滑雪被阻拦」事件，雪场道歉并调查，但<b>政策本身没有放开</b></li>
+    </ul></div>
+    <div class="card"><h4>例外情况</h4><ul>
+      <li><b>朋友之间互相指导</b>　一般不会被干预，但不能以教学为名收费</li>
+      <li><b>持证教练带亲友</b>　需提前向雪场报备</li>
+      <li><b>雪场合作机构</b>　目前官方口径是「未与任何俱乐部合作」</li>
+    </ul></div>
+  </div>
+
+  <div class="tip gold" style="margin-top:14px"><b>所以这 1,500 元花在哪</b><span>只能走雪场官方「滑雪助理」。好处是<b>有保险、有备案、可追溯</b>；代价是价格比自己找贵，且旺季要提前约。</span></div>
+</section>
+
+<section id="price">
+  <div class="sh"><div><div class="label">03 · PRICE</div><h2>官方教练价格</h2></div>
+    <p>按 2 小时计 · 单板略贵于双板</p></div>
+
+  <div class="budget"><table>
+    <colgroup><col class="c1"><col><col class="c3"></colgroup>
+    <tr><th>级别</th><th>适合谁</th><th class="num">2 小时</th></tr>
+    <tr><td><b>初级</b></td><td>零基础、第一次上雪</td><td class="num">¥480—780</td></tr>
+    <tr><td><b>中级</b></td><td>会犁式刹车、想学平行</td><td class="num">¥780</td></tr>
+    <tr><td><b>高级</b></td><td>有基础、要纠正动作或上难度</td><td class="num">¥1,460</td></tr>
+    <tr><td><b>全天（约 6 小时）</b></td><td>初级档折算，含午休</td><td class="num">¥1,400—2,000</td></tr>
+  </table></div>
+
+  <div class="tip" style="margin-top:12px"><b>价格说明</b><span>不同渠道、不同年份的报价有差异：携程 2024 年攻略写初级 480/2h、中级 780/2h、高级 1,460/2h；什么值得买 2026 年的帖子写初级 780/2h、资深 980/小时。<br><b>以「我的长白山」App 内的实时报价为准</b>，旺季（元旦、春节）会上浮。你们定的 1,500/人全天，大致对应初级档全天价。</span></div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><h4>怎么约</h4><ul>
+      <li>下载 <b>「我的长白山」App</b>，注册登录</li>
+      <li>或在微信搜 <b>「万旅行」小程序</b></li>
+      <li>选：单板/双板 · 级别 · 1 对 1 / 1 对 2 / 小班</li>
+      <li><b>旺季建议提前 1—2 周</b>，元旦档期紧张</li>
+    </ul></div>
+    <div class="card"><h4>1 对 1 还是 1 对 2</h4><ul>
+      <li><b>1 对 1</b>　进步最快，教练全程盯动作</li>
+      <li><b>1 对 2</b>　两人同水平可以合请，单价更低</li>
+      <li>你们两人水平接近的话，<b>1 对 2 性价比更高</b></li>
+      <li>水平差得多，就各请各的</li>
+    </ul></div>
+  </div>
+</section>
+
+<section id="day">
+  <div class="sh"><div><div class="label">04 · THE DAY</div><h2>1/2 这一天的节奏</h2></div>
+    <p>全天教学 · 雪票第 1 天</p></div>
+
+  <div class="tl">
+    <div class="row"><span class="t">07:30</span><div><b>早餐</b><p>酒店自助，7:30 开餐。吃饱，一上午消耗很大。</p></div></div>
+    <div class="row"><span class="t">08:20</span><div><b>步行或穿梭巴士到雪场</b><p>1.2 km，15 分钟。雪具前一晚已租好，直接穿。</p></div></div>
+    <div class="row"><span class="t">08:40</span><div><b>雪具大厅 · 找教练</b><p>报预约姓名和手机号，教练会在这里点名集合。<b>提前 10 分钟到</b>，别让教练等。</p></div></div>
+    <div class="row"><span class="t">09:00</span><div><b>20 分钟评估</b><p>教练会看你们的站姿、平衡、会不会刹车，据此定当天练什么、去哪个区。<b>这一步要认真做</b>，别逞强报高水平。</p></div></div>
+    <div class="row"><span class="t">09:20</span><div><b>魔毯区 · 基础动作</b><p>零基础基本都在这里：穿脱板、摔倒起身、犁式刹车、重心转换。<b>一上午能把刹车练稳就算成功。</b></p></div></div>
+    <div class="row"><span class="t">11:30</span><div><b>午餐 60 分钟</b><p>雪场餐厅或回小镇，人均 ¥50—80。别吃太饱。</p></div></div>
+    <div class="row"><span class="t">12:30</span><div><b>绿道实操</b><p>有基础的话教练会直接带上绿道，把人流密集的魔毯区让开。<b>重点练连续转弯和控速。</b></p></div></div>
+    <div class="row"><span class="t">15:30</span><div><b>教练带下山 · 复盘</b><p>完整走一遍从绿道上段到山下的路线，教练在关键弯道提醒。<b>这趟最值钱</b>——把当天学的串成一条线。</p></div></div>
+    <div class="row"><span class="t">16:00</span><div><b>自己再刷两趟</b><p>教练走后趁热打铁，把动作再固定一遍。16:30 雪场收，别贪。</p></div></div>
+    <div class="row"><span class="t">17:00</span><div><b>拉伸 · 温泉</b><p>套餐含汉拿山温泉。先拉伸 15 分钟再泡，第二天腿不会那么酸。</p></div></div>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="sh"><div><div class="label">05 · NOTES</div><h2>注意事项</h2></div></div>
+
+  <div class="tip warn"><b>① 现在就约教练</b><span>元旦是全年最挤的档期，1 对 1 教练常被提前订满。<b>订万达套餐时可以直接问前台能不能一起约</b>，或者打雪场教练部电话。别等到 1/1 晚上才想起来。</span></div>
+
+  <div class="tip"><b>② 别说「我会一点」</b><span>评估时如果虚报水平，教练会直接带你上绿道甚至蓝道，动作没打牢就上难度，<b>受伤风险高于收益</b>。老实说「第一次滑」反而学得快。</span></div>
+
+  <div class="tip"><b>③ 装备清单</b><span>雪板雪靴雪杖含在套餐里；<b>雪镜、面罩、防水手套要自备</b>，这几样租不到或不卫生。雪服可在雪场租（约 ¥300—600/套/天）。</span></div>
+
+  <div class="tip"><b>④ 保暖与补水</b><span>山上比山下低 5—8℃，风大。<b>贴身穿速干，不要穿棉</b>——出汗后棉衣湿透会失温。带保温杯，雪场有热水点。</span></div>
+
+  <div class="tip"><b>⑤ 1/3 上午还能滑</b><span>第二天上午 08:00—12:30 是第二次雪票权益。<b>不请教练，自己复习前一天的动作</b>，效果比连续上课好——间隔一夜，身体会自己消化。</span></div>
+
+  <div class="tip"><b>⑥ 保险</b><span>雪票通常含基础意外险，保额不高。如果买了自己的旅游意外险，<b>确认「包含滑雪」条款</b>，很多普通意外险把滑雪列为除外责任。</span></div>
+</section>
+
+<div class="footer">滑雪地图 · 万达雪场<br>教练政策与价格来源：雪场官方声明、携程攻略、什么值得买 · 2027 元旦档价格以 App 实时报价为准</div>
+</div>
+
+</body>
+</html>
